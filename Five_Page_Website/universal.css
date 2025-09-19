@@ -1,0 +1,76 @@
+/*Universal CSS to be used for all the pages for basic formatting*/
+
+/* styling the body */
+
+body {
+    width: 1640px;
+    margin: 0;
+    border: white 5px solid;
+    background-image: url(Assets/Universal/space-body-background.avif);
+    background-color:rgb(13, 6, 20);
+    background-repeat: repeat;
+    
+    
+}
+
+/* Styling the Header */
+
+header {
+    background-image: url("Assets/Home-Page/home-header.png");
+    background-color: rgb(65, 32, 65);
+    /* height and width is the ratio for the facebook header */
+    height: 664px;  
+    width: 1640px;
+    background-repeat: no-repeat;
+    background-position: top;
+    margin: 0 auto;
+}
+
+/* Styling the Nav */
+
+header .spacer {
+    height: 614px;
+    width: 1630px;
+    border: palevioletred 5px solid;
+}
+
+header nav {
+    text-align:center;
+    margin: 0 auto;
+    background-color: transparent;
+    width: 750px;
+    height: 50px;
+}
+
+header nav a {
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+}
+
+main {
+    color: white;
+    border: green 5px solid;
+}
+
+.footer {
+    color: white;
+    border: cyan 5px solid;
+}
+
+.rightfooter {
+    border: red 5px solid;
+}
+
+.leftfooter{
+    color: white;
+    border: blue 5px solid;
+}
+
+.library-home {
+    background-image: url(Assets/Universal/earth-in-space.png);
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 50px;
+}
+

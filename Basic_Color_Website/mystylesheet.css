@@ -1,0 +1,115 @@
+/* this is the CSS file for the Color Webpages */
+html {
+    height: 100%;
+    width: 100%;
+
+}
+/* CSS Style for the backgrounds */
+
+.red {
+    background-color: red;
+} 
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: rgb(78, 134, 255);  /*was originaly blue instead of rgb*/
+} 
+
+/* CSS for the Navigation */
+
+nav {
+    margin-left: 0px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 10px;
+    font-size: large;
+}
+a:link {
+    color: white;
+}
+
+a:visited {
+    color: blue;
+}
+
+a.red-link {
+    color: green;
+}
+
+a.green-link {
+    color: blue;
+}
+
+a.blue-link {
+    color: red;
+}
+a.white-override-link {
+    color: white;
+}
+
+/* CSS for the Paragraph Text */
+
+p {
+    font-family:'Courier New', Courier, monospace;
+    font-size: large;
+}
+
+/* CSS for the Header Text */
+
+h1 {
+    text-align: center;
+    text-decoration: none;
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+
+/* CSS for the Background Images */
+
+.red-image {
+    background-image: url(Color_Assets/red_lake.jpg);
+    width: 90%;
+    height: 60vh;
+    margin-left: 5%;
+    margin-right: 0%;
+    padding:0%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    top: 0px;
+    background-attachment: fixed;
+    
+}
+.green-image {
+    background-image: url("Color_Assets/green_lake.jpg");
+    width: 90%;
+    height: 60vh;
+    margin-left: 5%;
+    margin-right: 0;
+    padding:0%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    top: 0px;
+    background-attachment: fixed;
+    
+}
+
+.blue-image {
+    background-image: url("Color_Assets/blue_ice.png");
+    width: 90%;
+    height: 60vh;
+    margin-left: 5%;
+    margin-right: 0%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    top: 0px;
+    background-attachment: fixed;
+}
+
+
+
