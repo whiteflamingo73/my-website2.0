@@ -1,16 +1,30 @@
 /*Universal CSS to be used for all the pages for basic formatting*/
 
+html {
+    border: cornflowerblue 10px dashed;
+    margin: 0;
+    cursor: url(Assets/Universal/cursor-SLS.png), auto;
+}
+
 /* styling the body */
 
 body {
     width: 1640px;
-    margin: 0;
     border: white 5px solid;
     background-image: url(Assets/Universal/space-body-background.avif);
     background-color:rgb(13, 6, 20);
     background-repeat: repeat;
-    
-    
+    margin: 0 auto;
+}
+
+/* styling basic stuff, like text */
+
+p {
+    color: white;
+}
+
+a {
+      cursor: url(Assets/Universal/pointer-SLS.png), auto;
 }
 
 /* Styling the Header */
@@ -46,31 +60,87 @@ header nav a {
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: large;
+    background-color: purple;
+    padding: 20px;
+    border: purple 5px solid;
+    border-left: rgb(66, 11, 66) 7px solid;
+    border-bottom: rgb(66, 11, 66) 10px solid;
+    border-radius: 40%;
+  
 }
+
+header nav .active-page {
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+    background-color: rgb(66, 11, 66);
+    padding: 20px;
+    border: rgb(66, 11, 66) 5px solid;
+    border-left: purple 7px solid;
+    border-bottom: purple 10px solid;
+    border-radius: 40%;
+}
+
+
+/* styling the main content of the page */
 
 main {
     color: white;
     border: green 5px solid;
+    float: left;
+    padding: 20px;
+    height: 1000px;
+    width: 1380px;
 }
+
+/* styling the side panel */
+
+.side-panel {
+    border: darkgoldenrod 5px solid;
+    float: right;
+    height: 500px;
+    width: 200px;
+}
+
+/* styling the footer elements */
 
 .footer {
     color: white;
     border: cyan 5px solid;
+    height: 50px;
+    width: 1640px;
+    padding-top: 500px;
 }
 
-.rightfooter {
-    border: red 5px solid;
+.leftfooter {
+    color: white;
+    border: pink 5px solid;
+    height: 50px;
+    width: 770px;
+    float: right;
 }
 
-.leftfooter{
+.leftmostfooter{
     color: white;
     border: blue 5px solid;
+    width: 50px;
+    height: 50px;
+    float: left;
+
 }
 
 .library-home {
-    background-image: url(Assets/Universal/earth-in-space.png);
+    background-image: url(Assets/Universal/small-earth-in-space.png);
     background-repeat: no-repeat;
     height: 50px;
     width: 50px;
+    float: left;
+}
+.rightfooter {
+    border: red 5px solid;
+    height: 50px;
+    width: 770px;
+    float: right;
+    
 }
 
