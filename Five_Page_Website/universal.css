@@ -2,6 +2,7 @@
 
 html {
     border: cornflowerblue 10px dashed;
+    background-color: rgb(43, 5, 43); /* just to see where stuff spills out of the body */
     margin: 0;
     cursor: url(Assets/Universal/cursor-SLS.png), auto;
 }
@@ -67,6 +68,12 @@ header nav a {
     border-bottom: rgb(66, 11, 66) 10px solid;
     border-radius: 40%;
   
+}
+
+header nav a:hover {
+    border: rgb(235, 218, 255) 5px solid;
+    border-left: rgb(235, 218, 255) 7px solid;
+    border-bottom: rgb(235, 218, 255) 10px solid;
 }
 
 header nav .active-page {
