@@ -1,9 +1,9 @@
 /*Universal CSS to be used for all the pages for basic formatting*/
 
+
 html {
-    border: cornflowerblue 10px dashed;
+    /*border: cornflowerblue 10px dashed; */ /* used to see where the divs are */
     background-color: rgb(43, 5, 43); /* just to see where stuff spills out of the body */
-    margin: 0;
     cursor: url(Assets/Universal/cursor-SLS.png), auto;
 }
 
@@ -11,7 +11,9 @@ html {
 
 body {
     width: 1640px;
-    border: white 5px solid;
+    height: 100%;
+    /*height: 1770px; */
+    border: white 5px solid; 
     background-image: url(Assets/Universal/space-body-background.avif);
     background-color:rgb(13, 6, 20);
     background-repeat: repeat;
@@ -46,7 +48,7 @@ header {
 header .spacer {
     height: 614px;
     width: 1630px;
-    border: palevioletred 5px solid;
+    /*border: palevioletred 5px solid;   */ /* used to see where the divs are */
 }
 
 header nav {
@@ -59,6 +61,7 @@ header nav {
 
 header nav a {
     color: white;
+    text-decoration: none;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: large;
     background-color: purple;
@@ -93,46 +96,56 @@ header nav .active-page {
 
 main {
     color: white;
-    border: green 5px solid;
+    /*border: green 5px solid; */ /* used to see where the divs are */
     float: left;
     padding: 20px;
     height: 1000px;
-    width: 1380px;
+    width: 1280px;
 }
 
 /* styling the side panel */
 
 .side-panel {
-    border: darkgoldenrod 5px solid;
+    /*border: darkgoldenrod 5px solid; */ /* used to see where the divs are */
     float: right;
     height: 500px;
-    width: 200px;
+    width: 300px;
+}
+
+.side-panel img {
+    padding-top: 10px;
 }
 
 /* styling the footer elements */
 
 .footer {
     color: white;
-    border: cyan 5px solid;
+    margin-top: 1050px;
+    /*border: cyan 5px solid;  /* used to see where the divs are */
     height: 50px;
-    width: 1640px;
-    padding-top: 500px;
+    width: 1630px;
+    border-top: white 5px dashed;
 }
+
 
 .leftfooter {
     color: white;
-    border: pink 5px solid;
+    /*border: pink 5px solid; */ /* used to see where the divs are */
     height: 50px;
     width: 770px;
     float: right;
+    padding-top: 5px;
+    
+    
 }
 
 .leftmostfooter{
     color: white;
-    border: blue 5px solid;
-    width: 50px;
+    /*border: blue 5px solid; */ /* used to see where the divs are */
+    width: 60px;
     height: 50px;
     float: left;
+    
 
 }
 
@@ -140,14 +153,16 @@ main {
     background-image: url(Assets/Universal/small-earth-in-space.png);
     background-repeat: no-repeat;
     height: 50px;
-    width: 50px;
+    width: 70px;
     float: left;
+    margin-top: 3px;
 }
 .rightfooter {
-    border: red 5px solid;
+    /*border: red 5px solid; */ /* used to see where the divs are */
     height: 50px;
-    width: 770px;
+    width: 790px;
     float: right;
+    padding-top: 5px;
     
 }
 
