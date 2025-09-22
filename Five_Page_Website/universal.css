@@ -103,6 +103,11 @@ main {
     width: 1280px;
 }
 
+main .picture{
+    float: right;
+    border-radius: 100%;
+    
+}
 /* styling the side panel */
 
 .side-panel {
@@ -119,8 +124,10 @@ main {
 /* styling the footer elements */
 
 .footer {
+    clear: both;
+    bottom: 0;
     color: white;
-    margin-top: 1050px;
+    /*margin-top: 1050px; */
     /*border: cyan 5px solid;  /* used to see where the divs are */
     height: 50px;
     width: 1630px;
