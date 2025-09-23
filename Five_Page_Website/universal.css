@@ -46,6 +46,8 @@ header {
 /* Styling the Nav */
 
 header .spacer {
+    background-image: url(Assets/Home-Page/home-header.png);
+    background-color: blueviolet;
     height: 614px;
     width: 1630px;
     /*border: palevioletred 5px solid;   */ /* used to see where the divs are */
@@ -99,8 +101,14 @@ main {
     /*border: green 5px solid; */ /* used to see where the divs are */
     float: left;
     padding: 20px;
+    padding-bottom: 30px;
     height: 1000px;
     width: 1280px;
+}
+
+main h1 {
+    text-align: center;
+    font-weight: bolder;
 }
 
 main .picture{
@@ -125,7 +133,9 @@ main .picture{
 
 .footer {
     clear: both;
+    position: relative;
     bottom: 0;
+    width: 100%;
     color: white;
     /*margin-top: 1050px; */
     /*border: cyan 5px solid;  /* used to see where the divs are */
