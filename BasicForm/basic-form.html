@@ -3,8 +3,82 @@
 <html>
     <heading>
         <title>Aaron's Basic Form</title>
-    
+
     </heading>
 
+    <body>
+        <div class="formholder">
+            <h1>Basic Form Thingy</h1>
+            <form>
+                <label for="first-name">First Name:</label><br>
+                <input type="text" id="first-name" name="first-name"><br>
+
+                <label for="last-name">Last Name:</label><br>
+                <input type="text" id="last-name" name="last-name"><br>
+
+                <label for="DOB">Date of Birth:</label><br>
+                <input type="date" id="DOB" name="DOB"><br>
+
+                <label for="gender">Gender:</label><br>
+                <select id="gender" name="gender">
+                    <option value="Cisgender-Man">Cisgender Man</option>
+                    <option value="Cisgender-Woman">Cisgender Woman</option>
+                    <option value="Transgender-Man">Transgender Man</option>
+                    <option value="Transgender-Woman">Transgender Woman</option>
+                    <option value="Nonbinary">Nonbinary</option>
+                    <option value="Other">Other</option>
+                    <option value="Prefer-Not-To-Say">Prefer Not To Say</option>
+                </select><br>
+                    
+
+                
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br>
+
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password"><br>
+                <br><br>
+
+                <p>What transportation do you take?</p>
+
+                <input type="checkbox" id="transit1" name="transit1" value="Bike">
+                <label for="transit1">I bike</label><br>
+
+                <input type="checkbox" id="transit2" name="transit2" value="Walk">
+                <label for="transit2">I walk</label><br>
+
+                <input type="checkbox" id="transit3" name="transit3" value="Car">
+                <label for="transit3">I drive</label><br>
+
+                <input type="checkbox" id="transit4" name="transit4" value="TrainandBus">
+                <label for="transit4">I take the train/bus</label>
+                <br><br>
+
+                <p>Of those transportation options, which do you use the most?</p>
+
+                <input type="radio" id="transit1-bike" name="transit1-bike" value="Bike">
+                <label for="transit1-bike">Biking</label><br>
+
+                <input type="radio" id="transit2-walk" name="transit2-walk" value="Walk">
+                <label for="transit2-walk">Walking</label><br>
+
+                <input type="radio" id="transit3-car" name="transit3-car" value="Car">
+                <label for="transit3-car">Driving</label><br>
+
+                <input type="radio" id="transit4-train" name="transit4-train" value="TrainandBus">
+                <label for="transit4-train">Public Transit (Train & Bus)</label>
+                <br><br>
+
+                
+                <label for="date">When did you fill this out?</label><br>
+                <input type="date" id="date" name="date">
+                <br><br>
+
+                <input type="submit" value="Submit"> 
+                <br><br>
+
+            </form>
+
+    </body>
 
 </html>
