@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        <meta charset="utf 8">
+        <meta charset="utf-8">
         <title>Amimal Sounds</title>
     </head>
 
@@ -28,7 +28,7 @@
         </select>
 
         <!-- button that will call the javascript function -->
-        <button type="button" onclick="MyFunction()">Submit</button>
+        <button type="button" onclick="myFunction()">Submit</button>
 
         <!-- Paragraph tag will display the animal image -->
         <p id="demo"></p>
@@ -40,21 +40,26 @@
         function myFunction() {
             var thesound, text;
 
-            thesound = document.getElementById(animalsounds).value;
+            thesound = document.getElementById("animalsounds").value;
 
             if (thesound == "bear") {
                 text = "<img src=AnimalAssets/AnimalImages/bear.jpg>";
-                document.getElementById('audiotag1').play;
+                document.getElementById('audiotag1').play();
             } else if (thesound == "bird") {
                 text = "<img src=AnimalAssets/AnimalImages/bird.jpg>";
-                document.getElementById('audiotag2').play;
+                document.getElementById('audiotag2').play();
             } else if (thesound == "bison") {
                 text = "<img src=AnimalAssets/AnimalImages/bison.jpg>";
-                document.getElementById('audiotag3').play;
+                document.getElementById('audiotag3').play();
             } else if (thesound == "cat") {
-                text = "<img src=AnimalAssets/AnimalImages/cat.jpg>"
-                document.getElementById('audiotag4').play;
+                text = "<img src=AnimalAssets/AnimalImages/cat.jpg>";
+                document.getElementById('audiotag4').play();
+            } else if (thesound == "goat") {
+                text = "<img src=AnimalAssets/AnimalImages/goat.jpg>";
+                document.getElementById('audiotag5').play();
             }
+
+            document.getElementById("demo").innerHTML = text;
         }
         
         </script>
