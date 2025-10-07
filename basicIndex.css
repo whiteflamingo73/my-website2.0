@@ -11,17 +11,45 @@ a {
     text-decoration: none;
 }
 
+/* CSS to make a div look like a bookshelf */
+
+.bookshelf {
+    background-color: rgb(58, 31, 31);
+    width: 1000px;
+    border-right: rgb(71, 38, 28) 20px ridge;
+    border-left: rgb(71, 38, 28) 20px groove;
+    border-bottom: rgb(56, 28, 23) 20px groove;
+    border-top: rgb(70, 43, 21) 20px ridge;
+    position: absolute;
+}
+
+.top-shelf {
+    height: 220px;
+}
+
+.shelf {
+    height: 220px;
+    border-top:rgb(71, 38, 28) 10px groove;
+}
+
+/* CSS to make a link look like a book */
+
+.book-link-container {
+    width: 50px;
+    height: 190px;
+    float: right;
+    padding-top: 30px;
+}
 .book-link {
     width: 50px;
     height: 150px;
-    border: red 5px solid;
 }
-
 .book-top {
+    background-image: repeating-linear-gradient(to right, beige, rgb(177, 177, 177) 5%, beige 15%);
     background-color: beige;
     width: 40px;
-    height: 20px;
-    border-top: rgb(230, 230, 230) 5px groove;
+    height: 20px; 
+    border-top: rgb(171, 171, 171) 3px dotted;
     border-top-left-radius: 15%;
     border-top-right-radius: 15%;
     border-left: darkblue 5px groove;
@@ -30,23 +58,20 @@ a {
     border-bottom-left-radius: 12%;
     border-bottom-right-radius: 12%;
 }
-
 .book-spine {
+    background-image: linear-gradient(to right, darkblue, blue, darkblue);
     background-color: blue;
     width: 50px;
     border-top: blue top 2px solid;
     border-top-left-radius: 10%;
     border-top-right-radius: 10%;
-    
 }
-
 .book-text {
     width: 50px;
     height: 125px;
     text-align: center;
     writing-mode: vertical-lr;
 }
-
 .book-image {
     background-color: purple;
     border: darkblue 5px solid;
@@ -54,10 +79,10 @@ a {
     height: 30px;
     margin: 0 auto;
 }
-
 .book-image img {
     position: relative;
     width: 40px;
     height: 30px;
 }
+
 

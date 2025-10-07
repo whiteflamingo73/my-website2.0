@@ -1,6 +1,5 @@
 /*Universal CSS to be used for all the pages for basic formatting*/
 
-
 html {
     /*border: cornflowerblue 10px dashed; */ /* used to see where the divs are */
     background-color: rgb(43, 5, 43); /* just to see where stuff spills out of the body */
@@ -27,7 +26,7 @@ p {
 }
 
 a {
-      cursor: url(Assets/Universal/pointer-SLS.png), auto;
+    cursor: url(Assets/Universal/pointer-SLS.png), auto;
 }
 
 /* Styling the Header */
@@ -72,7 +71,6 @@ header nav a {
     border-left: rgb(66, 11, 66) 7px solid;
     border-bottom: rgb(66, 11, 66) 10px solid;
     border-radius: 40%;
-  
 }
 
 header nav a:hover {
@@ -92,7 +90,6 @@ header nav .active-page {
     border-bottom: purple 10px solid;
     border-radius: 40%;
 }
-
 
 /* styling the main content of the page */
 
@@ -114,7 +111,6 @@ main h1 {
 main .picture{
     float: right;
     border-radius: 100%;
-    
 }
 /* styling the side panel */
 
@@ -151,9 +147,7 @@ main .picture{
     height: 50px;
     width: 770px;
     float: right;
-    padding-top: 5px;
-    
-    
+    padding-top: 5px; 
 }
 
 .leftmostfooter{
@@ -162,8 +156,6 @@ main .picture{
     width: 60px;
     height: 50px;
     float: left;
-    
-
 }
 
 .library-home {
@@ -180,6 +172,110 @@ main .picture{
     width: 790px;
     float: right;
     padding-top: 5px;
-    
+}
+
+/* CSS Specific to the About Me page */
+
+.secret-image {
+    background-image: url(Assets/aboutpage/purple-flowers.png);
+    background-repeat: no-repeat;
+    background-size: 400px;
+    border: blueviolet 10px groove;
+    height: 400px;
+    width: 400px;
+    float: right;
+}
+
+.secret-image:hover {
+    background-image: url(Assets/aboutpage/evening-sky.png);
+    background-repeat: no-repeat;
+    background-size: 400px;
+    border: orchid 10px groove;
+    height: 400px;
+    width: 400px;
+    float: right;
+}
+
+.about-me-list {
+    font-size: large;
+    padding: 10px;
+    width: 400px;
+}
+
+.about-me-list a {
+    color: white;
+}
+
+.about-me-list a:visited {
+    color: white;
+}
+
+/* Side panel stuffs */
+
+.side-panel .about-side-image-description {
+    width: 250px;
+    height: 350px;
+    overflow: hidden;
+}
+
+.side-panel .about-side-image-description:hover {
+    width: 250px;
+    height: 370px;
+    overflow: hidden;
+}
+
+.side-panel .about-side-image {
+    border: rgb(73, 47, 218) 10px groove;
+    padding-top: 0px;
+}
+
+/* SCHEDULE TABLES!!! */
+
+.schedule {
+    padding-top: 150px;
+    width: 1350px;
+    /*border: red 5px solid; */ /* Just to help visualize spacing */
+}
+
+.green-schedule {
+    float: left;
+    width: 500px;
+    height: 500px;
+}
+
+.green{
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+.green th, .green td {
+    border: rgb(39, 204, 39) 5px solid;
+    border-collapse: collapse;
+    border-radius: 15%;
+    background-color: rgb(14, 99, 14);
+    text-align: center;
+}
+
+.white-schedule {
+    float: right;
+    width: 500px;
+    height: 500px;
+}
+
+.white {
+    margin: 0 auto;
+}
+
+.white th, .white td {
+    border: rgb(255, 255, 255) 5px solid;
+    border-collapse: collapse;
+    border-radius: 15%;
+    background-color: rgb(196, 196, 196);
+    text-align: center;
+    padding: 5px;
+    color: black;
 }
 
