@@ -27,6 +27,7 @@ p {
 
 a {
     cursor: url(Assets/Universal/pointer-SLS.png), auto;
+    color: white;
 }
 
 /* Styling the Header */
@@ -108,9 +109,14 @@ main h1 {
     font-weight: bolder;
 }
 
-main .picture{
+main .picture-planet {
     float: right;
     border-radius: 100%;
+}
+
+main .picture-basic {
+    float: right;
+    border: rgb(109, 35, 206) 10px groove;
 }
 /* styling the side panel */
 
@@ -279,3 +285,15 @@ h2 {
     color: black;
 }
 
+/* CSS for the Favorites Page */
+
+.favorite-description {
+    height: 200px;
+    width: 850px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+iframe {
+    cursor: url(Assets/Universal/pointer-SLS.png), auto;
+}
