@@ -131,6 +131,12 @@ main .picture-basic {
     padding-top: 10px;
 }
 
+.side-panel .picture-basic {
+    padding: 0px;
+    margin-left: -25px;
+    border: rgb(109, 35, 206) 10px groove;  
+}
+
 /* styling the footer elements */
 
 .footer {
@@ -287,11 +293,11 @@ h2 {
 
 /* CSS for the Favorites Page */
 
-.favorite-description {
+.picture-description {
     height: 200px;
     width: 850px;
     padding: 10px;
-    overflow: hidden;
+    /*overflow: hidden; */
 }
 
 iframe {
