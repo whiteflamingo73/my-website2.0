@@ -303,3 +303,16 @@ h2 {
 iframe {
     cursor: url(Assets/Universal/pointer-SLS.png), auto;
 }
+
+/* CSS used for the least page*/
+
+.audio-container {
+    height: 150px;
+    margin: 0 auto;
+}
+
+audio {
+    height: 100px;
+    padding: 30px;
+    margin: 0 auto;
+}
