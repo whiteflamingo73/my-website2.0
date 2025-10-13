@@ -245,25 +245,37 @@ main .picture-basic {
 
 .schedule {
     padding-top: 150px;
-    width: 1350px;
+    /*width: 1350px;*/
+    width: 500px; 
+    height: 1000px;
     /*border: red 5px solid; */ /* Just to help visualize spacing */
 }
 
 .green-schedule {
     float: left;
     width: 500px;
-    height: 500px;
+    height: 1000px;
 }
 
 .green{
     margin: 0 auto;
+    width: 500px;
 }
+
 
 h2 {
     text-align: center;
 }
 
-.green th, .green td {
+.school-schedule th, .school-schedule td {
+    border: rgb(148, 48, 123) 5px solid;
+    border-collapse: collapse;
+    border-radius: 15%;
+    background-color: rgb(36, 16, 36);
+    text-align: center;
+}
+
+.school-schedule .green, .school-schedule .green {
     border: rgb(39, 204, 39) 5px solid;
     border-collapse: collapse;
     border-radius: 15%;
@@ -271,17 +283,35 @@ h2 {
     text-align: center;
 }
 
+.block-3 {
+    border: rgb(172, 255, 124) 5px solid;
+    border-collapse: collapse;
+    border-radius: 15%;
+    background-color: rgb(247, 247, 247);
+    text-align: center;
+}
+
+tr {
+    height: 30px;
+}
+
+td {
+    height: 60px;
+    width: 100px;
+}
+
+
+
+
+
 .white-schedule {
     float: right;
     width: 500px;
     height: 500px;
 }
 
-.white {
-    margin: 0 auto;
-}
 
-.white th, .white td {
+.school-schedule .white{
     border: rgb(255, 255, 255) 5px solid;
     border-collapse: collapse;
     border-radius: 15%;

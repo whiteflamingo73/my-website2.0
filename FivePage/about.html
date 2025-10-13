@@ -50,87 +50,100 @@
         <div class="schedule">
             <div class="green-schedule">
                 <h2>Green Day Schedule</h2>
-                <table class="green">
+                <table class="school-schedule">
                     <tr>
-                        <th>Blocks</th>
-                        <th>Start</th>
-                        <th>End</th>
-                        <th>Minutes</th>
-                        <th>Green Day</th>
-                        <th>White Day</th>
+                        <th rowspan="1">Blocks</th>
+                        <th rowspan="1">Start</th>
+                        <th rowspan="1">End</th>
+                        <th rowspan="1">Minutes</th>
+                        <th rowspan="1" class="green">Green Day</th>
+                        <th rowspan="1" class="white">White Day</th>
                     </tr>
                     <tr>
-                        <td>Block 1</td>
-                        <td>7:40</td>
-                        <td>9:00</td>
-                        <td>80</td>
-                        <td>AP Environmental Science</td>
-                        <td>Honors US History</td>
+                        <td rowspan="4">Block 1</td>
+                        <td rowspan="4">7:40</td>
+                        <td rowspan="4">9:00</td>
+                        <td rowspan="4">80</td>
+                        <td rowspan="4" class="green">AP Environmental Science</td>
+                        <td rowspan="4" class="white">Honors US History</td>
                     </tr>
+                    <tr class="empty"></tr>
+                    <tr class="empty"></tr>
+                    <tr class="empty"></tr>
                     <tr>
-                        <td>Block 2<td>
-                        <td>9:05</td>
-                        <td>10:25</td>
-                        <td>80</td>
-                        <td>Computer Programming 2</td>
-                        <td>Computer Programming 2</td>
+                        <td rowspan="4">Block 2</td>
+                        <td rowspan="4">9:05</td>
+                        <td rowspan="4">10:25</td>
+                        <td rowspan="4">80</td>
+                        <td rowspan="4" class="green">Computer Programming 2</td>
+                        <td rowspan="4" class="white">Computer Programming 2</td>
                     </tr>
+                    <tr class="empty"></tr>
+                    <tr class="empty"></tr>
+                    <tr class="empty"></tr>
                     <tr>
-                        <td>Flex/Advisory</td>
-                        <td>10:30</td>
-                        <td>11:00</td>
-                        <td>30</td>
-                        <td>Flex/Advisory</td> 
-                        <td>Flex/Advisory</td>
+                        <td rowspan="1">Flex/Advisory</td>
+                        <td rowspan="1">10:30</td>
+                        <td rowspan="1">11:00</td>
+                        <td rowspan="1">30</td>
+                        <td rowspan="1" class="green">Flex/Advisory</td>
+                        <td rowspan="1" class="white">Flex/Advisory</td>
                     </tr>
-                    <tr class="block-3-container">
-                        <table class="block-3">
-                            <tr>
-                                <td></td>
-                                <td>11:05</td>
-                                <td>11:30</td>
-                                <td>Honors Alegebra 2</td>
-                            </tr>
-                            <tr>
-                                <td>Block 3/Lunch</td>
-                                <td>11:35</td>
-                                <td>12:05</td>
-                                <td>B Lunch</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>12:10</td>
-                                <td>1:05</td>
-                                <td>Honors Alegebra 2</td>
-                            </tr>
 
-                        </table>
-                        <td>Honors Alegebra 2 PT 1</td>
+                    <!--Block three start-->
+                    <tr class="block-3"> <!--Segment 1-->
+                        <td rowspan="4">Block 3/Lunch</td>
                         <td>11:05</td>
-                        <td>11:30</td>
-                        <td>25</td>
-                    </tr>
-                    <tr>
-                        <td>B Lunch</td>
                         <td>11:35</td>
-                        <td>12:00</td>
-                        <td>25</td>
+                        <td>30</td>
+                        <td class="green">Honors Alegebra 2</td> <!--Green Day-->
+                        <td class="white">A Lunch</td> <!--White Day-->
                     </tr>
-                    <tr>
-                        <td>Honors Alegebra 2 PT 2</td>
+                    <tr class="block-3"> <!--Segment 2-->
+                        <!--Block 3/Lunch-->
+                        <td>11:35</td>
                         <td>12:05</td>
+                        <td>30</td>
+                        <td class="green">B Lunch</td> <!--Green Day-->
+                        <td rowspan="3" class="white">Honors Physics</td> <!--White Day-->
+                    </tr>
+                    <tr class="block-3"> <!--Segment 3-->
+                        <!--Block 3/Lunch-->
+                        <td>12:05</td>
+                        <td>12:35</td>
+                        <td>30</td>
+                        <td rowspan="2" class="green">Honors Alegebra 2</td> <!--Green Day-->
+                        <!--White Day-->
+                    </tr>
+                    <tr class="block-3"> <!--Segment 4-->
+                        <!--Block 3/Lunch-->
+                        <td>12:35</td>
                         <td>1:05</td>
-                        <td>60</td>
+                        <td>30</td>
+                        <!--Green Day-->
+                        <!--White Day-->
                     </tr>
+
+                    <!--Block 3 end-->
+
                     <tr>
-                        <td>AP Language & Composition</td>
-                        <td>1:10</td>
-                        <td>2:30</td>
-                        <td>80</td>
+                        <td rowspan="4">Block 4</td>
+                        <td rowspan="4">1:10</td>
+                        <td rowspan="4">2:30</td>
+                        <td rowspan="4">80</td>
+                        <td rowspan="4" class="green">AP Language & Composition</td>
+                        <td rowspan="4" class="white">AP Language & Composition</td>
                     </tr>
+                    <tr class="empty"></tr>
+                    <tr class="empty"></tr>
+                    <tr class="empty"></tr>
+
+
+
                 </table>
             </div>
-            <div class="white-schedule">
+
+            <!-- <div class="white-schedule">
                 <h2>White Day Schedule</h2>
                 <table class="white">
                     <tr>
@@ -176,7 +189,7 @@
                         <td>80</td>
                     </tr>
                 </table>
-            </div>
+            </div> -->
         </div>
 
 
@@ -184,8 +197,8 @@
 
     <section class="side-panel">
         <p class="about-side-image-description">Aaron Moment:
-        <img src="Assets/aboutpage/aaron-moment.gif" width="230px" height="300px" class="about-side-image">
-        I don't have a job :( 
+            <img src="Assets/aboutpage/aaron-moment.gif" width="230px" height="300px" class="about-side-image">
+            I don't have a job :(
         </p>
     </section>
 
