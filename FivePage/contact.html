@@ -21,15 +21,84 @@
 
     <main>
         <h1>Contact Me</h1>
-        
+
+        <div class="formholder">
+            <h1>Basic Form Thingy</h1>
+            <form>
+                <fieldset>
+                    <label for="first-name">First Name:</label><br>
+                    <input type="text" id="first-name" name="first-name" placeholder="John"><br>
+
+                    <label for="last-name">Last Name:</label><br>
+                    <input type="text" id="last-name" name="last-name" placeholder="Smith"><br>
+
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" placeholder="example@email.com"><br>
+
+                    <label for="mythical-creature">Select Your Favorite Mythical Creature:</label><br>
+                    <select id="mythical-creature" name="mythical-creature" value="None-Selected">
+                        <option value="None-Selected">None Selected</option>
+                        <option value="Hydra">Hydra</option>
+                        <option value="Minotaur">Minotaur</option>
+                        <option value="Dragon">Dragon</option>
+                        <option value="Cherybdis">Cherybdis</option>
+                        <option value="Mermaid">Mermaid</option>
+                        <option value="Siren">Siren</option>
+                        <option value="Other">Other</option>
+
+                    </select>
+                    <br><br>
+
+                    <input type="radio" id="freshman" name="class" value="Freshman">
+                    <label for="freshman">Freshman</label><br>
+
+                    <input type="radio" id="sophomore" name="class" value="Sophomore">
+                    <label for="sophomore">Sophomore</label><br>
+
+                    <input type="radio" id="junior" name="class" value="Junior">
+                    <label for="junior">Junior</label><br>
+
+                    <input type="radio" id="senior" name="class" value="Senior">
+                    <label for="senior">Senior</label>
+                    <br>
+
+                    <input type="radio" id="teacher" name="class" value="Teacher">
+                    <label for="teacher">Teacher</label>
+                    <br>
+
+                    <input type="radio" id="other" name="class" value="Other">
+                    <label for="other">Other</label>
+                    <br><br>
+
+
+                    <input type="checkbox" id="like" name="like" value="Like">
+                    <label for="like">I Like What You Like</label>
+                    <br>
+                    <input type="checkbox" id="dislike" name="dislike" value="Dislike">
+                    <label for="dislike">I Dislike The Same Thing As You</label>
+                    <br><br>
+
+                    <textarea rows="30" cols="70" placeholder="Please Leave A Comment"></textarea>
+
+                    <br><br>
+
+                    <input type="reset" value="Reset">
+                    &nbsp
+                    <input type="submit" value="Submit" onclick="formValidation(this.form)">
+                    <br><br>
+
+                </fieldset>
+
+            </form>
+        </div>
+
+
     </main>
 
     <section class="side-panel">
         <p>hello, this is side-panel</p>
-        <img src="Assets/Home-Page/new-horizons-transparent.png"
-        width="300px" height="300px">
-        <img src="Assets/Home-Page/Voyager1-transparent.png"
-        width="300px" height="300px">
+        <img src="Assets/Home-Page/new-horizons-transparent.png" width="300px" height="300px">
+        <img src="Assets/Home-Page/Voyager1-transparent.png" width="300px" height="300px">
     </section>
 
     <footer class="footer">
