@@ -1,0 +1,18 @@
+.bookshelf {
+    background-color: rgb(58, 31, 31);
+    width: 1000px;
+    border-right: rgb(71, 38, 28) 20px ridge;
+    border-left: rgb(71, 38, 28) 20px groove;
+    border-bottom: rgb(56, 28, 23) 20px groove;
+    border-top: rgb(70, 43, 21) 20px ridge;
+    position: absolute;
+}
+
+.top-shelf {
+    height: 220px;
+}
+
+.shelf {
+    height: 220px;
+    border-top:rgb(71, 38, 28) 10px groove;
+}
