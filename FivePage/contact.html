@@ -5,6 +5,8 @@
 <head>
     <title>Aaron's Observatory</title>
     <link rel="stylesheet" href="universal.css">
+
+
 </head>
 
 <body>
@@ -26,17 +28,17 @@
             <h1>Basic Form Thingy</h1>
             <form>
                 <fieldset>
-                    <label for="first-name">First Name:</label><br>
-                    <input type="text" id="first-name" name="first-name" placeholder="John"><br>
+                    <label for="fname">First Name:</label><br>
+                    <input type="text" id="fname" name="fname" placeholder="John" value=""><br>
 
-                    <label for="last-name">Last Name:</label><br>
-                    <input type="text" id="last-name" name="last-name" placeholder="Smith"><br>
+                    <label for="lname">Last Name:</label><br>
+                    <input type="text" id="lname" name="lname" placeholder="Smith" value=""><br>
 
                     <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email" placeholder="example@email.com"><br>
+                    <input type="email" id="email" name="email" placeholder="example@email.com" value=""><br>
 
-                    <label for="mythical-creature">Select Your Favorite Mythical Creature:</label><br>
-                    <select id="mythical-creature" name="mythical-creature" value="None-Selected">
+                    <label for="mythicalCreature">Select Your Favorite Mythical Creature:</label><br>
+                    <select id="mythicalCreature" name="mythicalCreature" value="None-Selected">
                         <option value="None-Selected">None Selected</option>
                         <option value="Hydra">Hydra</option>
                         <option value="Minotaur">Minotaur</option>
@@ -78,13 +80,15 @@
                     <label for="dislike">I Dislike The Same Thing As You</label>
                     <br><br>
 
-                    <textarea rows="30" cols="70" placeholder="Please Leave A Comment"></textarea>
+                    <textarea rows="30" cols="70" id="comment" name="comment" placeholder="Please Leave A Comment"
+                        value=""></textarea>
 
                     <br><br>
 
                     <input type="reset" value="Reset">
                     &nbsp
-                    <input type="submit" value="Submit" onclick="formValidation(this.form)">
+                    <input type="submit" value="Submit" onclick="return formValidation(this.form);">
+                    <button type="button" onclick="alert('This is not the real alert')">View the Alert</button>
                     <br><br>
 
                 </fieldset>
@@ -116,6 +120,78 @@
         </footer>
 
     </footer>
+
+
+    <script LANGUAGE="JavaScript">
+        function formValidation(form) {
+
+            // var is a variable
+            var fName = form.fname.value;
+            var lName = form.lname.value;
+            var email = form.email.value;
+            var myth = form.mythicalCreature.value;
+            var grade = form.class.value;
+
+            var comment = form.comment.value;
+
+
+            //if else statements
+            if (form.like.checked) {
+                var like = ", you like something I like";
+            } else {
+                var like = ", you don't like anything I like";
+            }
+
+            if (form.dislike.checked) {
+                var dislike = ", you dislike something I dislike";
+            } else {
+                var dislike = ", you don't dislike anything I dislike";
+            }
+
+            // Lines displayed when someone clicks the submit button:
+            var FirstLine = ("Welcome " + fName + " " + lName + ", your email is " + email + ", your favorite mythical creature is" + myth + "." + ".\n\n");
+            var SecondLine = ("Your grade is " + grade + like + dislike + ", and your comment is: " + comment);
+
+            // displays the actual message
+            alert(FirstLine + SecondLine);
+
+            window.location.href = "contact.html";
+
+            return false;
+        }
+
+    </script>
+
+    <script>
+        let alertBox =
+            document.getElementById('customAlertBox');
+        
+        let alert_Message_container = 
+            document.getElementById('alertMessage');
+        
+        let custom_button = 
+            document.querySelector('.submit')
+        
+        let close_img = 
+            document.querySelector('.close')
+        
+        let body = 
+            document.querySelector("body");
+
+        custom_button.addEventListener
+            ('click', function () {
+                alert_Message_container.innerHTML = 
+                    "you clicked the button";
+                alertBox.style.display = "block";
+            });
+
+        close_img.addEventListener
+            ('click', function (){
+                alert_Message_container.innerHTML = 
+                    "you clicked the button";
+                alertBox.style.display = "none";
+            });
+    </script>
 
 </body>
 
