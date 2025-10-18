@@ -25,7 +25,6 @@
         <h1>Contact Me</h1>
 
         <div class="formholder">
-            <h1>Basic Form Thingy</h1>
             <form>
                 <fieldset>
                     <label for="fname">First Name:</label><br>
@@ -51,33 +50,61 @@
                     </select>
                     <br><br>
 
-                    <input type="radio" id="freshman" name="class" value="Freshman">
-                    <label for="freshman">Freshman</label><br>
+                    <label for="freshman" class="invisible">
+                        <p> Freshman</p>
+                        <input type="radio" id="freshman" name="class" value="Freshman">
+                        <span class="radio"></span>
+                   </label><br>
 
-                    <input type="radio" id="sophomore" name="class" value="Sophomore">
-                    <label for="sophomore">Sophomore</label><br>
+                    <label for="sophomore" class="invisible">
+                        <p>Sophomore</p>
+                        <input type="radio" id="sophomore" name="class" value="Sophomore">
+                        <span class="radio"></span>
+                    </label><br>
 
-                    <input type="radio" id="junior" name="class" value="Junior">
-                    <label for="junior">Junior</label><br>
+                    <label for="junior" class="invisible">
+                        <p>Junior</p>
+                        <input type="radio" id="junior" name="class" value="Junior">
+                        <span class="radio"></span>
+                    </label><br>
 
-                    <input type="radio" id="senior" name="class" value="Senior">
-                    <label for="senior">Senior</label>
+                    <label for="senior" class="invisible">
+                        <p>Senior</p>
+                        <input type="radio" id="senior" name="class" value="Senior">
+                        <span class="radio"></span>
+                    </label>
                     <br>
 
-                    <input type="radio" id="teacher" name="class" value="Teacher">
-                    <label for="teacher">Teacher</label>
+                    <label for="teacher" class="invisible">
+                        <p>Teacher</p>
+                        <input type="radio" id="teacher" name="class" value="Teacher">
+                        <span class="radio"></span>
+                    </label>
                     <br>
 
+                    <label for="other" class="invisible">
+                        <p>Other</p>
                     <input type="radio" id="other" name="class" value="Other">
-                    <label for="other">Other</label>
+                    <span class="radio"></span>
+                    </label>
                     <br><br>
 
+                    <label for="like" class="invisible">
+                        <p>I Like What You Like</p>
+                        <input type="checkbox" id="like" name="like" value="Like">
+                        <span class="checkmark"></span>
+                    
+                    </label>
 
-                    <input type="checkbox" id="like" name="like" value="Like">
-                    <label for="like">I Like What You Like</label>
                     <br>
-                    <input type="checkbox" id="dislike" name="dislike" value="Dislike">
-                    <label for="dislike">I Dislike The Same Thing As You</label>
+                    <label for="dislike" class="invisible">
+                        <p>I Dislike The Same Thing As You</p>
+                        <input type="checkbox" id="dislike" name="dislike" value="Dislike">
+                        
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <br><br>
                     <br><br>
 
                     <textarea rows="30" cols="70" id="comment" name="comment" placeholder="Please Leave A Comment"
@@ -88,12 +115,12 @@
                     <input type="reset" value="Reset">
                     &nbsp
                     <input type="submit" value="Submit" onclick="return formValidation(this.form);">
-                    <button type="button" onclick="alert('This is not the real alert')">View the Alert</button>
                     <br><br>
 
                 </fieldset>
 
             </form>
+            <div class="diagonal-border"></div>
         </div>
 
 
@@ -101,8 +128,8 @@
 
     <section class="side-panel">
         <p>hello, this is side-panel</p>
-        <img src="Assets/Home-Page/new-horizons-transparent.png" width="300px" height="300px">
-        <img src="Assets/Home-Page/Voyager1-transparent.png" width="300px" height="300px">
+        <img src="Assets/Contact/radiosillouhette.png" width="300px" height="300px">
+        
     </section>
 
     <footer class="footer">
@@ -149,8 +176,8 @@
             }
 
             // Lines displayed when someone clicks the submit button:
-            var FirstLine = ("Welcome " + fName + " " + lName + ", your email is " + email + ", your favorite mythical creature is" + myth + "." + ".\n\n");
-            var SecondLine = ("Your grade is " + grade + like + dislike + ", and your comment is: " + comment);
+            var FirstLine = ("Welcome " + fName + " " + lName + ", your email is " + email + ", your favorite mythical creature is the " + myth + "." + ".\n\n");
+            var SecondLine = ("You are a " + grade + like + dislike + ", and your comment is: " + comment);
 
             // displays the actual message
             alert(FirstLine + SecondLine);

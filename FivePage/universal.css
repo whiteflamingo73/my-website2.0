@@ -252,13 +252,10 @@ main .picture-basic {
     /*border: red 5px solid; */ /* Just to help visualize spacing */
 }
 
-
-
 .green{
     margin: 0 auto;
     width: 500px;
 }
-
 
 h2 {
     text-align: center;
@@ -297,8 +294,6 @@ td {
     width: 300px;
 }
 
-
-
 .school-schedule .white{
     border: rgb(255, 255, 255) 5px solid;
     border-collapse: collapse;
@@ -334,3 +329,149 @@ audio {
     padding: 30px;
     margin: 0 auto;
 }
+
+/* CSS used for the contact page */
+
+
+.formholder {
+    margin: 0 auto;
+    width: 550px;
+    height: 1050px;
+    background-color: rgba(73, 167, 255, 0.500);
+    border: rgb(17, 218, 174) 10px double;
+    border-top-left-radius: 4%;
+    
+}
+
+input, button, textarea, select {
+    cursor: url(Assets/Universal/pointer-SLS.png), auto;
+    margin: 0 auto;
+    background-color: rgba(8, 73, 104, 0.747);
+    color: white;
+    border: rgb(34, 211, 235) 4px outset;
+}
+
+.invisible {
+    display: block;
+    position: absolute;
+    width: 275px;
+    height: 50px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.invisible input {
+    position: relative;
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+}
+
+.invisible p {
+    position: relative;
+    text-align:start;
+    margin-left: 30px;
+    margin-top: 20px;
+    width: 250px;
+    height: 40px;
+    float: right;
+}
+
+.checkmark {
+    position: relative;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    margin-left: 0px;
+    background-color: rgba(235, 131, 62, 0.829);
+    border: rgb(13, 125, 145) 3px outset;
+}
+
+.invisible:hover input ~ .checkmark {
+    background-color: rgba(241, 60, 151, 0.87);
+}
+
+.invisible input:checked ~ .checkmark {
+    background-color: rgb(101, 172, 253);
+}
+
+.checkmark:after {
+    content: "";
+    position: relative;
+    display: none;
+}
+
+.invisible input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.invisible .checkmark:after {
+    left: 4px;
+    top: 1px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/*radio!! could be condensed, but may change it in the future, so it's helpful having all this here*/
+.radio {
+    position: relative;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    margin-left: 0px;
+    background-color: rgba(235, 131, 62, 0.829);
+    border: rgb(13, 125, 145) 3px outset;
+    border-radius: 100%;
+}
+
+.invisible:hover input ~ .radio {
+    background-color: rgba(241, 60, 151, 0.87);
+}
+
+.invisible input:checked ~ .radio {
+    background-color: rgb(101, 172, 253);
+}
+
+.radio:after {
+    content: "";
+    position: relative;
+    display: none;
+}
+
+.invisible input:checked ~ .radio:after {
+    display: block;
+}
+
+.invisible .radio:after {
+    left: 4px;
+    top: 1px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+label {
+    cursor: url(Assets/Universal/pointer-SLS.png), auto;
+    margin: 0 auto;   
+}
+
+form, fieldset {
+    margin: 0 auto;
+    border: 0;
+}
+
