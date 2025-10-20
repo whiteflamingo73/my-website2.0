@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Aaron's Observatory</title>
+    <link rel="stylesheet" href="universal.css">
+
+
+</head>
+
+<body>
+    <header>
+        <div class="spacer"></div>
+        <nav>
+            <a href="home.html">Home</a> &nbsp &nbsp
+            <a href="about.html">About Me</a> &nbsp &nbsp
+            <a href="favorite.html">Favorites</a> &nbsp &nbsp
+            <a href="least.html">Dislikes</a> &nbsp &nbsp
+            <a href="contact.html" class="active-page">Contact Me</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Contact Me</h1>
+
+        <div class="formholder">
+            <form>
+                <fieldset>
+                    <label for="fname">First Name:</label><br>
+                    <input type="text" id="fname" name="fname" placeholder="John" value=""><br>
+
+                    <label for="lname">Last Name:</label><br>
+                    <input type="text" id="lname" name="lname" placeholder="Smith" value=""><br>
+
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" placeholder="example@email.com" value=""><br>
+
+                    <label for="mythicalCreature">Select Your Favorite Mythical Creature:</label><br>
+                    <select id="mythicalCreature" name="mythicalCreature" value="None-Selected">
+                        <option value="None-Selected">None Selected</option>
+                        <option value="Hydra">Hydra</option>
+                        <option value="Minotaur">Minotaur</option>
+                        <option value="Dragon">Dragon</option>
+                        <option value="Cherybdis">Cherybdis</option>
+                        <option value="Mermaid">Mermaid</option>
+                        <option value="Siren">Siren</option>
+                        <option value="Other">Other</option>
+
+                    </select>
+                    <br><br>
+
+                    <label for="freshman" class="invisible">
+                        <p> Freshman</p>
+                        <input type="radio" id="freshman" name="class" value="Freshman">
+                        <span class="radio"></span>
+                   </label><br>
+
+                    <label for="sophomore" class="invisible">
+                        <p>Sophomore</p>
+                        <input type="radio" id="sophomore" name="class" value="Sophomore">
+                        <span class="radio"></span>
+                    </label><br>
+
+                    <label for="junior" class="invisible">
+                        <p>Junior</p>
+                        <input type="radio" id="junior" name="class" value="Junior">
+                        <span class="radio"></span>
+                    </label><br>
+
+                    <label for="senior" class="invisible">
+                        <p>Senior</p>
+                        <input type="radio" id="senior" name="class" value="Senior">
+                        <span class="radio"></span>
+                    </label>
+                    <br>
+
+                    <label for="teacher" class="invisible">
+                        <p>Teacher</p>
+                        <input type="radio" id="teacher" name="class" value="Teacher">
+                        <span class="radio"></span>
+                    </label>
+                    <br>
+
+                    <label for="other" class="invisible">
+                        <p>Other</p>
+                    <input type="radio" id="other" name="class" value="Other">
+                    <span class="radio"></span>
+                    </label>
+                    <br><br>
+
+                    <label for="like" class="invisible">
+                        <p>I Like What You Like</p>
+                        <input type="checkbox" id="like" name="like" value="Like">
+                        <span class="checkmark"></span>
+                    
+                    </label>
+
+                    <br>
+                    <label for="dislike" class="invisible">
+                        <p>I Dislike The Same Thing As You</p>
+                        <input type="checkbox" id="dislike" name="dislike" value="Dislike">
+                        
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <br><br>
+                    <br><br>
+
+                    <textarea rows="30" cols="70" id="comment" name="comment" placeholder="Please Leave A Comment"
+                        value=""></textarea>
+
+                    <br><br>
+
+                    <input type="reset" value="Reset">
+                    &nbsp
+                    <input type="submit" value="Submit" onclick="return formValidation(this.form);">
+                    <br><br>
+
+                </fieldset>
+
+            </form>
+            <div class="diagonal-border"></div>
+        </div>
+
+
+    </main>
+
+    <section class="side-panel">
+        <p>hello, this is side-panel</p>
+        <img src="Assets/Contact/radiosillouhette.png" width="300px" height="300px">
+        
+    </section>
+
+    <footer class="footer">
+        <footer class="spacer"></footer>
+        <footer class="rightfooter">
+            hello, this is right footer
+        </footer>
+        <footer class="leftfooter">
+            hello this is left footer
+        </footer>
+        <footer class="leftmostfooter">
+            <a href="../index.html">
+                <div class="library-home"></div>
+            </a>
+        </footer>
+
+    </footer>
+
+
+    <script LANGUAGE="JavaScript">
+        function formValidation(form) {
+
+            // var is a variable
+            var fName = form.fname.value;
+            var lName = form.lname.value;
+            var email = form.email.value;
+            var myth = form.mythicalCreature.value;
+            var grade = form.class.value;
+
+            var comment = form.comment.value;
+
+
+            //if else statements
+            if (form.like.checked) {
+                var like = ", you like something I like";
+            } else {
+                var like = ", you don't like anything I like";
+            }
+
+            if (form.dislike.checked) {
+                var dislike = ", you dislike something I dislike";
+            } else {
+                var dislike = ", you don't dislike anything I dislike";
+            }
+
+            // Lines displayed when someone clicks the submit button:
+            var FirstLine = ("Welcome " + fName + " " + lName + ", your email is " + email + ", your favorite mythical creature is the " + myth + "." + ".\n\n");
+            var SecondLine = ("You are a " + grade + like + dislike + ", and your comment is: " + comment);
+
+            // displays the actual message
+            alert(FirstLine + SecondLine);
+
+            window.location.href = "contact.html";
+
+            return false;
+        }
+
+    </script>
+
+    <script>
+        let alertBox =
+            document.getElementById('customAlertBox');
+        
+        let alert_Message_container = 
+            document.getElementById('alertMessage');
+        
+        let custom_button = 
+            document.querySelector('.submit')
+        
+        let close_img = 
+            document.querySelector('.close')
+        
+        let body = 
+            document.querySelector("body");
+
+        custom_button.addEventListener
+            ('click', function () {
+                alert_Message_container.innerHTML = 
+                    "you clicked the button";
+                alertBox.style.display = "block";
+            });
+
+        close_img.addEventListener
+            ('click', function (){
+                alert_Message_container.innerHTML = 
+                    "you clicked the button";
+                alertBox.style.display = "none";
+            });
+    </script>
+
+</body>
+
+
+</html>
