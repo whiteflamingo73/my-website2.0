@@ -36,6 +36,11 @@ nav {
     margin-top: 10%;
     margin-left: 10%;
 }
+.picture a:focus ~.picture {
+    width: 60%;
+    height: 60%;
+    border: red 5px solid;
+}
 
 .picture .iportrait {
     width: 60%;
