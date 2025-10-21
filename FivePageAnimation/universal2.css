@@ -475,3 +475,69 @@ form, fieldset {
     border: 0;
 }
 
+
+/* CSS for the animated fivepage(homepage) */
+
+.animatedheader {
+    background-image: url("Assets/Home-Page/no-txt-home-header.png");
+    background-color: rgb(65, 32, 65);
+    /* height and width is the ratio for the facebook header */
+    height: 664px;  
+    width: 1640px;
+    background-repeat: no-repeat;
+    background-position: top;
+    margin: 0 auto;
+}
+
+.animatedheader h1 {
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+}
+
+.animatedheader .spacer {
+    background-image: url(Assets/Home-Page/no-txt-home-header.png);
+    background-color: blueviolet;
+    height: 614px;
+    width: 1630px;
+    /*border: palevioletred 5px solid;   */ /* used to see where the divs are */
+}
+
+.animatedheader nav {
+    text-align:center;
+    margin: 0 auto;
+    background-color: transparent;
+    width: 750px;
+    height: 50px;
+}
+
+.animatedheader nav a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+    background-color: purple;
+    padding: 20px;
+    border: purple 5px solid;
+    border-left: rgb(66, 11, 66) 7px solid;
+    border-bottom: rgb(66, 11, 66) 10px solid;
+    border-radius: 40%;
+}
+
+.animatedheader nav a:hover {
+    border: rgb(235, 218, 255) 5px solid;
+    border-left: rgb(235, 218, 255) 7px solid;
+    border-bottom: rgb(235, 218, 255) 10px solid;
+}
+
+.animatedheader nav .active-page {
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+    background-color: rgb(66, 11, 66);
+    padding: 20px;
+    border: rgb(66, 11, 66) 5px solid;
+    border-left: purple 7px solid;
+    border-bottom: purple 10px solid;
+    border-radius: 40%;
+}
