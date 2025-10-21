@@ -1,7 +1,7 @@
 html, body {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 
@@ -23,11 +23,65 @@ nav {
     width: 30%;
     height: 30%;
     margin: 0 auto;
-    float: right;
+    float: left;
 }
 
 .picture h3 {
     text-align: center;
+}
+
+.big-image-container {
+    width: 90%;
+    height: 0%;
+    /*border: black 1px solid;*/
+    margin-top: 25%;
+    margin-left: 9.5%;
+    position: fixed;
+    overflow: hidden;
+}
+
+.big-image-container:focus {
+    background-color: rgb(218, 201, 216);
+    width: 90%;
+    height: 95%;
+    border: black 1px solid;
+    margin-top: 0%;
+    margin-left: 9.5%;
+    position: fixed;
+}
+
+.big-image-container:focus .picture {
+    width: 65%;
+    height: 95%;
+    border: black 2px solid;
+}
+
+.picture .big-picture {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    float: left;
+}
+
+.big-image-container:focus h2 {
+    margin-right: 12%;
+    width: 22%;
+    height: 10%;
+    border: black 1px solid;
+    float: right;
+}
+
+.big-image-container:focus p {
+    margin-top: 1%;
+    margin-right: 8%;
+    margin-left: 66%;
+    
+}
+
+.escape {
+    float:inline-end;
+    margin-right: 22%;
+    margin-top: 0.2%;
 }
 
 .picture .ilandscape {
@@ -35,11 +89,6 @@ nav {
     height: 60%;
     margin-top: 10%;
     margin-left: 10%;
-}
-.picture a:focus ~.picture {
-    width: 60%;
-    height: 60%;
-    border: red 5px solid;
 }
 
 .picture .iportrait {

@@ -10,27 +10,36 @@
 
 <body>
 
-    <header>My Photos!!!</header>
+    <header><h1>My Photos!!!</h1></header>
 
     <main>
         <nav>
             <a href="../index.html">Home</a>
         </nav>
+        <div id="big-display" class="big-image-container" tabindex="-1">
+            <div class="picture">
+                <img src="photos/oceanviewing.jpg" class="big-picture">
+            </div>
+            <button type="button" class="escape">Escape</button>
+            <h2>You shouldn't be seeing this</h2>
+            <p>This is an image description/post</p>
+            <button type="button" class="prev">Previous</button>
+            <button type="button" class="next">Next</button>
+
+        </div>
 
         <div class="picture-row">
-            <div class="picture">
+            <div class="picture" tabindex="0">
                 <h3>Campfire</h3>
-                <img src="photos/campfire.jpeg" class="iportrait" onclick="focus">
+                <img src="photos/campfire.jpeg" onclick="BigPictureDisplay('photos/campfire.jpeg','Campfire','I took this photo in my backyard while having a fire with some of my friends.','Campfire somewhat early in the night, a white-paneled wall is in the background')" class="iportrait">
             </div>
-                <div class="picture">
-                    <h3>Overlooking the Ocean</h3>
-                    <a onclick="focus">
-                    <img src="photos/oceanviewing.jpg" class="ilandscape">
-                    </a>
-                </div>
-            <div class="picture">
+            <div class="picture" tabindex="1">
+                <h3>Overlooking the Ocean</h3>
+                <img src="photos/oceanviewing.jpg" onclick="BigPictureDisplay('photos/oceanviewing.jpg','Overlooking the Ocean','I had my friend Skye take this photo for me on 4th of July 2025, that day was really fun!','Me looking over the ocean on the beach, theres a sailboat in the distance and the sky is clear')" class="ilandscape">
+            </div>
+            <div class="picture" tabindex="2">
                 <h3>Mount Major</h3>
-                <img src="photos/mtmajor.jpg" class="ilandscape" onclick="focus">
+                <img src="photos/mtmajor.jpg" onclick="BigPictureDisplay('photos/mtmajor.jpg','Overlooking Lake Winni','My dad took this picture of me and my friends Tristan and Shane after we all reached the summit of Mount Major in Alton NH looking over Lake Winnipesaukee.','The three of us looking out in the distance to the view of Lake Winnipesaukee')" class="ilandscape">
             </div>
         </div>
 
@@ -44,7 +53,12 @@
     </main>
 
 
-    <script LANGUAGE="JavaScript"></script>
+    <script LANGUAGE="JavaScript">
+        function BigPictureDisplay(picture, title, comment, desc) {
+            document.getElementById('big-display').innerHTML = "<div class='picture'><img src="+picture+" alt="+desc+" class='big-picture''></div><button type='button' class='escape'>Escape</button><h2>"+title+"</h2><p>"+comment+"</p><button type='button' class='prev'>Previous</button><button type='button' class='next'>Next</button>";
+            document.getElementById('big-display').focus(); 
+        }
+    </script>
 
 </body>
 
