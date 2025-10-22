@@ -487,18 +487,24 @@ form, fieldset {
     background-repeat: no-repeat;
     background-position: top;
     margin: 0 auto;
+    margin-top: 0px;
 }
+
+
 
 .animatedheader h1 {
     color: white;
     text-align: center;
-    font-size: xx-large;
+    font-family: 'EB Garamond SC Regular', serif;  
+    font-size: 65px;
+    height: 0px;
+    padding-top: -20px;
 }
 
 .animatedheader .spacer {
     background-image: url(Assets/Home-Page/no-txt-home-header.png);
     background-color: blueviolet;
-    height: 614px;
+    height: 580px;
     width: 1630px;
     /*border: palevioletred 5px solid;   */ /* used to see where the divs are */
 }
