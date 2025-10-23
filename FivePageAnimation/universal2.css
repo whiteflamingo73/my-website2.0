@@ -464,7 +464,6 @@ input, button, textarea, select {
     transform: rotate(45deg);
 }
 
-
 label {
     cursor: url(Assets/Universal/pointer-SLS.png), auto;
     margin: 0 auto;   
@@ -474,7 +473,6 @@ form, fieldset {
     margin: 0 auto;
     border: 0;
 }
-
 
 /* CSS for the animated fivepage(homepage) */
 
@@ -489,22 +487,26 @@ form, fieldset {
     margin: 0 auto;
     margin-top: 0px;
 }
-
-
-
-.animatedheader h1 {
-    color: white;
+.animatedheader h1{
+    background-image: url("Assets/Home-Page/no-txt-home-header.png");
     text-align: center;
-    font-family: 'EB Garamond SC Regular', serif;  
-    font-size: 65px;
     height: 0px;
-    padding-top: -20px;
+    padding-top: 90px;
+    animation-name: h1Animation;
+    animation-duration: 5s;   
 }
-
+/*other pages*/
+header h1 {
+    height: 0px;
+}
+header h1 img {
+    opacity: 0%;
+}
+/*other pages*/
 .animatedheader .spacer {
     background-image: url(Assets/Home-Page/no-txt-home-header.png);
     background-color: blueviolet;
-    height: 580px;
+    height: 524px;
     width: 1630px;
     /*border: palevioletred 5px solid;   */ /* used to see where the divs are */
 }
@@ -515,6 +517,9 @@ form, fieldset {
     background-color: transparent;
     width: 750px;
     height: 50px;
+    z-index: 6;
+    animation-name: navAnimation;
+    animation-duration: 5s;
 }
 
 .animatedheader nav a {
@@ -546,4 +551,58 @@ form, fieldset {
     border-left: purple 7px solid;
     border-bottom: purple 10px solid;
     border-radius: 40%;
+}
+
+.animated-side-panel img {
+    padding-top: 10px;
+    animation-name: sideAnimation;
+    animation-duration: 5s;
+}
+
+.animated-main p, .animated-main h1 {
+    z-index: 2;
+    animation-name: textAnimation;
+    animation-duration: 5s;
+}
+/*-- -- -- -- -- --- -- -- -- -- -- -- -- --- -- -- -- */
+/*Nav animation:*/
+@keyframes navAnimation {
+    from {
+        transform: translate(0px, 1400px);
+        background-color: transparent;
+    }
+    to {
+        transform: translate(0px, 0px);
+    }
+}
+
+/*Sidebar animation:*/
+@keyframes sideAnimation {
+    from {
+        transform: rotateY(666deg);
+    }
+    to {
+        transform: rotateY(0deg);
+    }
+}
+
+/*header h1 animation:*/
+@keyframes h1Animation {
+    from {
+        transform: translate(-700px, 0px);
+        background: transparent;
+    }
+    to {
+        transform: translate(0px, 0px);
+        background: transparent;
+    }
+}
+/*main text animation*/
+@keyframes textAnimation {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
 }
