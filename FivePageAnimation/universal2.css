@@ -102,6 +102,7 @@ main {
     padding-bottom: 30px;
     /* height: 1000px; */
     width: 1280px;
+    position: relative;
 }
 
 main h1 {
@@ -517,8 +518,9 @@ header h1 img {
     background-color: transparent;
     width: 750px;
     height: 50px;
-    z-index: 6;
+    z-index: 2;
     animation-name: navAnimation;
+    position: relative;
     animation-duration: 5s;
 }
 
@@ -533,6 +535,8 @@ header h1 img {
     border-left: rgb(66, 11, 66) 7px solid;
     border-bottom: rgb(66, 11, 66) 10px solid;
     border-radius: 40%;
+    position: relative;
+    z-index: 2;
 }
 
 .animatedheader nav a:hover {
@@ -560,9 +564,20 @@ header h1 img {
 }
 
 .animated-main p, .animated-main h1 {
-    z-index: 2;
+    position: relative;
+    z-index: 6;
     animation-name: textAnimation;
     animation-duration: 5s;
+}
+
+.animated-main img {
+    animation-name: ceresAnimation;
+    animation-duration: 5s;
+    transition: transform 5s;
+}
+
+.animated-main img:hover {
+    transform: rotate(666deg) scale(0,0);
 }
 /*-- -- -- -- -- --- -- -- -- -- -- -- -- --- -- -- -- */
 /*Nav animation:*/
@@ -604,5 +619,24 @@ header h1 img {
     }
     to {
         opacity: 100%;
+    }
+}
+/*ceres image animation*/
+@keyframes ceresAnimation{
+    from {
+        transform: rotate(666deg) scale(0,0);
+    }
+    to {
+        transform: rotate(0deg) scale(1,1);
+    }
+}
+
+/*The Mouseover animation*/
+@keyframes mouseAnimation{
+    from {
+        transform: rotate(0deg) scale(1,1);
+    }
+    to {
+        transform: rotate(666deg) scale(0,0);
     }
 }
