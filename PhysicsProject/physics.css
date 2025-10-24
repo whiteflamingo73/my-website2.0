@@ -1,0 +1,30 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.dialog {
+    width: 30%;
+    height: 40%;
+    align-self: center;
+    text-align: center;
+    border: rgb(169, 162, 180) 5px solid;
+    border-radius: 30%;
+    overflow: hidden;
+}
+
+.dissapear {
+    width: 0%;
+    height: 0%;
+    border: none;
+    background-color: none;
+    background-image: none;
+    overflow: hidden;
+}
+
+.teacher {
+    width: 10%;
+    height: 40%;
+    background-color: black; /*temp till there's an image*/
+}
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="physics.css">
+    <title>Newton's Laws of Motion</title>
+</head>
+
+<body>
+
+    <!--Start, when you first open the page up-->
+
+    <!--Opening Dialog-->
+    <div id="start-dialog" class="dialog">
+        <h2>Hello Internet User:</h2>
+        <p>You must have come here in search of understanding Newton's laws of motion.</p>
+        <p>But I'm sorry, I can't help you right now, as I must help Little Jimmy over there understand it first.
+            However, if you're willing to help me out, and learn alongside him, then you may stay.
+        </p>
+
+        <button type="button" class="leave"><a
+                href="https://docs.google.com/presentation/d/1eLZTajV2zFBRaio3R8ZvjBOWvjBShkIuTh2WyLxk2Ks/edit?usp=sharing">Leave</a></button>
+        <br>
+        <button type="button" onclick="dialogDissapear('start-dialog');dialogDissapear('start-teacher');" class="stay">Stay</button>
+    </div>
+
+    <div id="start-teacher" class="teacher"></div>
+
+    <!--Newton's First Law-->
+
+    <div id="question1" class="dialog">
+        <p>This ball is staying in place, I wonder what will happen when someone kicks it?</p>
+        <button type="button" class="next">Next</button>
+    </div>
+
+    <div id="first-option" class="option">
+        <button type="button">Kick the Ball</button>
+    </div>
+
+
+    <!--Javascript to do the functions-->
+    <script LANGUAGE="Javascript">
+
+        function dialogDissapear(id) {
+            document.getElementById(id).innerHTML = "<div class='dissapear'></div>";
+            document.getElementById(id).style.border = "none";
+            document.getElementById(id).style.background = "none";
+        }
+
+        function startNext(id) {
+                    
+                }
+
+    </script>
+
+</body>
+
+</html>
