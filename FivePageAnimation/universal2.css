@@ -524,7 +524,7 @@ header h1 img {
     animation-duration: 5s;
 }
 
-.animatedheader nav a {
+.home-link .animatedheader nav .link {
     color: white;
     text-decoration: none;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -539,13 +539,13 @@ header h1 img {
     z-index: 2;
 }
 
-.animatedheader nav a:hover {
+.home-link .animatedheader nav .link:hover {
     border: rgb(235, 218, 255) 5px solid;
     border-left: rgb(235, 218, 255) 7px solid;
     border-bottom: rgb(235, 218, 255) 10px solid;
 }
 
-.animatedheader nav .active-page {
+.home-link .animatedheader nav .active-page {
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: large;
@@ -578,6 +578,12 @@ header h1 img {
 
 .animated-main img:hover {
     transform: rotate(666deg) scale(0,0);
+}
+
+.home-link-header {
+    border: green 5px solid;
+    width: 50px;
+    height: 50px;
 }
 /*-- -- -- -- -- --- -- -- -- -- -- -- -- --- -- -- -- */
 /*Nav animation:*/
