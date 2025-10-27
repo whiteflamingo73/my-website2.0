@@ -98,19 +98,49 @@ div.main {
     border: rgb(252, 0, 42) 5px solid;
 }
 
+div.main .explanation {
+    border: rgb(218, 10, 207) 5px solid;
+}
+
 div.main .participation {
     border: rgb(245, 104, 146) 5px solid;
 }
 
-div.main .explanation {
-    border: rgb(218, 10, 207) 5px solid;
-}
 
 div.main .benefits {
     border: rgb(124, 78, 124) 5px solid;
 }
 
+div.main .requirements {
+    border: rgb(255, 159, 167) 5px solid;
+}
 
+div.main footer {
+    border: rgb(206, 43, 228) 5px solid;
+}
+
+/*sidebar stuffs*/
+
+.sidebar {
+    border: rgb(0, 255, 191) 5px solid;
+}
+
+
+.sidebar nav {
+    border: rgb(54, 167, 167) 5px solid;
+}
+
+.sidebar .design-selection {
+    border: rgb(65, 143, 179) 5px solid;
+}
+
+.sidebar .design-archives {
+    border: rgb(70, 160, 123) 5px solid;
+}
+
+.sidebar .zen-resources {
+    border: rgb(43, 119, 55) 5px solid;
+}
 
 /*These are all your major sub-elements, you can give a whole group of classes commands by grouping them separated by , */
 /*You can get more specific by styling the <p> tags or the <h3> tags or a specific <p> tag with a command like*/
