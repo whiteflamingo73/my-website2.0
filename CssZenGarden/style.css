@@ -31,11 +31,18 @@ Make sure you incorporate C.R.A.P into your design.
 html {
     position: relative;
     border: black 5px solid;
+    background-image: url(Assets/grassy-dirt.jpg);
+    box-shadow: inset 0 0 0 2000px rgba(1, 28, 78, 0.671);
+    background-repeat: repeat;
+    background-size:contain;
 }
 
 body {
     position: relative;
     border: #4102d3 5px solid;
+    background: url(Assets/anime-fish-fish.gif) left top no-repeat;
+    box-shadow: inset 0 0 0 2000px rgba(106, 158, 255, 0.616);
+    
 }
 
 /*will style all your a tags*/
@@ -77,6 +84,24 @@ header {
 
 header h1 {
     position: relative;
+    /*trying to make a lily-pad below*/
+    color: white;
+    text-align: center;
+    align-content: center;
+    background-color: rgb(32, 85, 32);
+    border-radius: 50%;
+    width: 12%;
+    height: 22vh;
+    overflow: hidden;
+}
+
+header h1::after {
+    content: '';
+    position: absolute;
+    border: blue 50px solid;
+    opacity: 100%;
+    transform: rotate(70deg);
+    
 }
 
 header h2 {
