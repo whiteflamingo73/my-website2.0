@@ -28,3 +28,24 @@ html, body {
     background-color: black; /*temp till there's an image*/
 }
 
+.ball {
+    width: 150px;
+    height: 150px;
+    animation-play-state: paused;
+    animation-duration: 10s;
+    animation-name: infinite-roll;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: normal;
+
+}
+
+@keyframes infinite-roll{
+    from {
+        transform: translateX(-150px);
+    }
+    to {
+        transform: translateX(2150px);
+    }
+}
+

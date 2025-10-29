@@ -35,8 +35,12 @@
         <button type="button" class="next">Next</button>
     </div>
 
-    <div id="first-option" class="option">
-        <button type="button">Kick the Ball</button>
+    <div id="first-option1" class="option">
+        <button type="button" onclick="rollBall('first-ball');">Kick the Ball</button>
+    </div>
+
+    <div id="first-ball" class="ball">
+        <img src="Assets/ball.png" width="150px" height="150px">
     </div>
 
 
@@ -49,9 +53,15 @@
             document.getElementById(id).style.background = "none";
         }
 
+        function rollBall(id) {
+            document.getElementById(id).style.animationPlayState = "running";
+        }
+
         function startNext(id) {
-                    
-                }
+            
+        }
+
+        
 
     </script>
 
