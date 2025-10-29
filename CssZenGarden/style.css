@@ -88,19 +88,39 @@ header h1 {
     color: white;
     text-align: center;
     align-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
     background-color: rgb(32, 85, 32);
     border-radius: 50%;
-    width: 12%;
-    height: 22vh;
     overflow: hidden;
+    clip-path: inset(0 0 0 0);
 }
 
-header h1::after {
+header h1::before {
     content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transform: rotate(0deg);
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-top: rgba(106, 158, 255, 0.5) 100px solid;
+    align-self: self-start;
+    border-radius: 50%;
+    clip-path: inset(0 0 50% 0);
+
+
+    /*
     position: absolute;
     border: blue 50px solid;
     opacity: 100%;
     transform: rotate(70deg);
+    */
     
 }
 
