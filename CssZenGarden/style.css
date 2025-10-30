@@ -83,32 +83,71 @@ header {
 }
 
 header h1 {
+    z-index: 1;
+    box-shadow: -5px -5px 10px 4px rgba(23, 75, 75, 0.589);
     color: white;
     position: relative;
+    text-align: center; /*makes it so the transform-origin is offset  */ 
+    vertical-align: middle; 
+    line-height: 200px;
+    font-size: 40px;
     background-color: rgb(32, 85, 32);
     /*border: rgb(47, 83, 47) 5px solid;*/
-    height: 100px; /*100px*/
-    width: 200px; /*200px*/
-    border-radius: 100px 100px 0 0;
+    height: 200px; /*100px*/
+    width: 400px; /*200px*/
+    border-radius: 200px 200px 0 0;
+    transform: rotate(0deg)
     
 }
 
 header h1::before {
-    height: 100px; /*100px*/
-    width: 200px;  /*200px*/
+    z-index: -1;
+    /*box-shadow: -5px -5px 10px 4px rgba(23, 75, 75, 0.589);*/
+    height: 200px; /*100px*/
+    width: 400px;  /*200px*/
     overflow: hidden;
     position: absolute;
     content: "";
-    border-radius: 100px 100px 0 0;
+    border-radius: 200px 200px 0 0;
     background-color: rgb(32, 85, 32);
     /*border: rgb(47, 83, 47) 5px solid;*/
-    transform-origin: 50% 100%;
-    transform: rotate(140deg); /*change the degrees to change how big that section of the cirlce is*/
+    transform-origin: 45.3% 105%; /*50% 100%*/
+    transform: rotate(200deg); /*change the degrees to change how big that section of the cirlce is*/
 }
 
 header h2 {
+    z-index: 1;
+    float: right;
+    color: white;
     position: relative;
+    text-align: center; /*makes it so the transform-origin is offset  */ 
+    vertical-align: middle; 
+    line-height: 150px;
+    font-size: 28px;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    height: 150px; /*100px*/
+    width: 300px; /*200px*/
+    border-radius: 200px 200px 0 0;
+    transform: rotate(0deg)
+    
 }
+
+header h2::before {
+    z-index: -1;
+    height: 150px; /*100px*/
+    width: 300px;  /*200px*/
+    overflow: hidden;
+    position: absolute;
+    content: "";
+    border-radius: 200px 200px 0 0;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    transform-origin: 45.6% 105%; /*50% 100%*/
+    transform: rotate(220deg); /*change the degrees to change how big that section of the cirlce is*/
+}
+
+
 
 .summary {
     border: rgb(133, 219, 145) 5px solid;
@@ -116,6 +155,36 @@ header h2 {
 
 .preamble {
     border: rgb(162, 206, 81) 5px solid;
+}
+.preamble h3 {
+    z-index: 1;
+    float: right;
+    color: white;
+    position: relative;
+    text-align: center; /*makes it so the transform-origin is offset  */ 
+    vertical-align: middle; 
+    line-height: 70px;
+    font-size: 24px;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    height: 150px; /*100px*/
+    width: 300px; /*200px*/
+    border-radius: 200px 200px 0 0;
+    transform: rotate(0deg)
+}
+
+.preamble h3::before {
+    z-index: -1;
+    height: 150px; /*100px*/
+    width: 300px;  /*200px*/
+    overflow: hidden;
+    position: absolute;
+    content: "";
+    border-radius: 200px 200px 0 0;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    transform-origin: 37% 110%; /*50% 100%*/
+    transform: rotate(220deg); /*change the degrees to change how big that section of the cirlce is*/
 }
 
 
@@ -132,7 +201,6 @@ div.main .explanation {
 div.main .participation {
     border: rgb(245, 104, 146) 5px solid;
 }
-
 
 div.main .benefits {
     border: rgb(124, 78, 124) 5px solid;
@@ -151,7 +219,6 @@ div.main footer {
 .sidebar {
     border: rgb(0, 255, 191) 5px solid;
 }
-
 
 .sidebar nav {
     border: rgb(54, 167, 167) 5px solid;
