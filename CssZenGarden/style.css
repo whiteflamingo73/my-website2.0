@@ -83,45 +83,27 @@ header {
 }
 
 header h1 {
-    position: relative;
-    /*trying to make a lily-pad below*/
     color: white;
-    text-align: center;
-    align-content: center;
-    align-items: center;
-    width: 200px;
-    height: 200px;
+    position: relative;
     background-color: rgb(32, 85, 32);
-    border-radius: 50%;
-    overflow: hidden;
-    clip-path: inset(0 0 0 0);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    height: 100px; /*100px*/
+    width: 200px; /*200px*/
+    border-radius: 100px 100px 0 0;
+    
 }
 
 header h1::before {
-    content: '';
+    height: 100px; /*100px*/
+    width: 200px;  /*200px*/
+    overflow: hidden;
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    transform: rotate(0deg);
-    width: 0;
-    height: 0;
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
-    border-bottom: 50px solid transparent;
-    border-top: rgba(106, 158, 255, 0.5) 100px solid;
-    align-self: self-start;
-    border-radius: 50%;
-    clip-path: inset(0 0 50% 0);
-
-
-    /*
-    position: absolute;
-    border: blue 50px solid;
-    opacity: 100%;
-    transform: rotate(70deg);
-    */
-    
+    content: "";
+    border-radius: 100px 100px 0 0;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    transform-origin: 50% 100%;
+    transform: rotate(140deg); /*change the degrees to change how big that section of the cirlce is*/
 }
 
 header h2 {
