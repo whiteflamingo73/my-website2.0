@@ -170,7 +170,7 @@ header h2::before {
     height: 150px; /*100px*/
     width: 300px; /*200px*/
     border-radius: 200px 200px 0 0;
-    transform: rotate(0deg)
+    transform: rotate(10deg)
 }
 
 .preamble h3::before {
@@ -183,9 +183,10 @@ header h2::before {
     border-radius: 200px 200px 0 0;
     background-color: rgb(32, 85, 32);
     /*border: rgb(47, 83, 47) 5px solid;*/
-    transform-origin: 37% 110%; /*50% 100%*/
-    transform: rotate(220deg); /*change the degrees to change how big that section of the cirlce is*/
+    transform-origin: 37% 100%; /*50% 100%*/
+    transform: rotate(-190deg); /*change the degrees to change how big that section of the cirlce is*/
 }
+
 
 
 /*surrounds .explanation .participation .benefits .requirements footer*/
@@ -194,20 +195,169 @@ div.main {
     border: rgb(252, 0, 42) 5px solid;
 }
 
+div.main .explanation, div.main .participation, div.main .benefits, div.main .requirements {
+    width: 50%;
+    height: auto;
+}
+
+div.main .explanation p, div.main .participation p, div.main .benefits p, div.main .requirements p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 50%;
+    height: auto;
+}
+
 div.main .explanation {
-    border: rgb(218, 10, 207) 5px solid;
+    border: none;
+    float: left;
+}
+
+div.main .explanation h3 {
+    z-index: 1;
+    float: right;
+    color: white;
+    position: relative;
+    text-align: center; /*makes it so the transform-origin is offset  */ 
+    vertical-align: middle; 
+    line-height: 200px;
+    font-size: 24px;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    height: 150px; /*100px*/
+    width: 300px; /*200px*/
+    border-radius: 200px 200px 0 0;
+    transform: rotate(245deg)
+}
+
+div.main .explanation h3::before {
+    z-index: -1;
+    height: 150px; /*100px*/
+    width: 300px;  /*200px*/
+    overflow: hidden;
+    position: absolute;
+    content: "";
+    border-radius: 200px 200px 0 0;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    transform-origin: 48% 100%; /*50% 100%*/
+    transform: rotate(-190deg); /*change the degrees to change how big that section of the cirlce is*/
 }
 
 div.main .participation {
-    border: rgb(245, 104, 146) 5px solid;
+    border: none;
+    float: right;
+}
+
+div.main .participation p {
+    float: right;
+}
+
+div.main .participation h3 {
+    z-index: 1;
+    float: right;
+    color: white;
+    position: relative;
+    text-align: center; /*makes it so the transform-origin is offset  */ 
+    vertical-align: middle; 
+    line-height: 200px;
+    font-size: 24px;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    height: 150px; /*100px*/
+    width: 300px; /*200px*/
+    border-radius: 200px 200px 0 0;
+    transform: rotate(-30deg)
+}
+
+div.main .participation h3::before {
+    z-index: -1;
+    height: 150px; /*100px*/
+    width: 300px;  /*200px*/
+    overflow: hidden;
+    position: absolute;
+    content: "";
+    border-radius: 200px 200px 0 0;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    transform-origin: 38.4% 98%; /*50% 100%*/
+    transform: rotate(-190deg); /*change the degrees to change how big that section of the cirlce is*/
 }
 
 div.main .benefits {
-    border: rgb(124, 78, 124) 5px solid;
+    border: none;
+    float: right;
+}
+
+div.main .benefits p {
+    float: right;
+}
+
+div.main .benefits h3 {
+    float: left;
+    z-index: 1;
+    float: right;
+    color: white;
+    position: relative;
+    text-align: center; /*makes it so the transform-origin is offset  */ 
+    vertical-align: middle; 
+    line-height: 200px;
+    font-size: 24px;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    height: 150px; /*100px*/
+    width: 300px; /*200px*/
+    border-radius: 200px 200px 0 0;
+    transform: rotate(20deg)
+
+}
+
+div.main .benefits h3::before {
+    float: left;
+    z-index: -1;
+    height: 150px; /*100px*/
+    width: 300px;  /*200px*/
+    overflow: hidden;
+    position: absolute;
+    content: "";
+    border-radius: 200px 200px 0 0;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    transform-origin: 33.3% 98%; /*50% 100%*/
+    transform: rotate(-190deg); /*change the degrees to change how big that section of the cirlce is*/
 }
 
 div.main .requirements {
-    border: rgb(255, 159, 167) 5px solid;
+    border: none;
+}
+
+div.main .requirements h3 {
+    z-index: 1;
+    float: right;
+    color: white;
+    position: relative;
+    text-align: center; /*makes it so the transform-origin is offset  */ 
+    vertical-align: middle; 
+    line-height: 200px;
+    font-size: 24px;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    height: 150px; /*100px*/
+    width: 300px; /*200px*/
+    border-radius: 200px 200px 0 0;
+    transform: rotate(-24deg)
+}
+
+div.main .requirements h3::before {
+    z-index: -1;
+    height: 150px; /*100px*/
+    width: 300px;  /*200px*/
+    overflow: hidden;
+    position: absolute;
+    content: "";
+    border-radius: 200px 200px 0 0;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    transform-origin: 39.4% 100%; /*50% 100%*/
+    transform: rotate(190deg); /*change the degrees to change how big that section of the cirlce is*/
 }
 
 div.main footer {
