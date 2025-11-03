@@ -193,16 +193,18 @@ header h2::before {
 div.main {
     position: relative;
     border: rgb(252, 0, 42) 5px solid;
+    height: 2500px;
 }
 
 div.main .explanation, div.main .participation, div.main .benefits, div.main .requirements {
-    width: 50%;
+    width: 750px;
     height: auto;
+    padding: 20px;
 }
 
 div.main .explanation p, div.main .participation p, div.main .benefits p, div.main .requirements p {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    width: 50%;
+    font-family:'Courier New', Courier, monospace;
+    width: 500px;
     height: auto;
 }
 
@@ -213,7 +215,7 @@ div.main .explanation {
 
 div.main .explanation h3 {
     z-index: 1;
-    float: right;
+    float: left;
     color: white;
     position: relative;
     text-align: center; /*makes it so the transform-origin is offset  */ 
@@ -242,6 +244,10 @@ div.main .explanation h3::before {
     transform: rotate(-190deg); /*change the degrees to change how big that section of the cirlce is*/
 }
 
+div.main .explanation p {
+    float: right;
+}
+
 div.main .participation {
     border: none;
     float: right;
@@ -251,9 +257,13 @@ div.main .participation p {
     float: right;
 }
 
+div.main .participation p:first-of-type {
+    padding-top: 100px;
+}
+
 div.main .participation h3 {
     z-index: 1;
-    float: right;
+    float: left;
     color: white;
     position: relative;
     text-align: center; /*makes it so the transform-origin is offset  */ 
@@ -288,10 +298,14 @@ div.main .benefits {
 }
 
 div.main .benefits p {
-    float: right;
+    float: left;
+    margin: 20px;
+    padding: 10px;
+    padding-top: 100px;
 }
 
 div.main .benefits h3 {
+    shape-outside: circle(55%);
     float: left;
     z-index: 1;
     float: right;
@@ -311,7 +325,7 @@ div.main .benefits h3 {
 }
 
 div.main .benefits h3::before {
-    float: left;
+    shape-outside: circle(55%);
     z-index: -1;
     height: 150px; /*100px*/
     width: 300px;  /*200px*/
@@ -327,11 +341,12 @@ div.main .benefits h3::before {
 
 div.main .requirements {
     border: none;
+    float: right;
 }
 
 div.main .requirements h3 {
     z-index: 1;
-    float: right;
+    float: left;
     color: white;
     position: relative;
     text-align: center; /*makes it so the transform-origin is offset  */ 
@@ -358,6 +373,15 @@ div.main .requirements h3::before {
     /*border: rgb(47, 83, 47) 5px solid;*/
     transform-origin: 39.4% 100%; /*50% 100%*/
     transform: rotate(190deg); /*change the degrees to change how big that section of the cirlce is*/
+}
+
+div.main .requirements p {
+   float: right;
+   width: 1000px;
+}
+
+div.main .requirements p:first-of-type {
+    padding-top: 100px;
 }
 
 div.main footer {
