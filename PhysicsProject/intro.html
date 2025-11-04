@@ -35,12 +35,14 @@
         <button type="button" class="next">Next</button>
     </div>
 
-    <div id="first-option1" class="option">
-        <button type="button" onclick="rollBall('first-ball');">Kick the Ball</button>
+    <div class="option">
+        <button type="button" onclick="rollBall('first-ball');" id="first-option1">Kick the Ball</button>
+        <button type="button" onclick="stopBall('first-ball');" id="first-option2">Stop the Ball</button>
     </div>
 
-    <div id="first-ball" class="ball">
-        <img src="Assets/ball.png" width="150px" height="150px">
+    <div id="first-ball-container" class="ball">
+        <img src="Assets/ball.png" width="150px" height="150px" id="first-ball" class="ball-img">
+        <div id="first-box" class="box"></div>
     </div>
 
 
@@ -57,10 +59,14 @@
             document.getElementById(id).style.animationPlayState = "running";
         }
 
+        function stopBall(id) {
+            document.getElementById(id).style.animationPlayState = "paused";
+        }
+
         function startNext(id) {
             
         }
-
+ 
         
 
     </script>
