@@ -22,7 +22,7 @@ You need some kind of special effect, JavaScript or CSS Animation.
 Make sure you incorporate C.R.A.P into your design. 
 ***************************************************/
 
-/*  My Primary color for my palette is: ??????????, my secondary colors are:  */
+/*  My Primary color for my palette is: #5276b7, my secondary colors are: #205520 and */
 
 
 /*their position is relative to the other tags around them*/
@@ -30,7 +30,7 @@ Make sure you incorporate C.R.A.P into your design.
 /*Delete this command from the blocks when you put your own commands in*/
 html {
     position: relative;
-    border: black 5px solid;
+    /*border: black 5px solid;*/
     background-image: url(Assets/grassy-dirt.jpg);
     box-shadow: inset 0 0 0 2000px rgba(1, 28, 78, 0.671);
     background-repeat: repeat;
@@ -39,7 +39,7 @@ html {
 
 body {
     position: relative;
-    border: #4102d3 5px solid;
+    /*border: #4102d3 5px solid;*/
     background: url(Assets/anime-fish-fish.gif) left top no-repeat;
     box-shadow: inset 0 0 0 2000px rgba(106, 158, 255, 0.616);
     
@@ -68,22 +68,24 @@ abbr {
 /*surrounds entire site except exta divs*/
 .page-wrapper {
     position: relative;
-    border: rgb(255, 101, 101) 5px solid;
+    /*border: rgb(255, 101, 101) 5px solid;*/
 }
 
 /*surrounds header, .summary, .preamble*/
 section.intro {
     position: relative;
-    border: rgb(28, 207, 124) 5px solid;
+    /*border: rgb(28, 207, 124) 5px solid;*/
 }
 
 header {
     position: relative;
-    border: rgb(6, 148, 25) 5px solid;
+    /*border: rgb(6, 148, 25) 5px solid;*/
+    height: 600px;
 }
 
 header h1 {
     z-index: 1;
+    margin: 0 auto;
     box-shadow: -5px -5px 10px 4px rgba(23, 75, 75, 0.589);
     color: white;
     position: relative;
@@ -118,6 +120,7 @@ header h1::before {
 header h2 {
     z-index: 1;
     float: right;
+    margin-right: 400px;
     color: white;
     position: relative;
     text-align: center; /*makes it so the transform-origin is offset  */ 
@@ -150,15 +153,19 @@ header h2::before {
 
 
 .summary {
-    border: rgb(133, 219, 145) 5px solid;
+    text-align: center;
+    height: 200px;
 }
 
 .preamble {
-    border: rgb(162, 206, 81) 5px solid;
+    /*border: rgb(162, 206, 81) 5px solid;*/
+    height: 500px;
+    width: 1250px
 }
 .preamble h3 {
     z-index: 1;
-    float: right;
+    float: left;
+    margin-left: 200px;
     color: white;
     position: relative;
     text-align: center; /*makes it so the transform-origin is offset  */ 
@@ -192,7 +199,7 @@ header h2::before {
 /*surrounds .explanation .participation .benefits .requirements footer*/
 div.main {
     position: relative;
-    border: rgb(252, 0, 42) 5px solid;
+    /*border: rgb(252, 0, 42) 5px solid;*/
     height: 2500px;
 }
 
@@ -385,29 +392,35 @@ div.main .requirements p:first-of-type {
 }
 
 div.main footer {
-    border: rgb(206, 43, 228) 5px solid;
+    border: none;
+    width: 1500px;
+    height: 50px;
+    
 }
 
 /*sidebar stuffs*/
 
 .sidebar {
-    border: rgb(0, 255, 191) 5px solid;
+    /*border: rgb(0, 255, 191) 5px solid;*/
+    background-color: transparent;
+    background-image: url(Assets/shorelinever3.jpg);
+    background-repeat: no-repeat;
 }
 
 .sidebar nav {
-    border: rgb(54, 167, 167) 5px solid;
+    border: none;
 }
 
 .sidebar .design-selection {
-    border: rgb(65, 143, 179) 5px solid;
+    border: none;
 }
 
 .sidebar .design-archives {
-    border: rgb(70, 160, 123) 5px solid;
+    border: none;
 }
 
 .sidebar .zen-resources {
-    border: rgb(43, 119, 55) 5px solid;
+    border: none;
 }
 
 /*These are all your major sub-elements, you can give a whole group of classes commands by grouping them separated by , */
@@ -434,4 +447,37 @@ footer {
     height:image height;
     */
     position: relative;
+}
+
+
+/*little lily pad animation*/
+
+h1, h2{
+    transform: rotate(0deg);
+    transition-duration: 3s;
+}
+
+div.main h3{
+    transform: rotate(0deg);
+    transition-duration: 3s;
+}
+
+h1:hover, h2:hover{
+    transform: rotate(10deg);
+    transition-duration: 3s;
+}
+
+
+div.main h3:hover {
+    transform: rotate(10deg);
+    transition-duration: 3s;
+}
+
+.intro h3{
+    transform: rotate(0deg);
+    transition-duration: 3s;
+}
+.intro h3:hover {
+    transform: rotate(10deg);
+    transition-duration: 3s;
 }
