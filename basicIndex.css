@@ -37,6 +37,8 @@ a {
 @import url("book.css"); */
 
 
+/*This is the base styling for a book, and also the book for the 3 Page*/
+
 .book-link-container {
     width: 50px;
     height: 190px;
@@ -88,4 +90,53 @@ a {
     height: 30px;
 }
 
-
+/*Five Page (not animated)*/
+.book-link-container-fivepage {
+    width: 50px;
+    height: 190px;
+    float: right;
+    padding-top: 30px;
+}
+.book-link-fivepage {
+    width: 50px;
+    height: 150px;
+}
+.book-top-fivepage {
+    background-image: repeating-linear-gradient(to right, beige, rgb(177, 177, 177) 5%, beige 15%);
+    background-color: beige;
+    width: 40px;
+    height: 20px; 
+    border-top: rgb(171, 171, 171) 3px dotted;
+    border-top-left-radius: 15%;
+    border-top-right-radius: 15%;
+    border-left: rgb(76, 0, 99) 5px groove;
+    border-right: rgb(76, 0, 99) 5px groove;
+    border-bottom: rgb(76, 0, 99) 3px groove;
+    border-bottom-left-radius: 12%;
+    border-bottom-right-radius: 12%;
+}
+.book-spine-fivepage {
+    background-image: linear-gradient(to right, rgb(76, 0, 99), rgb(143, 69, 127), rgb(76, 0, 99));
+    background-color: rgb(143, 69, 127);
+    width: 50px;
+    border-top: rgb(143, 69, 127) top 2px solid;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+}
+.book-text-fivepage {
+    width: 50px;
+    height: 125px;
+    text-align: center;
+    writing-mode: vertical-lr;
+}
+.book-image-fivepage {
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+}
+.book-image-fivepage img {
+    position: relative;
+    width: 40px;
+    height: 30px;
+}
