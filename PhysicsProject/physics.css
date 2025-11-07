@@ -87,7 +87,6 @@ html, body {
 
 .Force-Container .force-level:hover {
     position: relative;
-
     width: 90px;
     height: 290px;
     background-color: rgb(66, 216, 73);
@@ -96,18 +95,21 @@ html, body {
 
 .acleration-level {
     position: relative;
-
+    padding: 90px;
     width: 90px;
     height: 90px;
     background-color: rgb(102, 102, 102);
     border: black 5px solid;
 }
 
-.Force-Container .aceleration-level:hover {
+.aceleration-level:hover {
     position: relative;
-
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-bottom: 290px;
     width: 90px;
     height: 290px;
+    display: block;
     background-color: rgb(66, 216, 73);
     border: black 5px solid;
 }
