@@ -13,45 +13,47 @@
     <!--Start, when you first open the page up-->
 
     <!--Opening Dialog-->
-    <div id="start-dialog" class="dialog">
-        <h2>Hello Internet User:</h2>
-        <p>You must have come here in search of understanding Newton's laws of motion.</p>
-        <p>But I'm sorry, I can't help you right now, as I must help Little Jimmy over there understand it first.
-            However, if you're willing to help me out, and learn alongside him, then you may stay.
-        </p>
+    <div id="opening" class="opening">
+        <div id="start-dialog" class="dialog">
+            <h2>Hello Internet User:</h2>
+            <p>You must have come here in search of understanding Newton's laws of motion.</p>
+            <p>But I'm sorry, I can't help you right now, as I must help Little Jimmy over there understand it first.
+                However, if you're willing to help me out, and learn alongside him, then you may stay.
+            </p>
 
-        <button type="button" class="leave"><a
-                href="https://docs.google.com/presentation/d/1eLZTajV2zFBRaio3R8ZvjBOWvjBShkIuTh2WyLxk2Ks/edit?usp=sharing">Leave</a></button>
-        <br>
-        <button type="button" onclick="dialogDissapear('start-dialog');dialogDissapear('start-teacher');"
-            class="stay">Stay</button>
+            <button type="button" class="leave"><a
+                    href="https://docs.google.com/presentation/d/1eLZTajV2zFBRaio3R8ZvjBOWvjBShkIuTh2WyLxk2Ks/edit?usp=sharing">Leave</a></button>
+            <br>
+            <button type="button" onclick="startNext('opening', 'firstL', 'first-law');" class="stay">Stay</button>
+        </div>
+
+        <div id="start-teacher" class="teacher"></div>
     </div>
-
-    <div id="start-teacher" class="teacher"></div>
 
     <!--Newton's First Law-->
+    <div id="firstL" class="dissapear">
+        <div id="question1" class="dialog">
+            <p>This ball is staying in place, I wonder what will happen when someone kicks it?</p>
+            <button type="button" class="next">Next</button>
+        </div>
 
-    <div id="question1" class="dialog">
-        <p>This ball is staying in place, I wonder what will happen when someone kicks it?</p>
-        <button type="button" class="next">Next</button>
-    </div>
+        <div id="first-buttons" class="option">
+            <button type="button" onclick="rollBall('first-ball');" id="first-option1">Kick the Ball</button>
+            <button type="button" onclick="stopBall('first-ball');" id="first-option2">Stop the Ball</button>
+        </div>
 
-    <div id="first-buttons" class="option">
-        <button type="button" onclick="rollBall('first-ball');" id="first-option1">Kick the Ball</button>
-        <button type="button" onclick="stopBall('first-ball');" id="first-option2">Stop the Ball</button>
-    </div>
+        <div id="first-ball-container" class="ball">
+            <img src="Assets/ball.png" width="150px" height="150px" id="first-ball" class="ball-img">
+            <div id="first-box" class="box"></div>
+        </div>
 
-    <div id="first-ball-container" class="ball">
-        <img src="Assets/ball.png" width="150px" height="150px" id="first-ball" class="ball-img">
-        <div id="first-box" class="box"></div>
-    </div>
-
-    <div id="first-realization" class="dialog">
-        <p>Woah, the ball only stopped when it was hit by something!
-            <b>This must mean objects at rest will stay at rest, while objects in motion
-                will stay in motion, unless acted upon by an outside force.</b>
-        </p>
-        <button type="button" class="next">Next</button>
+        <div id="first-realization" class="dialog">
+            <p>Woah, the ball only stopped when it was hit by something!
+                <b>This must mean objects at rest will stay at rest, while objects in motion
+                    will stay in motion, unless acted upon by an outside force.</b>
+            </p>
+            <button type="button" class="next">Next</button>
+        </div>
     </div>
 
     <!--Newton's Third Law-->
@@ -93,18 +95,23 @@
         <div class="interactive">
             <div id="second-wall" class="wall"></div>
             <form>
-                <div id="aceleration-container" class="Force-Container">
-                    <h3>Apply Aceleration</h3>
-                    <input type="button" id="second-third-level" class="aceleration-level">lot</input>
-                    <input type="button" id="second-second-level" class="aceleration-level">some</input>
-                    <input type="button" id="second-first-level" class="aceleration-level">little</input>
-                </div>
-                <div id="aceleration-container" class="Force-Container">
-                    <h3>Apply Aceleration</h3>
-                    <div id="third-third-level" class="mass-level">lot</div>
-                    <div id="third-second-level" class="mass-level">some</div>
-                    <div id="third-first-level" class="mass-level">little</div>
-                </div>
+                <fieldset>
+                    <div id="aceleration-container" class="Force-Container">
+                        <h3>Apply Aceleration</h3>
+                        <!--label for="acel-lot" class="aceleration-level">lot</label-->
+                        <label for="acel-lot" class="invisible">
+                        <div id="second-third-level" class="aceleration-level" onclick="acelLevel('60');">lot</div>
+                        <div id="second-second-level" class="aceleration-level" onclick="acelLevel('30');">some</div>
+                        <div id="second-first-level" class="aceleration-level" onclick="acelLevel('15');">little</div>
+                    </div>
+                    <div id="mass-container" class="Force-Container">
+                        <h3>Change Mass</h3>
+                        <div id="third-third-level" class="mass-level" onclick="massLevel('60');">lot</div>
+                        <div id="third-second-level" class="mass-level" onclick="massLevel('30');">some</div>
+                        <div id="third-first-level" class="mass-level" onclick="massLevel('15');">little</div>
+                    </div>
+                    <input type="button" value="Submit Mass and Aceleration" onclick="startBall('second-ball');">
+                </fieldset>
             </form>
 
             <div id="second-ball-container" class="ball">
@@ -116,10 +123,13 @@
     <!--Javascript to do the functions-->
     <script LANGUAGE="Javascript">
 
-        function dialogDissapear(id) {
-            document.getElementById(id).innerHTML = "<div class='dissapear'></div>";
-            document.getElementById(id).style.border = "none";
-            document.getElementById(id).style.background = "none";
+        function elementDissapear(id) {
+            document.getElementById(id).className = "dissapear";
+        }
+
+        function startNext(id, id2, cls) {
+            document.getElementById(id).className = "dissapear";
+            document.getElementById(id2).className = cls;
         }
 
         let currentBallAnim = null;
@@ -266,6 +276,25 @@
 
         //For the 2nd Law of motion, practically the same functions for the 3rd law, I just needed a nice way to manipulate the aceleration for it
 
+        
+
+        function acelLevel(a) {
+            return a; 
+        }
+
+        let aceleration = acelLevel()
+    
+
+        function massLevel(m) {
+            return m;
+        }
+
+        let mass = massLevel()
+
+        function startBall(id) {
+            rollBallAM(id, acelLevel(aceleration), massLevel(mass));
+        }
+
         function rollBallAM(id, a = 20, m = 5) {
             const ball = document.getElementById(id);
 
@@ -299,6 +328,8 @@
             });
 
         }
+
+        
 
         function stopBallAM(id, a, m, pVf) {
             const ball = document.getElementById(id);
@@ -341,9 +372,7 @@
             });
         }
 
-        function startNext(id) {
 
-        }
 
 
 
