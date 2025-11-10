@@ -32,354 +32,531 @@
 
     <!--Newton's First Law-->
     <div id="firstL" class="dissapear">
-        <div id="question1" class="dialog">
-            <p>This ball is staying in place, I wonder what will happen when someone kicks it?</p>
-            <button type="button" class="next">Next</button>
+        <div class="fucking-Jimmy">
+            <div id="question1" class="dialog">
+                <p>This ball is staying in place, I wonder what will happen when someone kicks it?</p>
+                <button type="button" class="next"
+                    onclick="startNext('question1', 'first-ball-container', 'ball')">Next</button>
+            </div>
+            <img src="Assets/LittleJimmy.jpeg" id="Jimmy1" class="lilJimmy">
+
+            <div id="first-realization" class="dissapear">
+                <p>Woah, the ball only stopped when it was hit by something!
+                    <b>This must mean objects at rest will stay at rest, while objects in motion
+                        will stay in motion, unless acted upon by an outside force.</b>
+                </p>
+                <button type="button" class="next" onclick="startNext('firstL', 'thirdL', 'third-law')">Next</button>
+            </div>
         </div>
 
-        <div id="first-buttons" class="option">
-            <button type="button" onclick="rollBall('first-ball');" id="first-option1">Kick the Ball</button>
-            <button type="button" onclick="stopBall('first-ball');" id="first-option2">Stop the Ball</button>
+        <div id="interactive0" class="interactive">
+            <div id="first-ball-container" class="dissapear">
+                <div id="first-buttons" class="option">
+                    <button type="button" onclick="rollBall('first-ball');" id="first-option1">Kick the Ball</button>
+                    <button type="button"
+                        onclick="stopBall('first-ball'); startNext('first-buttons', 'first-realization', 'dialog');"
+                        id="first-option2">Stop the Ball</button>
+                </div>
+                <img src="Assets/ball.png" width="150px" height="150px" id="first-ball" class="ball-img">
+                <div id="first-box" class="box"></div>
+            </div>
         </div>
 
-        <div id="first-ball-container" class="ball">
-            <img src="Assets/ball.png" width="150px" height="150px" id="first-ball" class="ball-img">
-            <div id="first-box" class="box"></div>
-        </div>
-
-        <div id="first-realization" class="dialog">
-            <p>Woah, the ball only stopped when it was hit by something!
-                <b>This must mean objects at rest will stay at rest, while objects in motion
-                    will stay in motion, unless acted upon by an outside force.</b>
-            </p>
-            <button type="button" class="next">Next</button>
-        </div>
     </div>
 
     <!--Newton's Third Law-->
-    <div class="third-law">
-        <div class="JimmyDialog">
-            <div id="question2" class="dialog">
-                <p>But why does the outside force stop the ball?</p>
-                <button type="button" class="next">Next</button>
+    <div id="thirdL" class="dissapear">
+        <div class="fucking-Jimmy">
+            <img src="Assets/LittleJimmy.jpeg" id="Jimmy2" class="lilJimmy">
+            <div id="JimmyDialog2-1" class="JimmyDialog">
+                <div id="question2" class="dialog">
+                    <p>But why does the outside force stop the ball?</p>
+                    <button type="button" class="next"
+                        onclick="startNext('question1', 'interactive1', 'interactive')">Next</button>
+                </div>
+            </div>
+            <div class="JimmyDialog">
+                <div id="second-realization" class="dissapear">
+                    <p>When the ball hits something, that thing applies the same amount of force onto the ball in
+                        the
+                        opposite direction! That's so interesting!</p>
+                    <button type="button" class="next"
+                        onclick="startNext('thirdL', 'secondL', 'second-law');">Next</button>
+                </div>
             </div>
         </div>
-        <div class="interactive">
+
+        <div id="interactive1" class="dissapear">
             <div id="first-wall" class="wall"></div>
             <div id="first-force-meter" class="Force-Container">
                 <h3>Apply Force</h3>
                 <div id="first-third-level" class="force-level" onclick="rollBallForce('second-ball', 3200, 5);">lot
                 </div>
-                <div id="first-second-level" class="force-level" onclick="rollBallForce('second-ball', 800, 5);">some
+                <div id="first-second-level" class="force-level" onclick="rollBallForce('second-ball', 800, 5);">
+                    some
                 </div>
-                <div id="first-first-level" class="force-level" onclick="rollBallForce('second-ball', 200, 5);">little
+                <div id="first-first-level" class="force-level" onclick="rollBallForce('second-ball', 200, 5);">
+                    little
                 </div>
             </div>
 
             <div id="second-ball-container" class="ball">
-                <img src="Assets/ball.png" width="150px" height="150px" id="second-ball" class="ball-img">
+                <div id="second-ball" class="ball-img-wrap">
+                    <img src="Assets/ball.png" width="150px" height="150px" id="second-ball-img" class="ball-img">
+                </div>
             </div>
         </div>
-    </div>
 
+    </div>
 
     <!--Newton's Second Law-->
-    <div class="second-law">
-        <div class="JimmyDialog">
-            <div id="question3" class="dialog">
-                <p>I now know why the stops, but what's are the underlying mechanics behind it? What does force have to
-                    do with movement?</p>
-                <button type="button" class="next">Next</button>
-            </div>
-        </div>
-        <div class="interactive">
-            <div id="second-wall" class="wall"></div>
-            <form>
-                <fieldset>
-                    <div id="aceleration-container" class="Force-Container">
-                        <h3>Apply Aceleration</h3>
-                        <!--label for="acel-lot" class="aceleration-level">lot</label-->
-                        <label for="acel-lot" class="invisible">
-                        <div id="second-third-level" class="aceleration-level" onclick="acelLevel('60');">lot</div>
-                        <div id="second-second-level" class="aceleration-level" onclick="acelLevel('30');">some</div>
-                        <div id="second-first-level" class="aceleration-level" onclick="acelLevel('15');">little</div>
-                    </div>
-                    <div id="mass-container" class="Force-Container">
-                        <h3>Change Mass</h3>
-                        <div id="third-third-level" class="mass-level" onclick="massLevel('60');">lot</div>
-                        <div id="third-second-level" class="mass-level" onclick="massLevel('30');">some</div>
-                        <div id="third-first-level" class="mass-level" onclick="massLevel('15');">little</div>
-                    </div>
-                    <input type="button" value="Submit Mass and Aceleration" onclick="startBall('second-ball');">
-                </fieldset>
-            </form>
+    <div id="secondL" class="dissapear">
+        <div class="fucking-Jimmy">
+            <img src="Assets/LittleJimmy.jpeg" id="Jimmy2" class="lilJimmy">
 
-            <div id="second-ball-container" class="ball">
-                <img src="Assets/ball.png" width="150px" height="150px" id="second-ball" class="ball-img">
+            <div class="JimmyDialog">
+                <div id="question3" class="dialog">
+                    <p>I now know why the stops, but what's are the
+                        underlying mechanics behind it? What does force have
+                        to do with movement?</p>
+                    <button type="button" class="next"
+                        onclick="startNext('question2', 'interactive2', 'interactive');">Next</button>
+                </div>
+
+                <div id="third-realization" class="dissapear">
+                    <p>So Force is directly tied to the mass times the acceleration!</p>
+                    <button type="button" class="next" onclick="startNext('secondL', 'ed', 'ending');">Next</button>
+                </div>
             </div>
         </div>
+
+
+        <div id="interactive2" class="dissapear">
+            <div id="second-wall" class="wall"></div>
+            <div class="container-containers">
+                <div id="aceleration-container" class="Force-Container">
+                    <h3>Change Acceleration</h3>
+                    <!--label for="acel-lot" class="aceleration-level">lot</label-->
+                    <div id="second-third-level" class="aceleration-level" onclick="acelLevel('640', this);">
+                        lot:
+                        640
+                        m/s/s</div>
+                    <div id="second-second-level" class="aceleration-level" onclick="acelLevel('160', this);">
+                        some:
+                        160
+                        m/s/s</div>
+                    <div id="second-first-level" class="aceleration-level" onclick="acelLevel('40', this);">
+                        little:
+                        40
+                        m/s/s</div>
+                </div>
+                <div id="mass-container" class="Force-Container">
+                    <h3>Change Mass</h3>
+                    <div id="third-third-level" class="mass-level" onclick="massLevel('20', this);">lot:
+                        20
+                        kg</div>
+                    <div id="third-second-level" class="mass-level" onclick="massLevel('10', this);">
+                        some:
+                        10kg</div>
+                    <div id="third-first-level" class="mass-level" onclick="massLevel('5', this);">
+                        little:
+                        5kg</div>
+                </div>
+
+                <div id="second-force-container" class="Force-Container">
+                    <h3 id="containerHeading">Force: 0 N</h3>
+                    <div class="forceLev">
+                        <div id="force-amt" class="force-amount"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <input type="button" value="Submit Mass and Aceleration" onclick="startBall('third-ball');">
+
+
+            <div id="third-ball-container" class="ball">
+                <img src="Assets/ball.png" width="150px" height="150px" id="third-ball" class="ball-img">
+            </div>
+        </div>
+
     </div>
 
-    <!--Javascript to do the functions-->
-    <script LANGUAGE="Javascript">
+    <!--The Ending-->
+    <div id="ed" class="dissapear">
+        <div id="end-teacher" class="teacher"></div>
 
-        function elementDissapear(id) {
-            document.getElementById(id).className = "dissapear";
-        }
+        <div id="edd1" class="dialog">
+            <p>Look at that, you and Jimmy have learned Newton's Laws Of Motion</p>
+            <button type="button" class="next" onclick="startNext('edd1', 'edd2', 'dialog')">Next</button>
+        </div>
 
-        function startNext(id, id2, cls) {
-            document.getElementById(id).className = "dissapear";
-            document.getElementById(id2).className = cls;
-        }
+        <div id="edd2" class="dissapear">
+            <p>What? You <i>still</i> have questions about these laws?</p>
+            <p>Like what Newtons are?</p>
+            <button type="button" class="next" onclick="startNext('edd2', 'edd3', 'dialog')">Next</button>
+        </div>
 
-        let currentBallAnim = null;
-
-        // This one is only for the first rolling, a slightly modified one below for the rest
-
-        function rollBall(id) {
-            const ball = document.getElementById(id);
-
-            // Cancel any previous animation
-            if (currentBallAnim) currentBallAnim.cancel();
-
-            // Starting & ending positions (in px, relative to parent)
-            const startX = -150;
-            const endX = 2150; // Adjust based on your container width
-
-            // Animate forward motion
-
-            currentBallAnim = ball.animate([
-                { transform: `translateX(${startX}px)` },
-                { transform: `translateX(${endX}px)` }
-            ], {
-                duration: 3000,      // 3 seconds total
-                easing: 'linear',
-                fill: 'forwards',
-                iterations: Infinity,
-            });
-        }
-
-        function stopBall(id) {
-            const ball = document.getElementById(id);
-
-            // If there's no current animation, do nothing
-            if (!currentBallAnim) return;
-
-            // Get progress of current animation
-            const timing = currentBallAnim.effect.getTiming();
-            const duration = timing.duration;
-            const currentTime = currentBallAnim.currentTime;
-
-            //Only wanting timing for the current animation cylce
-            const cylceTime = currentTime % duration;
-            const progress = cylceTime / duration;
-
-            // Compute current position from the progress
-            const startX = -150;
-            const endX = 2150;
-            const currentPos = startX + (endX - startX) * progress;
-
-            //for some debugging
-            console.log(`Ball stopped at: ${currentPos}px`);
-
-            // Stop the current motion
-            currentBallAnim.cancel();
-
-            // Roll back a bit
-            ball.animate([
-                { transform: `translateX(${currentPos}px)` },
-                { transform: `translateX(${currentPos - 500}px)` } // rolls back 500px
-            ], {
-                duration: 2400,
-                easing: 'cubic-bezier(.25,.8,.5,1)',
-                fill: 'forwards'
-            });
-        }
-
-
-        // For the 3rd law of motion of the ball rollings, allows for calculations based on force: 
-
-        function rollBallForce(id, f = 100, m = 5) {
-            const ball = document.getElementById(id);
-
-            // Cancel any previous animation
-            if (currentBallAnim) currentBallAnim.cancel();
-
-            // Starting & ending positions (in px, relative to parent)
-            const startX = 0;
-            const endX = 1525; // Adjust based on your container width
-
-            //physics maths!!
-            const a = f / m;
-            const t = Math.sqrt((2 * 1520) / a);
-            const Vf = a * t;
-
-            // So I'm pretty sure the aceleration in this is pretty much just acting as a velocity, but I'm just gonna go with it.
-
-
-            // Animate forward motion
-
-            currentBallAnim = ball.animate([
-                { transform: `translateX(${startX}px)` },
-                { transform: `translateX(${endX}px)` }
-            ], {
-                duration: t * 1000,      // dynamic time based off of square root 2d/a
-                easing: 'linear',
-                fill: 'forwards',
-            });
-            currentBallAnim.finished.then(() => {
-                stopBallForce(id, f, m, Vf);
-            });
-
-        }
-
-        function stopBallForce(id, f, m, pVf) {
-            const ball = document.getElementById(id);
-
-            // If there's no current animation, do nothing
-            if (!currentBallAnim) return;
-
-            //physics maths
-            const a = f / m;
-            const Ra = a / 2;    //*simulating energy lost when it's transfered to the wall and bounces back, I looked at how its done, with elacticity and accounting for the motion of the second object, and I kinda understand it, but nor really, so we'll go for an approximation (Ra = Reduced Aceleration)
-
-
-            const Vi = a;
-            let t = Vi / Ra;
-            let d = (Vi ** 2) / (2 * Ra);
-
-
-            // Get progress of current animation
-            const timing = currentBallAnim.effect.getTiming();
-            const duration = timing.duration;
-            const currentTime = currentBallAnim.currentTime;
-            const progress = currentTime / duration;
-
-            // Compute current position from the progress
-            const startX = 0;
-            const endX = 1525;
-            const currentPos = startX + (endX - startX) * progress;
-
-            // Stop the current motion
-            currentBallAnim.cancel();
-
-            // Roll back a bit
-            ball.animate([
-                { transform: `translateX(${currentPos}px)` },
-                { transform: `translateX(${currentPos - d}px)` } // rolls back 500px
-            ], {
-                duration: t * 1000,
-                easing: 'cubic-bezier(.25,.8,.5,1)',
-                fill: 'forwards'
-            });
-        }
-
-        //For the 2nd Law of motion, practically the same functions for the 3rd law, I just needed a nice way to manipulate the aceleration for it
-
+        <div id="edd3" class="dissapear">
+            <p>Well, I guess not everyone can grasp such things as quickly as little Jimmy over there can.</p>
+            <p>Newtons are the units used to measure force, that's all.</p>
+            <button type="button" class="next" onclick="startNext('edd3', 'edd4', 'dialog')">Next</button>
+        </div>
         
+        <div id="edd4" class="dissapear">
+            <p>More questions? Like how the ball stops after hitting the wall, even though, based on the first law, it should really just keep going, like when you initially hit the ball.</p>
+            <p>That's because there's other forces acting on the ball, like friction and gravity effecting the ball.</p>
+            <button type="button" class="next" onclick="startNext('edd4', 'edd5', 'dialog')">Next</button>
+        </div>
 
-        function acelLevel(a) {
-            return a; 
-        }
+        <div id="edd5" class="dissapear">
+            <p><i>Then why are those forces not applied to when the ball was first hit?</i></p>
+            <p>I don't know!</p>
+            <p>It's because we're in a simulation. And a poorly written one at that.</p>
+            <p>We only exist for the sole purpose of demonstrating Newton's Three Laws of Motion for this kid's Physics Project</p>
+            <p>The inconsistancies is probably because they didn't know what they were doing.</p>
+            <button type="button" class="next" onclick="startNext('edd5', 'edd6', 'dialog')">Next</button>
+        </div>
 
-        let aceleration = acelLevel()
-    
-
-        function massLevel(m) {
-            return m;
-        }
-
-        let mass = massLevel()
-
-        function startBall(id) {
-            rollBallAM(id, acelLevel(aceleration), massLevel(mass));
-        }
-
-        function rollBallAM(id, a = 20, m = 5) {
-            const ball = document.getElementById(id);
-
-            // Cancel any previous animation
-            if (currentBallAnim) currentBallAnim.cancel();
-
-            // Starting & ending positions (in px, relative to parent)
-            const startX = 0;
-            const endX = 1525; // Adjust based on your container width
-
-            //physics maths!!
-            const f = a * m;
-            const t = Math.sqrt((2 * 1520) / a);
-            const Vf = a * t;
-
-            // So I'm pretty sure the aceleration in this is pretty much just acting as a velocity, but I'm just gonna go with it.
+        <div id="edd6" class="dissapear">
+            <p>So, what are you going to do now? Now that you know you're in a simulation?</p>
+            <button type="button" class="next" onclick="startNext('ed', 'opening', 'opening')">Ignore it, stay in the simulation</button>
+            <button type="button" class="next"><a href="https://www.youtube.com/watch?v=k8z0PbNzwHI&list=TLPQMTAxMTIwMjX6TsP8SSDuAA&index=4">Wake Up</a></button>
+        </div>
 
 
-            // Animate forward motion
-
-            currentBallAnim = ball.animate([
-                { transform: `translateX(${startX}px)` },
-                { transform: `translateX(${endX}px)` }
-            ], {
-                duration: t * 1000,      // dynamic time based off of square root 2d/a
-                easing: 'linear',
-                fill: 'forwards',
-            });
-            currentBallAnim.finished.then(() => {
-                stopBallForce(id, a, m, Vf);
-            });
-
-        }
-
-        
-
-        function stopBallAM(id, a, m, pVf) {
-            const ball = document.getElementById(id);
-
-            // If there's no current animation, do nothing
-            if (!currentBallAnim) return;
-
-            //physics maths
-            const f = a * m;
-            const Ra = a / 2;    //*simulating energy lost when it's transfered to the wall and bounces back, I looked at how its done, with elacticity and accounting for the motion of the second object, and I kinda understand it, but nor really, so we'll go for an approximation (Ra = Reduced Aceleration)
-
-
-            const Vi = a;
-            let t = Vi / Ra;
-            let d = (Vi ** 2) / (2 * Ra);
-
-
-            // Get progress of current animation
-            const timing = currentBallAnim.effect.getTiming();
-            const duration = timing.duration;
-            const currentTime = currentBallAnim.currentTime;
-            const progress = currentTime / duration;
-
-            // Compute current position from the progress
-            const startX = 0;
-            const endX = 1525;
-            const currentPos = startX + (endX - startX) * progress;
-
-            // Stop the current motion
-            currentBallAnim.cancel();
-
-            // Roll back a bit
-            ball.animate([
-                { transform: `translateX(${currentPos}px)` },
-                { transform: `translateX(${currentPos - d}px)` } // rolls back 500px
-            ], {
-                duration: t * 1000,
-                easing: 'cubic-bezier(.25,.8,.5,1)',
-                fill: 'forwards'
-            });
-        }
+    </div> <!--End of ending-->
 
 
 
+        <!--Javascript to do the functions-->
+        <script LANGUAGE="Javascript">
+
+            function elementDissapear(id) {
+                document.getElementById(id).className = "dissapear";
+            }
+
+            function startNext(id, id2, cls) {
+                document.getElementById(id).className = "dissapear";
+                document.getElementById(id2).className = cls;
+            }
+
+            let currentBallAnim = null;
+
+            // This one is only for the first rolling, a slightly modified one below for the rest
+
+            function rollBall(id) {
+                const ball = document.getElementById(id);
+
+                // Cancel any previous animation
+                if (currentBallAnim) currentBallAnim.cancel();
+
+                // Starting & ending positions (in px, relative to parent)
+                const startX = -150;
+                const endX = 2150; // Adjust based on your container width
+
+                // Animate forward motion
+
+                currentBallAnim = ball.animate([
+                    { transform: `translateX(${startX}px)` },
+                    { transform: `translateX(${endX}px)` }
+                ], {
+                    duration: 3000,      // 3 seconds total
+                    easing: 'linear',
+                    fill: 'forwards',
+                    iterations: Infinity,
+                });
+            }
+
+            function stopBall(id) {
+                const ball = document.getElementById(id);
+
+                // If there's no current animation, do nothing
+                if (!currentBallAnim) return;
+
+                // Get progress of current animation
+                const timing = currentBallAnim.effect.getTiming();
+                const duration = timing.duration;
+                const currentTime = currentBallAnim.currentTime;
+
+                //Only wanting timing for the current animation cylce
+                const cylceTime = currentTime % duration;
+                const progress = cylceTime / duration;
+
+                // Compute current position from the progress
+                const startX = -150;
+                const endX = 2150;
+                const currentPos = startX + (endX - startX) * progress;
+
+                //for some debugging
+                console.log(`Ball stopped at: ${currentPos}px`);
+
+                // Stop the current motion
+                currentBallAnim.cancel();
+
+                // Roll back a bit
+                ball.animate([
+                    { transform: `translateX(${currentPos}px)` },
+                    { transform: `translateX(${currentPos - 500}px)` } // rolls back 500px
+                ], {
+                    duration: 2400,
+                    easing: 'cubic-bezier(.25,.8,.5,1)',
+                    fill: 'forwards'
+                });
+            }
 
 
-    </script>
+            // For the 3rd law of motion of the ball rollings, allows for calculations based on force: 
+            document.getElementById('second-ball').style.setProperty('--startOpacity', 0);
+            document.getElementById('second-ball').style.setProperty('--endOpacity', 0);
+            document.getElementById('first-wall').style.setProperty('--startOpacity', 0);
 
 
-    <!--  OLD BALL ANIMATION CODE (it wasn't in my heart to delete it)
+            function rollBallForce(id, f = 100, m = 5) {
+                const ball = document.getElementById(id);
+
+                // Cancel any previous animation
+                if (currentBallAnim) currentBallAnim.cancel();
+
+                // Starting & ending positions (in px, relative to parent)
+                const startX = 0;
+                const endX = 1525; // Adjust based on your container width
+
+                //physics maths!!
+                const a = f / m;
+                const t = Math.sqrt((2 * 1520) / a);
+                const Vf = a * t;
+
+                // So I'm pretty sure the aceleration in this is pretty much just acting as a velocity, but I'm just gonna go with it.
+                // Now that I'm thinking abt it, it could be it was just applied once instead of continuously, idk
+
+                // Animate forward motion
+
+                currentBallAnim = ball.animate([
+                    { transform: `translateX(${startX}px)` },
+                    { transform: `translateX(${endX}px)` }
+                ], {
+                    duration: t * 1000,      // dynamic time based off of square root 2d/a
+                    easing: 'linear',
+                    fill: 'forwards',
+                });
+
+                const ballWrapper = document.getElementById(id);
+
+                //updating pseudo elements
+                ballWrapper.style.setProperty('--startForce', `"${f} Newtons ---->"`);
+                ballWrapper.style.setProperty('--startOpacity', 1);
+                ballWrapper.style.setProperty('--endOpacity', 0);
+
+
+                currentBallAnim.finished.then(() => {
+                    stopBallForce(id, f, m, Vf);
+                    startNext('JimmyDialog2-1', 'second-realization', 'dialog');
+                });
+
+            }
+
+            function stopBallForce(id, f, m, pVf) {
+                const ball = document.getElementById(id);
+
+                // If there's no current animation, do nothing
+                if (!currentBallAnim) return;
+
+                //physics maths
+                const a = f / m;
+                const Ra = a / 2;    //*simulating energy lost when it's transfered to the wall and bounces back, I looked at how its done, with elacticity and accounting for the motion of the second object, and I kinda understand it, but nor really, so we'll go for an approximation (Ra = Reduced Aceleration)
+                const Rf = m * Ra
+
+                const Vi = a;
+                let t = Vi / Ra;
+                let d = (Vi ** 2) / (2 * Ra);
+
+
+                // Get progress of current animation
+                const timing = currentBallAnim.effect.getTiming();
+                const duration = timing.duration;
+                const currentTime = currentBallAnim.currentTime;
+                const progress = currentTime / duration;
+
+                // Compute current position from the progress
+                const startX = 0;
+                const endX = 1525;
+                const currentPos = startX + (endX - startX) * progress;
+
+                // Stop the current motion
+                currentBallAnim.cancel();
+
+                // Roll back a bit
+                currentBallAnim = ball.animate([
+                    { transform: `translateX(${currentPos}px)` },
+                    { transform: `translateX(${currentPos - d}px)` } // rolls back d pixels
+                ], {
+                    duration: t * 1000,
+                    easing: 'cubic-bezier(.25,.8,.5,1)',
+                    fill: 'forwards'
+                });
+
+
+                //updating pseudo elements
+                const ballWrapper = document.getElementById(id)
+
+                ballWrapper.style.setProperty('--startForce', `"${f / 4} Newtons ---->"`);
+                ballWrapper.style.setProperty('--startOpacity', 1);
+
+                ballWrapper.style.setProperty('--endForce', `"${f - (f / 4)} Newtons <----"`);
+                ballWrapper.style.setProperty('--endOpacity', 1);
+
+                //what's happening above(^) is it's trying to represent how energy 
+                //is transfered to the wall(which is how much is being applied) 
+                //and that's how it goes in the opposite direction. 
+                //The math makes the net force equal to to Rf.
+
+                const wall = document.getElementById('first-wall')
+
+                wall.style.setProperty('--startForce', `"${f - (f / 4)} Newtons ---->"`);
+                wall.style.setProperty('--startOpacity', 1);
+
+                // Make the text dissapear
+
+                currentBallAnim.finished.then(() => {
+                    wall.style.setProperty('--startOpacity', 0);
+                    ballWrapper.style.setProperty('--startOpacity', 0);
+                    ballWrapper.style.setProperty('--endOpacity', 0);
+
+                });
+            }
+
+            //For the 2nd Law of motion, practically the same functions for the 3rd law, I just needed a nice way to manipulate the aceleration for it
+
+            let selectedAcceleration = 0;
+            let selectedMass = 0;
+
+            function acelLevel(a, element) {
+                selectedAcceleration = Number(a);
+                highlightSelection(element, 'aceleration-level');
+                updateForceAmount();
+            }
+
+            function massLevel(m, element) {
+                selectedMass = Number(m);
+                highlightSelection(element, 'mass-level');
+                updateForceAmount();
+            }
+
+            function highlightSelection(selectedElement, className) {
+                const siblings = document.querySelectorAll(`.${className}`);
+                siblings.forEach(el => el.classList.remove('selected'));
+
+                selectedElement.classList.add('selected');
+            }
+
+            function updateForceAmount() {
+                const forceBar = document.getElementById('force-amt');
+                const forceValue = selectedMass * selectedAcceleration;
+                const heading = document.getElementById('containerHeading');
+
+                //max force for proper scaling:
+                const maxForce = 12800;
+                const fillPercent = Math.min((forceValue / maxForce) * 100, 100);
+
+                //raising the force level
+                forceBar.style.height = `${fillPercent}%`;
+                heading.innerHTML = `Force: ${forceValue} N`;
+            }
+
+            function startBall(id) {
+                if (selectedAcceleration === 0 || selectedMass === 0) {
+                    alert("Please select both acceleration and mass first.");
+                    return;
+                }
+
+                rollBallAM(id, selectedAcceleration, selectedMass);
+            }
+
+            function rollBallAM(id, a, m) {
+                const ball = document.getElementById(id);
+
+                // Cancel any previous animation
+                if (currentBallAnim) currentBallAnim.cancel();
+
+                // Starting & ending positions (in px, relative to parent)
+                const startX = 0;
+                const endX = 1525; // Adjust based on your container width
+
+                //physics maths!!
+                const f = a * m;
+                const t = Math.sqrt((2 * 1520) / a);
+                const Vf = a * t;
+
+                // So I'm pretty sure the aceleration in this is pretty much just acting as a velocity, but I'm just gonna go with it.
+
+
+                // Animate forward motion
+
+                currentBallAnim = ball.animate([
+                    { transform: `translateX(${startX}px)` },
+                    { transform: `translateX(${endX}px)` }
+                ], {
+                    duration: t * 1000,      // dynamic time based off of square root 2d/a
+                    easing: 'linear',
+                    fill: 'forwards',
+                });
+                currentBallAnim.finished.then(() => {
+                    stopBallAM(id, a, m, Vf);
+                    startNext('question3', 'third-realization', 'dialog');
+                });
+
+            }
+
+            function stopBallAM(id, a, m, pVf) {
+                const ball = document.getElementById(id);
+
+                // If there's no current animation, do nothing
+                if (!currentBallAnim) return;
+
+                //physics maths
+                const f = a * m;
+                const Ra = a / 2;    //*simulating energy lost when it's transfered to the wall and bounces back, I looked at how its done, with elacticity and accounting for the motion of the second object, and I kinda understand it, but nor really, so we'll go for an approximation (Ra = Reduced Aceleration)
+
+
+                const Vi = a;
+                let t = Vi / Ra;
+                let d = (Vi ** 2) / (2 * Ra);
+
+
+                // Get progress of current animation
+                const timing = currentBallAnim.effect.getTiming();
+                const duration = timing.duration;
+                const currentTime = currentBallAnim.currentTime;
+                const progress = currentTime / duration;
+
+                // Compute current position from the progress
+                const startX = 0;
+                const endX = 1525;
+                const currentPos = startX + (endX - startX) * progress;
+
+                // Stop the current motion
+                currentBallAnim.cancel();
+
+                // Roll back a bit
+                ball.animate([
+                    { transform: `translateX(${currentPos}px)` },
+                    { transform: `translateX(${currentPos - d}px)` } // rolls back 500px
+                ], {
+                    duration: t * 1000,
+                    easing: 'cubic-bezier(.25,.8,.5,1)',
+                    fill: 'forwards'
+                });
+            }
+
+
+
+
+
+        </script>
+
+
+        <!--  OLD BALL ANIMATION CODE (it wasn't in my heart to delete it)
         function rollBall(id) {
             document.getElementById(id).classList.remove("ball-img-stopping");
             document.getElementById(id).classList.remove("ball-img");

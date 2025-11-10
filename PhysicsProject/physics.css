@@ -4,19 +4,50 @@ html, body {
     overflow-x: hidden;
 }
 
-.first-law, .third-law, .second-law {
-    width: 100%;
-    height: 1000px;
+.first-law, .third-law, .second-law, .ending {
+    width: 100% !important;
+    height: 1000px !important;
+    visibility: visible;
+    overflow: visible;
+    display: block !important;
+}
+
+.teacher {
+    width: 10%;
+    height: 40%;
+    background-color: black; /*temp till there's an image*/
+}
+
+#start-teacher {
+    background-image: url(Assets/TeacherPose1.png);
+    height: 689px;
+    width: 349px;
+}
+
+#end-teacher {
+    background-image: url(Assets/TeacherPose2.png);
+    height: 689px;
+    width: 349px;
+}
+
+.lilJimmy {
+    width: 288px;
+    height: 279px;
+    float: left;
 }
 
 .dialog {
     width: 30%;
-    height: 40%;
+    height: auto;
     align-self: center;
     text-align: center;
     border: rgb(169, 162, 180) 5px solid;
     border-radius: 30%;
     overflow: hidden;
+    float: right;
+}
+.JimmyDialog {
+    height: 279px;
 }
  
 .dissapear {
@@ -26,13 +57,10 @@ html, body {
     background-color: none;
     background-image: none;
     overflow: hidden;
+    display: none;
 }
 
-.teacher {
-    width: 10%;
-    height: 40%;
-    background-color: black; /*temp till there's an image*/
-}
+
 
 .ball {
     width: 450px;
@@ -50,9 +78,6 @@ html, body {
     animation: boxDrop 5s paused linear;
 }
 
-.third-law {
-    border: red 5px solid;
-}
 
 .wall {
     position: relative;
@@ -62,6 +87,15 @@ html, body {
     background-color: brown;
 }
 
+.wall::after {
+    position: relative;
+    content: var(--startForce, " Newtons ---->");
+    top: 60%;
+    right: 60%;
+    opacity: var(--startOpacity);
+    transition: opacity 1s;
+}
+
 .third-law .spacer {
     width: 100%;
     height: 450px;
@@ -69,11 +103,48 @@ html, body {
     border: black 5px solid;
 }
 
+
+
+.container-containers{
+    display: flex;
+    justify-content: space-evenly;
+    flex: content;
+    flex-direction: row;
+    width: 80%;
+    height: 500px;
+}
+
 .Force-Container {
     position: relative;
     width: 100px;
     height: 390px;
     overflow: hidden;
+}
+
+#second-force-container {
+    position: relative;
+    width: 110px;
+    height: 400px;
+    overflow: hidden;
+    
+}
+
+.forceLev {
+    position: relative;
+    width: 100px;
+    height: 300px;
+    overflow: hidden;
+    border: black 5px solid;
+    background-color: rgb(102, 102, 102);
+}
+
+.force-amount {
+    position: absolute;
+    width: 100%;
+    border-top: black 5px solid;
+    background-color: rgb(66, 216, 73);
+    height: 0%;
+    bottom: 0%;
 }
 
 .force-level {
@@ -93,23 +164,19 @@ html, body {
     border: black 5px solid;
 }
 
-.acleration-level {
+.aceleration-level {
     position: relative;
-    padding: 90px;
+
     width: 90px;
     height: 90px;
     background-color: rgb(102, 102, 102);
     border: black 5px solid;
 }
 
-.aceleration-level:hover {
+.Force-Container .aceleration-level:hover {
     position: relative;
-    padding-left: 45px;
-    padding-right: 45px;
-    padding-bottom: 290px;
     width: 90px;
     height: 290px;
-    display: block;
     background-color: rgb(66, 216, 73);
     border: black 5px solid;
 }
@@ -125,11 +192,16 @@ html, body {
 
 .Force-Container .mass-level:hover {
     position: relative;
-
     width: 90px;
     height: 290px;
     background-color: rgb(66, 216, 73);
     border: black 5px solid;
+}
+
+.mass-level.selected, .aceleration-level.selected {
+    background-color: rgb(66, 216, 73);
+    border-color: black;
+    height: 290px;
 }
 
 
@@ -137,6 +209,30 @@ html, body {
 .ball-img {
     width: 150px;
     height: 150px;
+}
+
+.ball-img-wrap {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.ball-img-wrap::after {
+    position: relative;
+    content: var(--startForce, " Newtons ---->");
+    top: -80%;
+    right: 100%;
+    opacity: var(--startOpacity);
+    transition: opacity 1s;
+}
+
+.ball-img-wrap::before {
+    position: relative;
+    content: var(--endForce, " Newtons <----");
+    top: 50%;
+    left: 100%;
+    opacity: var(--endOpacity);
+    transition: opacity 1s;
 }
 
 .ball-img-rolling {
@@ -155,7 +251,24 @@ html, body {
     animation-direction: normal;*/
 }
 
+.interactive {
+    position: relative;
+    overflow: visible;
+    width: 100%;
+    top: 0%;
+}
 
+#interactive2 {
+    position: relative;
+    overflow: visible;
+    width: 100%;
+    top: -15%;
+}
+
+.fucking-Jimmy {
+    width: 100%;
+    height: 400px;
+}
 
 
 @keyframes infinite-roll{
