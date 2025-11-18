@@ -1,0 +1,51 @@
+.header {
+    padding: 0px;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/*sidenav background color*/
+.bg-sidenav {
+    background-color: rgb(36, 36, 95); 
+}
+
+.nav-link {
+    color: rgb(187, 187, 187);
+}
+
+.nav-link:hover {
+    color: rgb(138, 138, 138);
+}
+
+
+/*style main content*/
+
+main {
+    background-color: rgb(197, 219, 219);
+}
+
+.carousel-inner img {
+    margin: auto;
+}
+
+.carousel-item {
+    height: 30%;
+    width: 30%;
+    margin: 0 auto;
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
