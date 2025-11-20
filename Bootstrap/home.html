@@ -34,14 +34,24 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link &nbsp</a>
+                            <a class="nav-link" href="home.html">Home &nbsp</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link &nbsp</a>
+                            <a class="nav-link" href="#">Three Page &nbsp</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link" href="#">Forms &nbsp</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pseudo &nbsp</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Animation &nbsp</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ZenGardenEmbed.html">Zen Garden &nbsp</a>
+                        </li>
+                        
                     </ul>
                 </div>
             </nav>
@@ -49,6 +59,10 @@
 
         <div class="row">
             <sidebar class="col-md-3 bg-sidenav">
+                <!--Image that dissapears with media query-->
+
+                <div class="">
+
                 <!--A verticl navbar-->
                 <nav class="navbar">
                     <!--links-->
@@ -69,13 +83,13 @@
 
             <main class="col-md-9">
                 <h3>Home</h3>
-
                 <!--Carousel-->
                 <div id="home-carousel" class="carousel slide" data-bs-ride="carousel">
 
                     <!--Indicators/dots-->
                     <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#home-carousel" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#home-carousel" data-bs-slide-to="0"
+                            class="active"></button>
                         <button type="button" data-bs-target="#home-carousel" data-bs-slide-to="1"></button>
                         <button type="button" data-bs-target="#home-carousel" data-bs-slide-to="2"></button>
                         <button type="button" data-bs-target="#home-carousel" data-bs-slide-to="3"></button>
@@ -84,35 +98,49 @@
 
                     <!--Carousel slideshow content-->
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="Assets/Images/MedievalArt/cat1.webp" alt="Cat1" class="d-block w-30">
+                        <div class="item-flex"> <!--Trying to make the image centered, not working rn-->
+                            <div class="carousel-item active">
+                                <img src="Assets/Images/MedievalArt/cat1.webp" alt="Cat1" class="d-block w-30">
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <img src="Assets/Images/MedievalArt/medieval-creature-art1.jpeg" alt="creature" class="d-block w-30">
+                        <div class="item-flex">
+                            <div class="carousel-item">
+                                <img src="Assets/Images/MedievalArt/medieval-creature-art1.jpeg" alt="creature"
+                                    class="d-block w-30">
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <img src="Assets/Images/MedievalArt/cutheads.webp" alt="cutheads" class="d-block w-30">
+                        <div class="item-flex">
+                            <div class="carousel-item">
+                                <img src="Assets/Images/MedievalArt/cutheads.webp" alt="cutheads" class="d-block w-30">
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <img src="Assets/Images/MedievalArt/medieval-of-death.webp" alt="meddeath" class="d-block w-30">
+                        <div class="item-flex">
+                            <div class="carousel-item">
+                                <img src="Assets/Images/MedievalArt/medieval-of-death.webp" alt="meddeath"
+                                    class="d-block w-30">
+                            </div>
                         </div>
-                        <div class="carousel-item">
-                            <img src="Assets/Images/MedievalArt/cat2.jpeg" alt="Cat2" class="d-block w-30">
+                        <div class="item-flex">
+                            <div class="carousel-item">
+                                <img src="Assets/Images/MedievalArt/cat2.jpeg" alt="Cat2" class="d-block w-30">
+                            </div>
                         </div>
                     </div>
 
                     <!--Left and right controls/icons-->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#home-carousel" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#home-carousel"
+                        data-bs-slide="prev">
                         <span class="carousel-control-prev-icon"></span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#home-carousel" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#home-carousel"
+                        data-bs-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </button>
 
                 </div>
 
-                
-                
+
+
 
             </main>
 

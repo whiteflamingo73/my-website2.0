@@ -39,13 +39,41 @@ main {
 }
 
 .carousel-item {
-    height: 30%;
-    width: 30%;
+    height: 100%;
+    width: 100%;
     margin: 0 auto;
 }
 
 .carousel-item img {
     height: 100%;
     width: 100%;
+    margin: 0 auto;
     object-fit: contain;
+    border: blue 5px solid;
+}
+
+.active {
+    align-self: center;
+}
+
+.item-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: blue 5px solid;
+    width: 100%;
+    height: 100%;
+}
+
+/*Three Page embed*/
+
+.embed-page {
+    width: 100%;
+    height: 100vh;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
 }
