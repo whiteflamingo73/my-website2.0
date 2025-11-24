@@ -27,6 +27,11 @@
     color: rgb(138, 138, 138);
 }
 
+/*
+.sidenav {
+    height: 100%;
+}
+*/
 
 /*style main content*/
 
@@ -38,32 +43,61 @@ main {
     margin: auto;
 }
 
-.carousel-item {
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-}
-
-
 
 .carousel-item img {
-    height: 50%;
+    max-height: 50%;
     width: 50%;
     object-fit: contain;
     
 }
-/*
-.item-flex {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
-*/
 
-/*Three Page embed*/
+/*Stylinh for media query and stuff*/
+
+
+.circle-image {
+    margin: auto;
+    max-height: 40%;
+}
+
+/*3 page stuff*/
+
+.colorDiv {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.colorNav {
+    width: 100%;
+    height: 5%;
+}
+
+.bg-red {
+    background-color: red;
+}
+
+.bg-green {
+    background-color: rgb(47, 165, 47);
+}
+
+.bg-blue {
+    background-color: rgb(36, 93, 250);
+}
+
+.bg-red .colorNav a{
+    color: rgb(255, 113, 113);
+}
+
+.bg-green .colorNav a{
+    color: rgb(145, 252, 135);
+}
+
+.bg-blue .colorNav a{
+    color: rgb(152, 222, 255);
+}
+
+/*Zen Garden Page embed*/
 
 .embed-page {
     width: 100%;
