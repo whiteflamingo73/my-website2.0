@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--The bootstrap links:-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Bootstrap 5 Sucks</title>
+</head>
+
+<body>
+    <div class="container-fluid" id="top">
+        <div class="row">
+            <a href="home.html" class="col-md-12 header">
+                <header class="col-md-12 header">
+                    <img src="Assets/Images/oldPhotos/castle-pembroke-wales1890-1900.jpg" class="img-fluid d-block"
+                        style="width:100%;height:auto;" alt="" />
+                </header>
+            </a>
+        </div> <!--End header row-->
+
+        <div class="row">
+            <nav class="navbar-expand-md bg-dark navbar-dark col-md-12">
+
+                <!--Toggleer/collapsible button-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!--Navbar Links-->
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link &nbsp</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link &nbsp</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div> <!--end of Nav Row-->
+
+        <div class="row">
+            <sidebar class="col-md-3 bg-sidenav ">
+                <!--A verticl navbar-->
+                <nav class="navbar">
+                    <!--links-->
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link 3</a>
+                        </li>
+                    </ul>
+                </nav>
+            </sidebar>
+
+
+            <main class="col-md-9">
+                <h3>My Forms</h3>
+
+                <!--The Forms-->
+
+                <div class="formholder">
+                    <h1>Basic Form Thingy</h1>
+                    <form>
+                        <fieldset>
+                            <label for="fname">First Name:</label><br>
+                            <input type="text" id="fname" name="fname"><br>
+
+                            <label for="lName">Last Name:</label><br>
+                            <input type="text" id="lname" name="lname"><br>
+
+                            <label for="dob">Date of Birth:</label><br>
+                            <input type="date" id="dob" name="dob"><br>
+
+                            <label for="gender">Gender:</label><br>
+                            <select id="gender" name="gender">
+                                <option value="CisMan">Cisgender Man</option>
+                                <option value="CisWoman">Cisgender Woman</option>
+                                <option value="TransMan">Transgender Man</option>
+                                <option value="TransWoman">Transgender Woman</option>
+                                <option value="Nonbinary">Nonbinary</option>
+                                <option value="Other">Other</option>
+                                <option value="PNTS">Prefer Not To Say</option>
+                            </select><br>
+
+
+
+                            <label for="email">Email:</label><br>
+                            <input type="email" id="email" name="email"><br>
+
+                            <label for="password">Password:</label><br>
+                            <input type="password" id="password" name="password"><br>
+                            <br><br>
+
+                            <p>What transportation do you take?</p>
+
+                            <input type="checkbox" id="transit1" name="transit1" value="Bike">
+                            <label for="transit1">I bike</label><br>
+
+                            <input type="checkbox" id="transit2" name="transit2" value="Walk">
+                            <label for="transit2">I walk</label><br>
+
+                            <input type="checkbox" id="transit3" name="transit3" value="Car">
+                            <label for="transit3">I drive</label><br>
+
+                            <input type="checkbox" id="transit4" name="transit4" value="TrainandBus">
+                            <label for="transit4">I take the train/bus</label>
+                            <br><br>
+
+                            <input type="submit" value="Submit" onclick="return formValidation(this.form);">
+                            <br><br>
+                        </fieldset>
+                    </form>
+
+            </main>
+
+        </div> <!--end sidebar/main row-->
+
+        <div class="row bg-dark text-white">
+            <footer class="col-md-4 text-left">&copy; 2025 Castle Development</footer>
+            <footer class="col-md-4 text-center">
+                I'm not saying my address <br>
+                because I'm not an idiot<br>
+                For your information
+            </footer>
+            <footer class="col-md-4 text-right">
+                developed by <a href="mailto:aaronbargdill@gmail.com" target="_blank">Aaron Bargdill</a>
+            </footer>
+        </div> <!--end of footer row-->
+    </div> <!--end of container fluid-->
+
+
+
+
+    <!--JavaScript-->
+
+    <!--For the First Form:-->
+
+    <script LANGUAGE="JavaScript">
+        function formValidation(form) {
+
+            // var is a variable
+            var fName = form.fname.value;
+            var lName = form.lname.value;
+            var email = form.email.value;
+            var password = form.password.value;
+            var Gender = form.gender.value;
+            var dob = form.dob.value;
+
+            //if else statements
+            if (form.transit1.checked) {
+                var Trans1 = "Bike";
+            } else {
+                var Trans1 = "";
+            }
+
+            if (form.transit2.checked) {
+                var Trans2 = "Walk";
+            } else {
+                var Trans2 = "";
+            }
+
+            if (form.transit3.checked) {
+                var Trans3 = "Drive";
+            } else {
+                var Trans3 = "";
+            }
+
+            if (form.transit4.checked) {
+                var Trans4 = "Public Transit";
+            } else {
+                var Trans4 = "";
+            }
+
+            
+            // Lines displayed when someone clicks the submit button:
+            var FirstLine = ("Welcome " + fName + " " + lName + ", your email is " + email + ", you are a " + Gender + "." + ".\n\n");
+            var SecondLine = ("You take a " + Trans1 + Trans2 + Trans3 + Trans4 + ". You were born on: " + dob + ", and your password is: " + password);
+
+            // displays the actual message
+            alert(FirstLine + SecondLine);
+
+            window.location.href = "Forms.html";
+
+            return false;
+        }
+
+    </script>
+
+    <script>
+        let alertBox =
+            document.getElementById('customAlertBox');
+
+        let alert_Message_container =
+            document.getElementById('alertMessage');
+
+        let custom_button =
+            document.querySelector('.submit')
+
+        let close_img =
+            document.querySelector('.close')
+
+        let body =
+            document.querySelector("body");
+
+        custom_button.addEventListener
+            ('click', function () {
+                alert_Message_container.innerHTML =
+                    "you clicked the button";
+                alertBox.style.display = "block";
+            });
+
+        close_img.addEventListener
+            ('click', function () {
+                alert_Message_container.innerHTML =
+                    "you clicked the button";
+                alertBox.style.display = "none";
+            });
+    </script>
+
+</body>
+
+</html>
