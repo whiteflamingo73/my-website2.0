@@ -1,0 +1,483 @@
+/* css Zen Garden default style v1.02 */
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+
+
+/* Not all elements are defined in this file, so you'll most likely want to refer to the index.html as well. */
+
+/************************************************** 
+Student Name: Aaron Bargdill
+Date of Project: Start: 10/27/25 End: x/x/25
+
+Start Mr. Reynolds' Directions:
+Make sure you list your color palette colors in the comment below.
+
+You do not have to comment the HTML, but every block of CSS on this page needs to commented even stuff that is already here that you don't use.  If you don't need it and don't want to comment it delete it. But if it is here is needs to be commented.  
+
+Formatting, make sure all your CSS is uniformly indented
+throughout the entire style sheet.  
+
+You need to set fonts and I will search for that, you need more than one image.
+
+You need some kind of special effect, JavaScript or CSS Animation.
+Make sure you incorporate C.R.A.P into your design. 
+***************************************************/
+
+/*  My Primary color for my palette is: #5276b7, my secondary colors are: #205520 and */
+
+
+/*their position is relative to the other tags around them*/
+/*I am placing this default command in every block so the IDE does not highlight the command for being empty*/
+/*Delete this command from the blocks when you put your own commands in*/
+html {
+    position: relative;
+    /*border: black 5px solid;*/
+    background-image: url(Assets/grassy-dirt.jpg);
+    box-shadow: inset 0 0 0 2000px rgba(1, 28, 78, 0.671);
+    background-repeat: repeat;
+    background-size:contain;
+}
+
+body {
+    position: relative;
+    /*border: #4102d3 5px solid;*/
+    background: url(Assets/anime-fish-fish.gif) left top no-repeat;
+    box-shadow: inset 0 0 0 2000px rgba(106, 158, 255, 0.616);
+    
+}
+
+/*will style all your a tags*/
+a:link {
+    color: #B7A5DF;
+}
+
+/*will control what happens on a hover of a tags*/
+a:hover {
+    position: relative;
+}
+
+.sidebar a:link {
+    position: relative;
+}
+
+/*this tag puts a dotted underline under text*/
+abbr {
+    /*border-bottom: none;*/
+    position: relative;
+}
+
+/*surrounds entire site except exta divs*/
+.page-wrapper {
+    position: relative;
+    /*border: rgb(255, 101, 101) 5px solid;*/
+}
+
+/*surrounds header, .summary, .preamble*/
+section.intro {
+    position: relative;
+    /*border: rgb(28, 207, 124) 5px solid;*/
+}
+
+header {
+    position: relative;
+    /*border: rgb(6, 148, 25) 5px solid;*/
+    height: 600px;
+}
+
+header h1 {
+    z-index: 1;
+    margin: 0 auto;
+    box-shadow: -5px -5px 10px 4px rgba(23, 75, 75, 0.589);
+    color: white;
+    position: relative;
+    text-align: center; /*makes it so the transform-origin is offset  */ 
+    vertical-align: middle; 
+    line-height: 200px;
+    font-size: 40px;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    height: 200px; /*100px*/
+    width: 400px; /*200px*/
+    border-radius: 200px 200px 0 0;
+    transform: rotate(0deg)
+    
+}
+
+header h1::before {
+    z-index: -1;
+    /*box-shadow: -5px -5px 10px 4px rgba(23, 75, 75, 0.589);*/
+    height: 200px; /*100px*/
+    width: 400px;  /*200px*/
+    overflow: hidden;
+    position: absolute;
+    content: "";
+    border-radius: 200px 200px 0 0;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    transform-origin: 45.3% 105%; /*50% 100%*/
+    transform: rotate(200deg); /*change the degrees to change how big that section of the cirlce is*/
+}
+
+header h2 {
+    z-index: 1;
+    float: right;
+    margin-right: 400px;
+    color: white;
+    position: relative;
+    text-align: center; /*makes it so the transform-origin is offset  */ 
+    vertical-align: middle; 
+    line-height: 150px;
+    font-size: 28px;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    height: 150px; /*100px*/
+    width: 300px; /*200px*/
+    border-radius: 200px 200px 0 0;
+    transform: rotate(0deg)
+    
+}
+
+header h2::before {
+    z-index: -1;
+    height: 150px; /*100px*/
+    width: 300px;  /*200px*/
+    overflow: hidden;
+    position: absolute;
+    content: "";
+    border-radius: 200px 200px 0 0;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    transform-origin: 45.6% 105%; /*50% 100%*/
+    transform: rotate(220deg); /*change the degrees to change how big that section of the cirlce is*/
+}
+
+
+
+.summary {
+    text-align: center;
+    height: 200px;
+}
+
+.preamble {
+    /*border: rgb(162, 206, 81) 5px solid;*/
+    height: 500px;
+    width: 1250px
+}
+.preamble h3 {
+    z-index: 1;
+    float: left;
+    margin-left: 200px;
+    color: white;
+    position: relative;
+    text-align: center; /*makes it so the transform-origin is offset  */ 
+    vertical-align: middle; 
+    line-height: 70px;
+    font-size: 24px;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    height: 150px; /*100px*/
+    width: 300px; /*200px*/
+    border-radius: 200px 200px 0 0;
+    transform: rotate(10deg)
+}
+
+.preamble h3::before {
+    z-index: -1;
+    height: 150px; /*100px*/
+    width: 300px;  /*200px*/
+    overflow: hidden;
+    position: absolute;
+    content: "";
+    border-radius: 200px 200px 0 0;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    transform-origin: 37% 100%; /*50% 100%*/
+    transform: rotate(-190deg); /*change the degrees to change how big that section of the cirlce is*/
+}
+
+
+
+/*surrounds .explanation .participation .benefits .requirements footer*/
+div.main {
+    position: relative;
+    /*border: rgb(252, 0, 42) 5px solid;*/
+    height: 2500px;
+}
+
+div.main .explanation, div.main .participation, div.main .benefits, div.main .requirements {
+    width: 750px;
+    height: auto;
+    padding: 20px;
+}
+
+div.main .explanation p, div.main .participation p, div.main .benefits p, div.main .requirements p {
+    font-family:'Courier New', Courier, monospace;
+    width: 500px;
+    height: auto;
+}
+
+div.main .explanation {
+    border: none;
+    float: left;
+}
+
+div.main .explanation h3 {
+    z-index: 1;
+    float: left;
+    color: white;
+    position: relative;
+    text-align: center; /*makes it so the transform-origin is offset  */ 
+    vertical-align: middle; 
+    line-height: 200px;
+    font-size: 24px;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    height: 150px; /*100px*/
+    width: 300px; /*200px*/
+    border-radius: 200px 200px 0 0;
+    transform: rotate(245deg)
+}
+
+div.main .explanation h3::before {
+    z-index: -1;
+    height: 150px; /*100px*/
+    width: 300px;  /*200px*/
+    overflow: hidden;
+    position: absolute;
+    content: "";
+    border-radius: 200px 200px 0 0;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    transform-origin: 48% 100%; /*50% 100%*/
+    transform: rotate(-190deg); /*change the degrees to change how big that section of the cirlce is*/
+}
+
+div.main .explanation p {
+    float: right;
+}
+
+div.main .participation {
+    border: none;
+    float: right;
+}
+
+div.main .participation p {
+    float: right;
+}
+
+div.main .participation p:first-of-type {
+    padding-top: 100px;
+}
+
+div.main .participation h3 {
+    z-index: 1;
+    float: left;
+    color: white;
+    position: relative;
+    text-align: center; /*makes it so the transform-origin is offset  */ 
+    vertical-align: middle; 
+    line-height: 200px;
+    font-size: 24px;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    height: 150px; /*100px*/
+    width: 300px; /*200px*/
+    border-radius: 200px 200px 0 0;
+    transform: rotate(-30deg)
+}
+
+div.main .participation h3::before {
+    z-index: -1;
+    height: 150px; /*100px*/
+    width: 300px;  /*200px*/
+    overflow: hidden;
+    position: absolute;
+    content: "";
+    border-radius: 200px 200px 0 0;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    transform-origin: 38.4% 98%; /*50% 100%*/
+    transform: rotate(-190deg); /*change the degrees to change how big that section of the cirlce is*/
+}
+
+div.main .benefits {
+    border: none;
+    float: right;
+}
+
+div.main .benefits p {
+    float: left;
+    margin: 20px;
+    padding: 10px;
+    padding-top: 100px;
+}
+
+div.main .benefits h3 {
+    shape-outside: circle(55%);
+    float: left;
+    z-index: 1;
+    float: right;
+    color: white;
+    position: relative;
+    text-align: center; /*makes it so the transform-origin is offset  */ 
+    vertical-align: middle; 
+    line-height: 200px;
+    font-size: 24px;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    height: 150px; /*100px*/
+    width: 300px; /*200px*/
+    border-radius: 200px 200px 0 0;
+    transform: rotate(20deg)
+
+}
+
+div.main .benefits h3::before {
+    shape-outside: circle(55%);
+    z-index: -1;
+    height: 150px; /*100px*/
+    width: 300px;  /*200px*/
+    overflow: hidden;
+    position: absolute;
+    content: "";
+    border-radius: 200px 200px 0 0;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    transform-origin: 33.3% 98%; /*50% 100%*/
+    transform: rotate(-190deg); /*change the degrees to change how big that section of the cirlce is*/
+}
+
+div.main .requirements {
+    border: none;
+    float: right;
+}
+
+div.main .requirements h3 {
+    z-index: 1;
+    float: left;
+    color: white;
+    position: relative;
+    text-align: center; /*makes it so the transform-origin is offset  */ 
+    vertical-align: middle; 
+    line-height: 200px;
+    font-size: 24px;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    height: 150px; /*100px*/
+    width: 300px; /*200px*/
+    border-radius: 200px 200px 0 0;
+    transform: rotate(-24deg)
+}
+
+div.main .requirements h3::before {
+    z-index: -1;
+    height: 150px; /*100px*/
+    width: 300px;  /*200px*/
+    overflow: hidden;
+    position: absolute;
+    content: "";
+    border-radius: 200px 200px 0 0;
+    background-color: rgb(32, 85, 32);
+    /*border: rgb(47, 83, 47) 5px solid;*/
+    transform-origin: 39.4% 100%; /*50% 100%*/
+    transform: rotate(190deg); /*change the degrees to change how big that section of the cirlce is*/
+}
+
+div.main .requirements p {
+   float: right;
+   width: 1000px;
+}
+
+div.main .requirements p:first-of-type {
+    padding-top: 100px;
+}
+
+div.main footer {
+    border: none;
+    width: 1500px;
+    height: 50px;
+    
+}
+
+/*sidebar stuffs*/
+
+.sidebar {
+    /*border: rgb(0, 255, 191) 5px solid;*/
+    background-color: transparent;
+    background-image: url(Assets/shorelinever3.jpg);
+    background-repeat: no-repeat;
+}
+
+.sidebar nav {
+    border: none;
+}
+
+.sidebar .design-selection {
+    border: none;
+}
+
+.sidebar .design-archives {
+    border: none;
+}
+
+.sidebar .zen-resources {
+    border: none;
+}
+
+/*These are all your major sub-elements, you can give a whole group of classes commands by grouping them separated by , */
+/*You can get more specific by styling the <p> tags or the <h3> tags or a specific <p> tag with a command like*/
+/*suppary p would style every <p> inside of summary */
+header,
+.summary,
+.preamble,
+.explanation,
+.participation,
+.benefits,
+.requirements,
+footer {
+    position: relative;
+}
+
+/*There are 6 extras at the very bottom of the page*/
+.extra1 {
+    /*code below will place element at top of page*/
+    /*
+    position:absolute;
+    top:0px;
+    width:image width;
+    height:image height;
+    */
+    position: relative;
+}
+
+
+/*little lily pad animation*/
+
+h1, h2{
+    transform: rotate(0deg);
+    transition-duration: 3s;
+}
+
+div.main h3{
+    transform: rotate(0deg);
+    transition-duration: 3s;
+}
+
+h1:hover, h2:hover{
+    transform: rotate(10deg);
+    transition-duration: 3s;
+}
+
+
+div.main h3:hover {
+    transform: rotate(10deg);
+    transition-duration: 3s;
+}
+
+.intro h3{
+    transform: rotate(0deg);
+    transition-duration: 3s;
+}
+.intro h3:hover {
+    transform: rotate(10deg);
+    transition-duration: 3s;
+}
