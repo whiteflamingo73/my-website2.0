@@ -108,3 +108,39 @@ iframe {
     width: 100%;
     height: 100%;
 }
+
+
+/*Animation page animations and styling*/
+
+.AnimImg {
+    transform: scale(0.25);
+}
+
+
+.RotateX {
+    animation-name: rotateX;
+    animation: infinite
+}
+
+.RotateY {
+    animation-name: rotateY;
+}
+
+.RotateZ {
+    animation-name: rotateZ;
+}
+
+
+@keyframes rotateX {
+    from {
+        transform: rotateX(0deg);
+    }
+    to {
+        transform: rotateX(360deg);
+    }
+}
+
+
+
+
+
