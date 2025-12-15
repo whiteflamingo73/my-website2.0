@@ -9,7 +9,7 @@
    <link rel="stylesheet" href="basicIndex.css">
 </head>
 
-<body>
+<body onload="startTime()">
    <h1>Aaron's Library</h1>
 
    <br>
@@ -23,6 +23,12 @@
       <br>
       <i>This is some italisized text</i>
    </p>
+
+   <!--Javascript Clock html Element-->
+   <div id="clock">
+      <div id="digital"></div>
+      <div id="analog"></div>
+   </div>
 
    <ul>
       <a href="window.html">
@@ -226,6 +232,18 @@
       </div> <!--end of bottom shelf-->
 
    </div> <!--end of bookshelf-->
+
+   <!--Javascript for the Clock-->
+   <script>
+      function startTime() {
+         const today = new Date();
+         let h = today.getHours();
+         let m = today.getMinutes();
+         let s = today.getSeconds();
+         
+      }
+
+   </script>
 
 </body>
 
