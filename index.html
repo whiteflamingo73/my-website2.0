@@ -25,10 +25,10 @@
    </p>
 
    <!--Javascript Clock html Element-->
-   <div id="clock">
-      <div id="digital"></div>
-      <div id="analog"></div>
-   </div>
+   
+   <div id="digital">Time</div>
+   <div id="analog"></div>
+
 
    <ul>
       <a href="window.html">
@@ -240,8 +240,46 @@
          let h = today.getHours();
          let m = today.getMinutes();
          let s = today.getSeconds();
-         
+         m = checkTime(m);
+         s = checkTime(s);
+
+         //military time
+         document.getElementById('digital').innerHTML = h + ":" +
+         m + ":" + s;
+         setTimeout(startTime, 1000);
+
+       
       }
+
+      function checkTime(i) {
+         if (i < 10) {i = "0" + i};
+
+         return i;
+      }
+
+      //normal time
+      function normalTime(h, m, s) {
+         let meridian = "AM"
+         let pmHour = h - 12
+
+         if (h >= 12) {
+            meridian = "PM"
+            if (h > 12) {
+               document.getElementById('digital').innerHTML = pmHour + ":" +
+               m + ":" + s + "" + meridian;
+            } else {
+               document.getElementById('digital').innerHTML = h + ":" +
+               m + ":" + s + "" + meridian;
+            }
+
+         } else {
+            document.getElementById('digital').innerHTML = h + ":" +
+            m + ":" + s + "" + meridian; 
+         }
+      }
+
+
+
 
    </script>
 
