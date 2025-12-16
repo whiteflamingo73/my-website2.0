@@ -25,10 +25,16 @@
    </p>
 
    <!--Javascript Clock html Element-->
-   
-   <div id="digital">Time</div>
-   <div id="analog"></div>
 
+   <div id="clock">
+      <form>
+         <fieldset id="clockField">
+            <button type="button" id="clockType" class="clockChanger" onclick="clockIteration(0)">Military</button>
+         </fieldset>
+      </form>
+      <div id="digital">Time</div>
+      <div id="analog"></div>
+   </div>
 
    <ul>
       <a href="window.html">
@@ -139,7 +145,7 @@
             </a>
          </div>
 
-          <!--Animated Five Page-->
+         <!--Animated Five Page-->
          <div class="book-link-container">
             <a class="book-link" href="FivePageAnimation/home2.html">
                <div id="color" class="book-spine">
@@ -154,7 +160,7 @@
             </a>
          </div>
 
-          <!--My Photos-->
+         <!--My Photos-->
          <div class="book-link-container">
             <a class="book-link" href="InstagramReplacement/picture-home.html">
                <div id="color" class="book-spine">
@@ -199,8 +205,8 @@
             </a>
          </div>
 
-          <!--FlexBox-->
-          <div class="book-link-container">
+         <!--FlexBox-->
+         <div class="book-link-container">
             <a class="book-link" href="FlexBox/">
                <div id="color" class="book-spine">
                   <div class="book-top"></div>
@@ -228,7 +234,7 @@
                </div>
             </a>
          </div>
-         
+
       </div> <!--end of bottom shelf-->
 
    </div> <!--end of bookshelf-->
@@ -242,17 +248,44 @@
          let s = today.getSeconds();
          m = checkTime(m);
          s = checkTime(s);
+         let meridian = "AM"
+         let pmHour = h - 12
+
+
+         let clock_button = document.getElementById('clockField');
+
 
          //military time
-         document.getElementById('digital').innerHTML = h + ":" +
-         m + ":" + s;
+
+         if (clock_button.innerHTML == "<button type='button' id='clockType' class='clockChanger' onclick='clockIteration(0)'>Military</button>") {
+            document.getElementById('digital').innerHTML = h + ":" +
+               m + ":" + s;
+         }
+
+         if (clock_button.innerHTML == "<button type='button' id='clockType' class='clockChanger' onclick='clockIteration(1)'>Digital</button>") {
+            if (h >= 12) {
+               meridian = "PM"
+               if (h > 12) {
+                  document.getElementById('digital').innerHTML = pmHour + ":" +
+                     m + ":" + s + "" + meridian;
+               } else {
+                  document.getElementById('digital').innerHTML = h + ":" +
+                     m + ":" + s + "" + meridian;
+               }
+
+            } else {
+               document.getElementById('digital').innerHTML = h + ":" +
+                  m + ":" + s + "" + meridian;
+            }
+         }
+
+
          setTimeout(startTime, 1000);
 
-       
       }
 
       function checkTime(i) {
-         if (i < 10) {i = "0" + i};
+         if (i < 10) { i = "0" + i };
 
          return i;
       }
@@ -266,19 +299,50 @@
             meridian = "PM"
             if (h > 12) {
                document.getElementById('digital').innerHTML = pmHour + ":" +
-               m + ":" + s + "" + meridian;
+                  m + ":" + s + "" + meridian;
             } else {
                document.getElementById('digital').innerHTML = h + ":" +
-               m + ":" + s + "" + meridian;
+                  m + ":" + s + "" + meridian;
             }
 
          } else {
             document.getElementById('digital').innerHTML = h + ":" +
-            m + ":" + s + "" + meridian; 
+               m + ":" + s + "" + meridian;
          }
       }
 
+      function clockIteration(i) {
+         let clockButton;
 
+         if (i <= 3) {
+            i++;
+
+         }
+         if (i == 3) {
+            i = 0;
+         }
+
+         if (i == 0) {
+            clockButton = "Military";
+            document.getElementById('clockField').innerHTML =
+               "<button type='button' id='clockType' class='clockChanger' onclick='clockIteration(0)'>" + clockButton + "</button>";
+         }
+
+         if (i == 1) {
+            clockButton = "Digital";
+            document.getElementById('clockField').innerHTML =
+               "<button type='button' id='clockType' class='clockChanger' onclick='clockIteration(1)'>" + clockButton + "</button>";
+         }
+
+         if (i == 2) {
+            clockButton = "Analog";
+            document.getElementById('clockField').innerHTML =
+               "<button type='button' id='clockType' class='clockChanger' onclick='clockIteration(2)'>" + clockButton + "</button>";
+         }
+
+
+
+      }
 
 
    </script>

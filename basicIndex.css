@@ -11,6 +11,13 @@ a {
     text-decoration: none;
 }
 
+/*CSS to style clock stuffs*/
+.clockChanger {
+    width: 100px;
+    height: 20px;
+}
+
+
 /* CSS to make a div look like a bookshelf 
 @import url("bookshelf.css")*/
 
