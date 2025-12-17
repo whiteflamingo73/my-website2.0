@@ -17,6 +17,10 @@ a {
     height: 20px;
 }
 
+.clockBase {
+    background-color: rgb(92, 77, 65);
+}
+
 
 /* CSS to make a div look like a bookshelf 
 @import url("bookshelf.css")*/

@@ -7,6 +7,7 @@
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width">
    <link rel="stylesheet" href="basicIndex.css">
+   <script src="index.js"></script>
 </head>
 
 <body onload="startTime()">
@@ -32,8 +33,11 @@
             <button type="button" id="clockType" class="clockChanger" onclick="clockIteration(0)">Military</button>
          </fieldset>
       </form>
-      <div id="digital">Time</div>
-      <div id="analog"></div>
+      <div id="digital">Time, Military</div>
+      <div id="digital2">Time, Normal</div>
+      <div id="analog">
+         <canvas id="clockAnalog" class="clockBase" width="400" height="400"></canvas>
+      </div>
    </div>
 
    <ul>
@@ -239,114 +243,48 @@
 
    </div> <!--end of bookshelf-->
 
-   <!--Javascript for the Clock-->
-   <script>
-      function startTime() {
-         const today = new Date();
-         let h = today.getHours();
-         let m = today.getMinutes();
-         let s = today.getSeconds();
-         m = checkTime(m);
-         s = checkTime(s);
-         let meridian = "AM"
-         let pmHour = h - 12
-
-
-         let clock_button = document.getElementById('clockField');
-
-
-         //military time
-
-         if (clock_button.innerHTML == "<button type='button' id='clockType' class='clockChanger' onclick='clockIteration(0)'>Military</button>") {
-            document.getElementById('digital').innerHTML = h + ":" +
-               m + ":" + s;
-         }
-
-         if (clock_button.innerHTML == "<button type='button' id='clockType' class='clockChanger' onclick='clockIteration(1)'>Digital</button>") {
-            if (h >= 12) {
-               meridian = "PM"
-               if (h > 12) {
-                  document.getElementById('digital').innerHTML = pmHour + ":" +
-                     m + ":" + s + "" + meridian;
-               } else {
-                  document.getElementById('digital').innerHTML = h + ":" +
-                     m + ":" + s + "" + meridian;
-               }
-
-            } else {
-               document.getElementById('digital').innerHTML = h + ":" +
-                  m + ":" + s + "" + meridian;
-            }
-         }
-
-
-         setTimeout(startTime, 1000);
-
-      }
-
-      function checkTime(i) {
-         if (i < 10) { i = "0" + i };
-
-         return i;
-      }
-
-      //normal time
-      function normalTime(h, m, s) {
-         let meridian = "AM"
-         let pmHour = h - 12
-
-         if (h >= 12) {
-            meridian = "PM"
-            if (h > 12) {
-               document.getElementById('digital').innerHTML = pmHour + ":" +
-                  m + ":" + s + "" + meridian;
-            } else {
-               document.getElementById('digital').innerHTML = h + ":" +
-                  m + ":" + s + "" + meridian;
-            }
-
-         } else {
-            document.getElementById('digital').innerHTML = h + ":" +
-               m + ":" + s + "" + meridian;
-         }
-      }
-
-      function clockIteration(i) {
-         let clockButton;
-
-         if (i <= 3) {
-            i++;
-
-         }
-         if (i == 3) {
-            i = 0;
-         }
-
-         if (i == 0) {
-            clockButton = "Military";
-            document.getElementById('clockField').innerHTML =
-               "<button type='button' id='clockType' class='clockChanger' onclick='clockIteration(0)'>" + clockButton + "</button>";
-         }
-
-         if (i == 1) {
-            clockButton = "Digital";
-            document.getElementById('clockField').innerHTML =
-               "<button type='button' id='clockType' class='clockChanger' onclick='clockIteration(1)'>" + clockButton + "</button>";
-         }
-
-         if (i == 2) {
-            clockButton = "Analog";
-            document.getElementById('clockField').innerHTML =
-               "<button type='button' id='clockType' class='clockChanger' onclick='clockIteration(2)'>" + clockButton + "</button>";
-         }
-
-
-
-      }
-
-
-   </script>
-
 </body>
+
+<script>
+   //Analog Clock
+   // hex: #52291a
+   drawClock();
+
+   function drawClock() {
+      const canvasClock = document.getElementById('clockAnalog');
+      const clockObject = canvasClock.getContext("2d");
+      let radius = canvasClock.height / 2;
+      clockObject.translate(radius, radius);
+      radius = radius * 0.90;
+
+      drawFace(clockObject, radius);
+   }
+
+   function drawFace(ctx, radius) {
+      const gradient = ctx.createRadialGradient(0, 0, radius * 0.95, 0, 0, radius * 1.05);
+      gradient.addColorStop(0, '#333');
+      gradient.addColorStop(0.5, '#52291a');
+      gradient.addColorStop(1, '#3d1e13');
+
+      ctx.beginPath();
+      ctx.arc(0, 0, radius, 0, 2 * Math.PI);
+      ctx.fillStyle = "white";
+      ctx.fill();
+
+      ctx.strokeStyle = gradient;
+      ctx.lineWidth = radius*0.1;
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.arc(0, 0, radius * 0.1, 0, 2 * Math.PI);
+      ctx.fillStyle = '#3d1e13';
+      ctx.fill();
+   }
+
+   function drawNumbers(ctx, radius) {
+      ctx.font = radius * 0.15 + "px arial";
+   }
+
+</script>
 
 </html>
