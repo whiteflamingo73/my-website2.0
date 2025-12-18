@@ -32,32 +32,7 @@ function startTime() {
         document.getElementById('digital2').innerHTML = h + ":" +
             m + ":" + s + " " + meridian;
     }
-
-    //military time
-    /*
-    if (clock_button.innerHTML == "<button type='button' id='clockType' class='clockChanger' onclick='clockIteration(0)'>Military</button>") {
-       document.getElementById('digital').innerHTML = h + ":" +
-          m + ":" + s;
-    }
-
-    if (clock_button.innerHTML == "<button type='button' id='clockType' class='clockChanger' onclick='clockIteration(1)'>Digital</button>") {
-       if (h >= 12) {
-          meridian = "PM"
-          if (h > 12) {
-             document.getElementById('digital').innerHTML = pmHour + ":" +
-                m + ":" + s + "" + meridian;
-          } else {
-             document.getElementById('digital').innerHTML = h + ":" +
-                m + ":" + s + "" + meridian;
-          }
-
-       } else {
-          document.getElementById('digital').innerHTML = h + ":" +
-             m + ":" + s + "" + meridian;
-       }
-    }
-    */
-
+    
     setTimeout(startTime, 1000);
 
 }
@@ -68,26 +43,6 @@ function checkTime(i) {
     return i;
 }
 
-//normal time
-function normalTime(h, m, s) {
-    let meridian = "AM"
-    let pmHour = h - 12
-
-    if (h >= 12) {
-        meridian = "PM"
-        if (h > 12) {
-            document.getElementById('digital').innerHTML = pmHour + ":" +
-                m + ":" + s + "" + meridian;
-        } else {
-            document.getElementById('digital').innerHTML = h + ":" +
-                m + ":" + s + "" + meridian;
-        }
-
-    } else {
-        document.getElementById('digital').innerHTML = h + ":" +
-            m + ":" + s + "" + meridian;
-    }
-}
 
 function clockIteration(i) {
     let clockButton;
