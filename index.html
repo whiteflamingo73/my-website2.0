@@ -10,7 +10,7 @@
    <script src="index.js"></script>
 </head>
 
-<body onload="startTime(); setInterval(drawClock, 1000);">
+<body onload="startTime()">
    <h1>Aaron's Library</h1>
 
    <br>
@@ -27,6 +27,8 @@
 
    <!--Javascript Clock html Element-->
 
+
+
    <div id="clock">
       <form>
          <fieldset id="clockField">
@@ -36,22 +38,14 @@
       <div id="digital">Time, Military</div>
       <div id="digital2">Time, Normal</div>
       <div id="analog">
-         <canvas id="clockAnalog" class="clockBase" width="400" height="400"></canvas>
+         <canvas id="clockAnalog" class="clockBase" width="300" height="300"></canvas>
       </div>
    </div>
 
-   <ul>
-      <a href="window.html">
-         <img src="Website_Images/Assets/window.jpg" width="500" height="300"></a>
-      <br>
-      <a href="big_bookshelf.html">
-         <img src="Website_Images/Assets/bookshelf.webp" width="500" height="250">
-      </a>
-      <br>
+   <div class="window">
+      <canvas id="window" width="600" height="400"></canvas>
+   </div>
 
-
-
-   </ul>
 
    <!--Bookshelf where the books will be stored-->
    <div class="bookshelf">
@@ -248,18 +242,24 @@
 
       //Analog Clock
       // hex: #52291a
-      
+
+
+      var canvasClock = document.getElementById('clockAnalog');
+      var clockObject = canvasClock.getContext("2d");
+      var radius = canvasClock.height / 2;
+      clockObject.translate(radius, radius);
+      radius = radius * 0.90;
+
+      drawClock();
 
       function drawClock() {
-         const canvasClock = document.getElementById('clockAnalog');
-         const clockObject = canvasClock.getContext("2d");
-         let radius = canvasClock.height / 2;
-         clockObject.translate(radius, radius);
-         radius = radius * 0.90;
 
          drawFace(clockObject, radius);
          drawNumbers(clockObject, radius);
          drawTime(clockObject, radius);
+         drawKnob(clockObject, radius);
+         //clockObject.clearRect(-400, -400, canvasClock.width, canvasClock.height);
+         setTimeout(drawClock, 500);
 
 
       }
@@ -286,6 +286,13 @@
 
       }
 
+      function drawKnob(ctx, radius) {
+         ctx.beginPath();
+         ctx.arc(0, 0, radius * 0.05, 0, 2 * Math.PI);
+         ctx.fillStyle = '#5a2e01';
+         ctx.fill();
+      }
+
       function drawNumbers(ctx, radius) {
          ctx.font = radius * 0.15 + "px Garamond";
          ctx.textBaseline = "middle";
@@ -307,16 +314,21 @@
          let h = today.getHours();
          let m = today.getMinutes();
          let s = today.getSeconds();
+         m = checkTime(m);
+         s = checkTime(s);
+
 
          h = h % 12;
          h = (h * Math.PI / 6) + (m * Math.PI / (6 * 60)) + (s * Math.PI / (360 * 60));
-         drawHand(ctx, h, radius * 0.5, radius * 0.07);
+         drawHand(ctx, h, radius * 0.5, radius * 0.06);
 
          m = (m * Math.PI / 30) + (s * Math.PI / (30 * 60));
-         drawHand(ctx, m, radius * 0.8, radius * 0.07);
+         drawHand(ctx, m, radius * 0.75, radius * 0.05);
 
          s = (s * Math.PI / 30);
          drawHand(ctx, s, radius * 0.9, radius * 0.02);
+
+
       }
 
       function drawHand(ctx, pos, length, width) {
@@ -329,7 +341,36 @@
          ctx.stroke();
          ctx.rotate(-pos);
       }
+   </script>
 
+   <script>
+      var window = getElementById('window');
+      var windowObject = window.getContext("2d");
+      var skyRadius = window.height / 2;
+      windowObject.translate(radius, radius);
+
+      drawSkybox(windowObject, skyRadius);
+
+      function drawSkybox(ctx, radius) {
+         const gradient = ctx.createRadialGradient(0, 0, radius * 0.95, 0, 0, radius * 1.05);
+         gradient.addColorStop(0, '#333');
+         gradient.addColorStop(0.5, '#52291a');
+         gradient.addColorStop(1, '#3d1e13');
+
+         ctx.beginPath();
+         ctx.arc(0, 0, radius, 0, 2 * Math.PI);
+         ctx.fillStyle = "white";
+         ctx.fill();
+
+         ctx.strokeStyle = gradient;
+         ctx.lineWidth = radius * 0.1;
+         ctx.stroke();
+
+         ctx.beginPath();
+         ctx.arc(0, 0, radius * 0.1, 0, 2 * Math.PI);
+         ctx.fillStyle = '#3d1e13';
+         ctx.fill();
+      }
 
    </script>
 </body>
