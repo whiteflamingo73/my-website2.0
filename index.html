@@ -43,7 +43,7 @@
    </div>
 
    <div class="window">
-      <canvas id="window" width="600" height="400"></canvas>
+      <canvas id="windowView" width="600" height="400"></canvas>
    </div>
 
 
@@ -250,7 +250,7 @@
       clockObject.translate(radius, radius);
       radius = radius * 0.90;
 
-      drawClock();
+      
 
       function drawClock() {
 
@@ -259,7 +259,7 @@
          drawTime(clockObject, radius);
          drawKnob(clockObject, radius);
          //clockObject.clearRect(-400, -400, canvasClock.width, canvasClock.height);
-         setTimeout(drawClock, 500);
+
 
 
       }
@@ -341,38 +341,39 @@
          ctx.stroke();
          ctx.rotate(-pos);
       }
-   </script>
 
-   <script>
-      var window = getElementById('window');
+      function clearClock(){
+         const canvasClock = document.getElementById('clockAnalog');
+         let clockObject = canvasClock.getContext("2d");
+
+         clockObject.clearRect(-150, -150, canvasClock.width, canvasClock.height);
+      }
+
+      //creating a window showing time of day 
+
+      var window = document.getElementById('windowView');
       var windowObject = window.getContext("2d");
       var skyRadius = window.height / 2;
       windowObject.translate(radius, radius);
+      radius = radius * 0.90;
 
-      drawSkybox(windowObject, skyRadius);
+      drawWindowView(windowObject, skyRadius);
+
+      function drawWindowView(){
+         drawSkybox(windowObject, skyRadius);
+      }
 
       function drawSkybox(ctx, radius) {
-         const gradient = ctx.createRadialGradient(0, 0, radius * 0.95, 0, 0, radius * 1.05);
-         gradient.addColorStop(0, '#333');
-         gradient.addColorStop(0.5, '#52291a');
-         gradient.addColorStop(1, '#3d1e13');
-
-         ctx.beginPath();
-         ctx.arc(0, 0, radius, 0, 2 * Math.PI);
+         
+         ctx.arc(0, 0, radius, 0 , 2 * Math.PI);
          ctx.fillStyle = "white";
          ctx.fill();
 
-         ctx.strokeStyle = gradient;
-         ctx.lineWidth = radius * 0.1;
-         ctx.stroke();
-
-         ctx.beginPath();
-         ctx.arc(0, 0, radius * 0.1, 0, 2 * Math.PI);
-         ctx.fillStyle = '#3d1e13';
-         ctx.fill();
+         
       }
-
    </script>
+
+   
 </body>
 
 

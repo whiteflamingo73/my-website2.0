@@ -10,29 +10,45 @@ function startTime() {
     //h = 15; (testing the normal time)
     let pmHour = h - 12;
 
-    let clock_button = document.getElementById('clockField');
+    let clock_button = document.getElementById('clockType').innerText;
 
-    document.getElementById('digital').innerHTML = h + ":" +
-        m + ":" + s;
+    //displays military time
+    if (clock_button == 'Military') {
+        document.getElementById('digital').innerHTML = h + ":" +
+            m + ":" + s;
+    } else {
+        document.getElementById('digital').innerHTML = " ";
+    }
 
-    document.getElementById('digital2').innerHTML = h + ":" +
-        m + ":" + s;
+    //displays normal time in 12 hour format
+    if (clock_button == 'Digital') {
+        if (h >= 12) {
+            meridian = "PM"
+            if (h > 12) {
+                document.getElementById('digital2').innerHTML = pmHour + ":" +
+                    m + ":" + s + " " + meridian;
+            } else {
+                document.getElementById('digital2').innerHTML = h + ":" +
+                    m + ":" + s + " " + meridian;
+            }
 
-    if (h >= 12) {
-        meridian = "PM"
-        if (h > 12) {
-            document.getElementById('digital2').innerHTML = pmHour + ":" +
-                m + ":" + s + " " + meridian;
         } else {
             document.getElementById('digital2').innerHTML = h + ":" +
                 m + ":" + s + " " + meridian;
         }
-
     } else {
-        document.getElementById('digital2').innerHTML = h + ":" +
-            m + ":" + s + " " + meridian;
+        document.getElementById('digital2').innerHTML = " ";
+        }
+
+    if (clock_button == 'Analog') {
+        drawClock();
+    } else {
+        clearClock();
     }
-    
+
+
+
+
     setTimeout(startTime, 1000);
 
 }
