@@ -46,6 +46,10 @@ function startTime() {
         clearClock();
     }
 
+    if (h <= 17) {
+        document.getElementById('lightOn').style.opacity = 0;
+    }
+
 
 
 

@@ -12,6 +12,25 @@ a {
 }
 
 /*CSS to style clock stuffs*/
+.lightBulb {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 10%;
+    border: black 5px solid;
+}
+
+.light {
+    display: flex;
+    width: 100%;
+    height: 10%;
+    object-fit: contain;
+    transform-origin: top;
+    transform: rotateX(180deg) scale(0.20);
+    
+    
+}
+
 .clockChanger {
     width: 100px;
     height: 20px;
@@ -21,11 +40,11 @@ a {
     background-color: rgb(92, 77, 65);
 }
 
-/*
+
 .window {
     background-color: rgb(103, 199, 255);
 }
-*/
+
 
 
 /* CSS to make a div look like a bookshelf 
