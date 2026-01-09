@@ -22,6 +22,26 @@ let paddleX = (canvas.width - paddleWidth) / 2;
 let rightPressed = false;
 let leftPressed = false;
 
+//constants for the bricks
+const brickRowCount = 3;
+const brickColumnCount = 5;
+const brickWidth = 75;
+const brickHeight = 20;
+const brickPadding = 10;
+const brickOffsetTop = 30;
+const brickOffsetLeft = 30;
+
+const bricks = [];
+for (let c = 0; c < brickColumnCount; c++) {
+    bricks[c] = [];
+    for (let r = 0; r < brickRowCount; r++) {
+        bricks[c][r] = {x: 0, y:0};
+    }
+}
+
+//variables for losing the game:
+let interval = 0;
+
 //---------------------------------------------------------//
 
 function drawBall() {
@@ -38,6 +58,20 @@ function drawPaddle() {
     ctx.fillStyle = "#00dd81ff";
     ctx.fill();
     ctx.closePath();
+}
+
+function drawBricks() {
+    for (let c = 0; c < brickColumnCount; c++) {
+        for (let r = 0; r < brickRowCount; r++) {
+            bricks[c][r].x = 0;
+            bricks[c][r].y = 0;
+            ctx.beginPath();
+            ctx.rect(0, 0, brickWidth, brickHeight);
+            ctx.fillStyle = "#0095DD";
+            ctx.fill();
+            ctx.closePath();
+        }
+    }
 }
 
 function draw() {
@@ -58,9 +92,18 @@ function draw() {
 
     //ball collisions with the walls
     //top & bottom:
-    if (y + dy < ballRadius || y + dy > canvas.height - ballRadius) {
+    if (y + dy < ballRadius) {
         dy = -dy;
+    } else if (y + dy > canvas.height - ballRadius) {
+        if (x > paddleX - ballRadius && x < paddleX + paddleWidth + ballRadius) {
+            dy = -dy;
+        } else {
+            alert("GAME OVER");
+            document.location.reload();
+            clearInterval(interval) //needed for Chrome to end game
+        }
     }
+
     //left & right
     if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
         dx = -dx;
@@ -90,8 +133,12 @@ function keyUpHandler(e) {
     }
 }
 
+
+
+
+
 function startGame() {
-    setInterval(draw, 10);
+    interval = setInterval(draw, 10);
 }
 
 //---------------------------------------------------------//
