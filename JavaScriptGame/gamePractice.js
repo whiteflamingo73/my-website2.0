@@ -31,16 +31,22 @@ const brickPadding = 10;
 const brickOffsetTop = 30;
 const brickOffsetLeft = 30;
 
+
 const bricks = [];
 for (let c = 0; c < brickColumnCount; c++) {
     bricks[c] = [];
     for (let r = 0; r < brickRowCount; r++) {
-        bricks[c][r] = {x: 0, y:0};
+        bricks[c][r] = { x: 0, y: 0, status: 1 };
     }
 }
 
-//variables for losing the game:
-let interval = 0;
+//variables for score
+let score = 0;
+
+//variables for lives
+let lives = 3;
+
+
 
 //---------------------------------------------------------//
 
@@ -63,24 +69,70 @@ function drawPaddle() {
 function drawBricks() {
     for (let c = 0; c < brickColumnCount; c++) {
         for (let r = 0; r < brickRowCount; r++) {
-            bricks[c][r].x = 0;
-            bricks[c][r].y = 0;
-            ctx.beginPath();
-            ctx.rect(0, 0, brickWidth, brickHeight);
-            ctx.fillStyle = "#0095DD";
-            ctx.fill();
-            ctx.closePath();
+            if (bricks[c][r].status === 1) {
+                const brickX = c * (brickWidth + brickPadding) + brickOffsetLeft;
+                const brickY = r * (brickHeight + brickPadding) + brickOffsetTop;
+
+                bricks[c][r].x = brickX;
+                bricks[c][r].y = brickY;
+                ctx.beginPath();
+                ctx.rect(brickX, brickY, brickWidth, brickHeight);
+                ctx.fillStyle = "#dd9000";
+                ctx.fill();
+                ctx.closePath();
+            }
+
         }
     }
 }
 
-function draw() {
+function collisionDetection() {
+    for (let c = 0; c < brickColumnCount; c++) {
+        for (let r = 0; r < brickRowCount; r++) {
+            const b = bricks[c][r];
+            if (b.status === 1) {
+                if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
+                    dy = -dy;
+                    b.status = 0;
+                    score++;
+                    if (score === brickRowCount * brickColumnCount) {
+                        alert("YOU WIN!!!");
+                        document.location.reload();
+                        
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+function drawScore() {
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "#0095DD";
+    ctx.fillText(`Score: ${score}`, 8, 20);
+}
+
+function drawLives() {
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "#0095DD";
+    ctx.fillText(`Lives: ${lives}`, canvas.width - 65, 20)
+
+}
+
+function drawGame() {
     //clearing the canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     //--------------//
     drawBall();
+
     drawPaddle();
+    drawScore();
+    drawLives();
+    drawBricks();
+    collisionDetection();
+
     //--------------//
 
     //paddle moving logic
@@ -98,9 +150,17 @@ function draw() {
         if (x > paddleX - ballRadius && x < paddleX + paddleWidth + ballRadius) {
             dy = -dy;
         } else {
-            alert("GAME OVER");
-            document.location.reload();
-            clearInterval(interval) //needed for Chrome to end game
+            lives--;
+            if (!lives) {
+                alert("GAME OVER");
+                document.location.reload();
+            } else {
+                x = canvas.width / 2;
+                y = canvas.height - 30;
+                dx = 2;
+                dy = -2;
+                paddleX = (canvas.width - paddleWidth) / 2;
+            }
         }
     }
 
@@ -112,10 +172,15 @@ function draw() {
     //changing x and y
     x += dx;
     y += dy;
+
+    //making the function call itself in a loop
+    requestAnimationFrame(drawGame);
 }
 
 document.addEventListener("keydown", keyDownHandler);
 document.addEventListener("keyup", keyUpHandler);
+
+document.addEventListener("mousemove", mouseMoveHandler);
 
 function keyDownHandler(e) {
     if (e.key === "Right" || e.key === "ArrowRight") {
@@ -133,12 +198,19 @@ function keyUpHandler(e) {
     }
 }
 
+function mouseMoveHandler(e) {
+    const relativeX = e.clientX - canvas.offsetLeft;
+    if (relativeX > 0 && relativeX < canvas.width) {
+        paddleX = relativeX - paddleWidth / 2;
+    }
+}
+
 
 
 
 
 function startGame() {
-    interval = setInterval(draw, 10);
+    drawGame()
 }
 
 //---------------------------------------------------------//
