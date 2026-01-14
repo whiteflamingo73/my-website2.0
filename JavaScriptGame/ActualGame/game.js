@@ -24,6 +24,7 @@ let leftPressed = false;
 let rightPressed = false;
 let upPressed = false;
 let downPressed = false;
+let spacePressed = false;
 
 
 //character variables
@@ -42,67 +43,6 @@ function drawCharacter() {
 }
 
 //movement handlers:
-
-
-function drawGame() {
-    //clearing the frame
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    //----------------//
-    drawCharacter();
-    //----------------//
-
-    //updating player position
-    if(rightPressed) {
-        east += 0.5;
-    } else {
-        east = 0;
-    }
-
-    if(leftPressed) {
-        west += -0.5;
-    } else {
-        west = 0;
-    }
-
-    if(upPressed) {
-        north += -0.5;
-    } else {
-        north = 0;
-    }
-    
-    if(downPressed) {
-        south += 0.5;
-    } else {
-        south = 0;
-    }
-
-    if(east >= 5){
-        east = 5;
-    }
-
-    if(west <= -5){
-        west = -5;
-    }
-
-    if(north <= -5){
-        north = -5;
-    }
-
-    if(south >= 5){
-        south = 5;
-    }
-
-    const dx = east + west;
-    const dy = north + south;
-
-    playerX += dx;
-    playerY += dy;
-
-    //looping the game
-    requestAnimationFrame(drawGame);
-}
-
 document.addEventListener("keydown", keyDownHandler);
 document.addEventListener("keyup", keyUpHandler);
 
@@ -118,6 +58,10 @@ function keyDownHandler(e) {
         upPressed = true;
     } else if (e.key === "Down" || e.key === "ArrowDown" || e.key === "s") {
         downPressed = true;
+    }
+
+    if (e.key === "Space" || e.key === " " || e.key === "Spacebar") {
+        spacePressed = true;
     }
 
 }
@@ -136,8 +80,85 @@ function keyUpHandler(e) {
 
     }
 
+    if (e.key === "Space" || e.key === " " || e.key === "Spacebar") {
+        spacePressed = false;
+    }
+
 }
 
+function drawGame() {
+    //clearing the frame
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    //----------------//
+    drawCharacter();
+    //----------------//
+
+    //Player moving logic
+
+    let dx = east + west;
+    let dy = north + south;
+
+    if(rightPressed) {
+        east += 0.5;
+    } else {
+        east += -0.5;
+    }
+
+    if(leftPressed) {
+        west += -0.5;
+    } else {
+        west += 0.5;
+    }
+
+    if(upPressed) {
+        north += -0.5;
+    } else {
+        north += 0.5;
+    }
+    
+    if(downPressed) {
+        south += 0.5;
+    } else {
+        south += -0.5;
+    }
+
+    if(east >= 5){
+        east = 5;
+    } else if(east <= 0){
+        east = 0;
+    }
+
+    if(west <= -5){
+        west = -5;
+    } else if(west >= 0){
+        west = 0;
+    }
+
+    if(north <= -5){
+        north = -5;
+    } else if(north >= 0){
+        north = 0;
+    }
+
+    if(south >= 5){
+        south = 5;
+    } else if(south <= 0){
+        south = 0;
+    }
+
+    //boost mechanic logic
+    if(spacePressed){
+        dx += dx/2;
+        dy += dy/2;
+    }
+
+    playerX += dx;
+    playerY += dy;
+
+    //looping the game
+    requestAnimationFrame(drawGame);
+}
 
 function startGame() {
     drawGame();
