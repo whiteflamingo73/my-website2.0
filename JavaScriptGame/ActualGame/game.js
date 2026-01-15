@@ -18,7 +18,7 @@ let west = 0; //-2
 let north = 0; //-2
 let south = 0; //2
 
-
+let playerRotation = 0;
 
 let leftPressed = false;
 let rightPressed = false;
@@ -35,8 +35,17 @@ const radius = 10;
 
 function drawCharacter() {
     ctx.beginPath();
+    ctx.moveTo(playerX, playerY) //top corner
+    ctx.lineTo(playerX - 20, playerY + 30);
+    ctx.lineTo(playerX + 20, playerY + 30);
+    ctx.closePath();
+    ctx.strokeStyle = "#eee";
+    ctx.lineWidth = 3;
+    ctx.stroke();
+
+    ctx.beginPath();
     ctx.arc(playerX, playerY, radius, 0, Math.PI * 2);
-    ctx.fillStyle = "#0095DD";
+    ctx.fillStyle = "#dd0000";
     ctx.fill();
     ctx.closePath();
 
@@ -152,6 +161,9 @@ function drawGame() {
         dx += dx/2;
         dy += dy/2;
     }
+
+    //rotation logic
+    
 
     playerX += dx;
     playerY += dy;
