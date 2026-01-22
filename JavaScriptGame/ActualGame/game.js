@@ -4,21 +4,29 @@ const ctx = canvas.getContext('2d');
 let x = canvas.width / 2;
 let y = canvas.height / 2;
 
-let playerX = x;
-let playerY = y;
+
+class player {
+    constructor(X,Y, size, velX, velY, rotation) {
+        this.X = X;
+        this.Y = Y;
+        this.size = size;
+        this.velX = velX;
+        this.velY = velY;
+        this.rotation = rotation
+    }
+
+}
+
+let Player = new player(x, y, 50, 0, 0, 90/180 * Math.PI ); // convert to radians
+
 
 //X movement variables
 let east = 0; //2
 let west = 0; //-2
 
-
-
-
 //Y movement variables
 let north = 0; //-2
 let south = 0; //2
-
-let playerRotation = 0;
 
 let leftPressed = false;
 let rightPressed = false;
@@ -33,21 +41,55 @@ const radius = 10;
 
 //----------------------------------------------------------------------------------//
 
-function drawCharacter() {
+function drawShip(center, size, angle) {
     ctx.beginPath();
-    ctx.moveTo(playerX, playerY) //top corner
-    ctx.lineTo(playerX - 20, playerY + 30);
-    ctx.lineTo(playerX + 20, playerY + 30);
+    for (let j = 0; j < 3; j++) {
+        a = angle * Math.PI / 180;
+        x = center.x + size * Math.sin(a);
+        y = center.y + size * Math.cos(a);
+        ctx.lineTo(x, y);
+        angle += 120;
+    }
     ctx.closePath();
     ctx.strokeStyle = "#eee";
     ctx.lineWidth = 3;
     ctx.stroke();
+    ctx.beginPath();
+    a = angle * Math.PI / 180;
+    a = 90 / Math.PI * 180; 
+
+    ctx.lineTo(
+        Player.X - Player.size * (Math.cos(a) + Math.sin(a)),
+        Player.Y + Player.size * (Math.sin(a) - Math.cos(a))
+    );
+
+    ctx.lineTo(
+        Player.X - Player.size * (Math.cos(a) - Math.sin(a)),
+        Player.Y + Player.size * (Math.sin(a) + Math.cos(a))
+    );
+    
+    
+
+
+    ctx.closePath();
+    ctx.strokeStyle = "#eee";
+    ctx.lineWidth = 3;
+    ctx.stroke();
+}
+
+function drawCharacter() {
+    drawShip({x: Player.X, y: Player.Y }, 50, Math.atan2(Player.velX, Player.velY) * 180);
 
     ctx.beginPath();
-    ctx.arc(playerX, playerY, radius, 0, Math.PI * 2);
+    ctx.arc(Player.X, Player.Y, radius, 0, Math.PI * 2);
     ctx.fillStyle = "#dd0000";
     ctx.fill();
     ctx.closePath();
+
+
+    //ctx.moveTo(Player.X, Player.Y) //top corner
+    //ctx.lineTo(Player.X - 20, Player.Y + 30);
+    //ctx.lineTo(Player.X + 20, Player.Y + 30);
 
 }
 
@@ -95,14 +137,7 @@ function keyUpHandler(e) {
 
 }
 
-function drawGame() {
-    //clearing the frame
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    //----------------//
-    drawCharacter();
-    //----------------//
-
+function playerMove() {
     //Player moving logic
 
     let dx = east + west;
@@ -156,17 +191,31 @@ function drawGame() {
         south = 0;
     }
 
+
     //boost mechanic logic
     if(spacePressed){
         dx += dx/2;
         dy += dy/2;
     }
 
-    //rotation logic
+    Player.X += dx;
+    Player.Y += dy;
+    Player.velX = dx;
+    Player.velY = dy;
+
+
     
 
-    playerX += dx;
-    playerY += dy;
+}
+
+function drawGame() {
+    //clearing the frame
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    //----------------//
+    drawCharacter();
+    playerMove();
+    //----------------//
 
     //looping the game
     requestAnimationFrame(drawGame);
