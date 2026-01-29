@@ -16,20 +16,18 @@ a {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    height: 3%;
+    height: 1%;
     border: black 5px solid;
 }
 
 .light {
     display: flex;
-    width: 100%;
-    height: 5%;
     object-fit: contain;
+    width: 100%;
     transform-origin:top;
-    transform: rotateX(180deg) scale(0.20);
-    
-    
+    transform: rotateX(180deg);
 }
+
 
 .clockChanger {
     width: 100px;
@@ -52,7 +50,7 @@ a {
 
 .bookshelf {
     background-color: rgb(58, 31, 31);
-    width: 1000px;
+    width: 100%;
     border-right: rgb(71, 38, 28) 20px ridge;
     border-left: rgb(71, 38, 28) 20px groove;
     border-bottom: rgb(56, 28, 23) 20px groove;
@@ -61,11 +59,11 @@ a {
 }
 
 .top-shelf {
-    height: 220px;
+    height: 50%;
 }
 
 .shelf {
-    height: 220px;
+    height: 50%;
     border-top:rgb(71, 38, 28) 10px groove;
 }
 
@@ -76,10 +74,10 @@ a {
 /*This is the base styling for a book, and also the book for the 3 Page*/
 
 .book-link-container {
-    width: 50px;
-    height: 190px;
+    width: 10%;
+    height: 90%;
     float: right;
-    padding-top: 30px;
+    padding-top: 10%;
 }
 .book-link {
     width: 50px;
