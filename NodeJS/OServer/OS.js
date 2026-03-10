@@ -1,33 +1,33 @@
 const osu = require('os-utils');
 const fsys = require('fs');
 
-console.log(osu.platform());
-const platform = osu.platform();
 
-console.log(osu.cpuUsage());
-console.log(osu.cpuFree());
 
-const TotMem = ((osu.totalmem() / 1000).toFixed(2));
-const FreeMem = ((osu.freemem() / 1000).toFixed(2));
-const UsedMem = ((osu.totalmem() / 1000) - (osu.freemem() / 1000)).toFixed(2);
-const MemPer = ((osu.freememPercentage() * 100).toFixed(2));
+function run() {
 
-let utSec = osu.sysUptime();
-let utMin = utSec / 60;
-let utHr = utMin / 60;
+    const platform = osu.platform();
 
-utSec = Math.floor(utSec) % 60;
-utMin = Math.floor(utMin) % 60;
-utHr = Math.floor(utHr) % 60;
+    const TotMem = ((osu.totalmem() / 1000).toFixed(2));
+    const FreeMem = ((osu.freemem() / 1000).toFixed(2));
+    const UsedMem = ((osu.totalmem() / 1000) - (osu.freemem() / 1000)).toFixed(2);
+    const MemPer = ((osu.freememPercentage() * 100).toFixed(2));
 
-console.log('Uptime: '
-    + utHr + " Hour(s) "
-    + utMin + " Minute(s) and "
-    + utSec + " Second(s)"
-);
+    let utSec = osu.sysUptime();
+    let utMin = utSec / 60;
+    let utHr = utMin / 60;
 
-const content =
-    `<!DOCTYPE html>
+    utSec = Math.floor(utSec) % 60;
+    utMin = Math.floor(utMin) % 60;
+    utHr = Math.floor(utHr) % 60;
+
+    /*console.log('Uptime: '
+        + utHr + " Hour(s) "
+        + utMin + " Minute(s) and "
+        + utSec + " Second(s)"
+    );*/
+
+    const content =
+        `<!DOCTYPE html>
 
 <html>
 
@@ -57,13 +57,17 @@ const content =
 
 </html>`;
 
-fsys.writeFile('sysdata.html', content, 'utf8', (err) => {
-    if (err) {
-        console.error(err);
-        return;
-    }
-});
+    //console.log(UsedMem);
 
+    fsys.writeFile('sysdata.html', content, 'utf8', (err) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+    });
+}
+
+setInterval(run, 3000);
 
 
 

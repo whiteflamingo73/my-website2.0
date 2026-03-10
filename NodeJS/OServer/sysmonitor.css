@@ -1,0 +1,7 @@
+iframe{
+    display: flex;
+    flex: auto;
+    width: 50%;
+    height: 50%;
+    justify-self: center;
+}

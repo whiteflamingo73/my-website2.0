@@ -1,3 +1,10 @@
-const osMudule = require('OS.js')
+const osMudule = require('./OS.js')
 
-setInterval(osMudule.run(), 1000);
+const start = document.querySelector('.start');
+
+start.addEventListener('click', function(){
+    setInterval(osModule.run, 1000);
+    console.log('ran');
+});
+
+setInterval(osMudule.run, 1000);
