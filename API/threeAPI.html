@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>API Project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <!--<link rel="stylesheet" href="sysmonitor.css"> -->
+
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <h3>Put in Coordinates, must be at least 2 decimals</h3>
+            <label for="lat">Latitude:</label>
+            <input type="text" id="lat" name="lat" value="" placeholder="40.7306">
+            <label for="long">Longitude:</label>
+            <input type="text" id="long" name="long" value="" placeholder="-73.9352">
+            <input type="submit" value="Submit" onclick="formSubmition(this.form);">
+        </fieldset>
+    </form>
+    <div id="mapContainer">
+    </div>
+
+    <div class="birdContainer">
+        <h2 id="birdTitle">Bird Title</h2>
+        <div id="birdImageContainer">
+            <div id="birdError">No Error</div>
+            <img id="birdImage">
+        </div>
+        <div id="birdInfo">Info</div>
+    </div>
+    <button id="birdStart">Click here for Bird Data in Console</button>
+
+
+
+    <script src="AnimalData.js"></script>
+</body>
+
+</html>
