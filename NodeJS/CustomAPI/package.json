@@ -1,0 +1,18 @@
+{
+  "name": "customapi",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "My custom API for programming 2",
+  "main": "myAPI.js",
+  "scripts": {
+    "run": "node CustomAPI/myAPI.js",
+    "run:watch": "nodemon CustomAPI/API.js --watch CustomAPI",
+    "start": "npm run run:watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aaron Bargdill",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
