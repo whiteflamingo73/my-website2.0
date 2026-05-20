@@ -1,0 +1,66 @@
+/*Universal*/
+html{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+/*Home Page*/
+.adventureChoice {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.transChoice {
+    width: 32%;
+    height: 32%;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    align-self:center;  
+
+    background-color: transparent;
+    border-radius: 50%;
+
+}
+
+.transChoice img {
+    width: 60%;
+    height: 60%;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.transChoice h2 {
+    font-size: 40px;
+    color: aliceblue;
+    -webkit-text-stroke: 2px #000;
+}
+
+
+
+/*Drive Page*/
+#outsideCar {
+    width: 100%;
+    height: 100%;
+    background-image: url(assets/outsideCar-temp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#insideCar {
+    width: 100%;
+    height: 100%;
+    background-image: url(assets/drive-temp-removebg-preview.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/*Train Page*/
+
+
+
+/*Bike Page*/
