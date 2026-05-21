@@ -1,5 +1,5 @@
 /*Universal*/
-html{
+html {
     height: 100%;
     width: 100%;
     overflow: hidden;
@@ -17,9 +17,9 @@ html{
     width: 32%;
     height: 32%;
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     flex-wrap: wrap;
-    align-self:center;  
+    align-self: center;
 
     background-color: transparent;
     border-radius: 50%;
@@ -53,9 +53,45 @@ html{
 #insideCar {
     width: 100%;
     height: 100%;
-    background-image: url(assets/drive-temp-removebg-preview.png);
+    background-image: url(assets/insideCar-temp.png);
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+}
+
+#leftCarSpacer {
+    width: 30%;
+    height: 100%;
+}
+
+.wheelRow {
+    width: 30%;
+    height: 100%;
+}
+
+.topWheelSpacer{
+    width: 100%;
+    height: 45%;
+}
+
+.carWheel {
+    
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    border: black 10px solid;
+    border-radius: 50%;
+    justify-content: center;
+}
+
+
+
+#carHorn {
+    width: 20%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: red;
+    align-self: center;
 }
 
 
@@ -64,3 +100,19 @@ html{
 
 
 /*Bike Page*/
+#outsideBike {
+    width: 100%;
+    height: 100%;
+    background-image: url(assets/outsideBike.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#insideBike {
+    width: 100%;
+    height: 100%;
+    background-image: url(assets/insideBike.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
