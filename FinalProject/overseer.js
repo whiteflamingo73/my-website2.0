@@ -1,8 +1,13 @@
-/* JS file for all of the website!
+/* 
+   JS file for all of the website!
    Even if ts is inneficient, it'll be funny
    and I wanna see how many lines of code is written
    and also, there may be some shared functions
-   so it may be useful, idk */
+   so it may be useful, idk 
+   
+   I've learned that having it as one file doesn't work
+   so now the files will be split up :( 
+*/
 
 
 //Functions for Homepage
@@ -27,3 +32,4 @@ bikeStart.addEventListener('click', function(){
 
 
 //End of Homepage
+

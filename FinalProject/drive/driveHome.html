@@ -7,11 +7,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="../adventure.css">
-    <!--<script src="../overseer.js" defer></script>-->
+    <script type="importmap">
+        {
+            "imports":{
+                "radio-browser-api": "https://esm.sh"
+            }
+        }
+    </script>
+    <script type="module/text/javascript" src="./drive.js" defer></script>
 </head>
 
 <body id="outsideCar">
+    <!--preloading audio-->
+    <audio id="vintageHorn" src="../assets/vintageCarHorn.mp3" preload="auto"></audio>
+
     <div id="insideCar">
+        <!--Start of wheel-->
         <div id="leftCarSpacer"></div>
         <div class="wheelRow">
             <div class="topWheelSpacer"></div>
@@ -21,7 +32,26 @@
                 </button>
             </div>
             <div class="bottomWheelSpacer"></div>
-        </div>
+        </div> <!--End of wheel-->
+
+        <!--Start of Radio-->
+        <div id="radioContainer" class="RadioContainer">
+            <div id="middleCarSpacer" class="middleCarSpacer"></div>
+            <div id="radioRow" class="radioRow">
+                <div id="radioSpacer" class="radioTopSpacer"></div>
+                <button type="button" id="radioStation" class="radioSmall">
+                    <div class="radioTop">
+                        <div id="radioTune"></div>
+                        <div id="radioDisplay"></div>
+                        <div id="radioVolume"></div>
+                    </div>
+                    <div class="radioBottom">
+                        <div id="radioOnOff"></div>
+                    </div>
+                </button>
+
+            </div>
+        </div> <!--End of Radio-->
 
     </div> <!--end of inside car-->
 

@@ -7,11 +7,36 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="../adventure.css">
-    <!--<script src="../overseer.js" defer></script>-->
+    <script src="train.js" defer></script>
 </head>
 
 <body id="outsideTrain">
     <div id="insideTrain">
+
+        <!--Start of mp3 player-->
+        <div id="mp3Container" class="mp3Container">
+            <div id="mp3TopSpacer" class="mp3TopSpacer"></div>
+            <div id="mp3Player" class="mp3Player">
+                <div class="mp3Top">
+                    <div id="songDisplay"></div>
+                    <div id="choosePlaylist">
+                        <button type="button" id="play1" class="playlist">Classical</button>
+                    </div>
+                </div>
+                <div class="mp3Bottom">
+                    <div id="volume">
+                        <input type="range" min="1" max="100"
+                        value="55" class="volume_slider" onchange="setVolume">
+                        <div id="volumeDisplay"></div>
+                    </div>
+                    <div class="StartStopContainer">
+                        <button id="StartStop"></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div> <!--End of Radio-->
 
     </div> <!--end of inside train-->
 

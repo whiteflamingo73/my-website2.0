@@ -62,11 +62,13 @@ html {
 #leftCarSpacer {
     width: 30%;
     height: 100%;
+    z-index: 1;
 }
 
 .wheelRow {
     width: 30%;
     height: 100%;
+    z-index: 1;
 }
 
 .topWheelSpacer{
@@ -84,8 +86,6 @@ html {
     justify-content: center;
 }
 
-
-
 #carHorn {
     width: 20%;
     aspect-ratio: 1;
@@ -94,8 +94,269 @@ html {
     align-self: center;
 }
 
+/*radio in the car*/
+
+/*classes with the "Big" suffix are for when 
+the radio station is big in size*/
+
+.RadioContainer {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    z-index: 4;
+}
+
+.RadioContainerBig {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    z-index: 5;
+    backdrop-filter: blur(5px);
+}
+
+.middleCarSpacer {
+    width: 30%;
+    height: 100%;
+}
+
+.middleCarSpacerBig {
+    width: 0%;
+    height: 100%;
+} 
+
+.radioRow {
+    width: 50%;
+    height: 100%;
+}
+
+.radioRowBig {
+    width: 70%;
+    height: 100%;
+}
+
+
+.radioTopSpacer {
+    width: 100%;
+    height: 70%;
+}
+
+.radioTopSpacerBig {
+    width:100%;
+    height:30%;
+}
+
+.radioSmall {
+    width: 100%;
+    height: 20%;
+    background-color: rgb(54, 51, 51);
+    z-index: 1;
+}
+
+.radioBig {
+    width: 100%;
+    height: 40%;
+    background-color: rgb(54, 51, 51);
+    z-index: 4;
+}
+
+.radioTop {
+    width: 100%;
+    height: 40%;
+    display: flex;
+}
+
+#radioDisplay {
+    width: 70%;
+    height: 50%;
+    justify-self: center;
+    background-color: #2d5837;
+}
+
+#radioTune {
+    width: 15%;
+    justify-self: left;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: #000 3px solid;
+}
+
+#radioVolume {
+    width: 15%;
+    justify-self: right;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: #000 3px solid;
+}
+
+.radioBottom {
+    display: flex;
+    width: 100%;
+    height: 60%;
+    align-content: space-evenly;
+}
+
+#radioOnOff {
+    background-color: rgb(195, 208, 219);
+    width: 40%;
+    height: 30%;
+    margin: auto;
+    margin-top: 0%;
+}
+
+
+
 
 /*Train Page*/
+#outsideTrain {
+    width: 100%;
+    height: 100%;
+    background-image: url(assets/outsideCar-temp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#insideTrain {
+    width: 100%;
+    height: 100%;
+    background-image: url(assets/insideCar-temp.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    
+}
+
+.mp3Container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-direction: row;
+    width: 15%;
+    height: 100%;
+    background-color: black;
+    border: #2d5837 5px solid;
+}
+
+.mp3Player {
+    width: 100%;
+    height: 30%;
+    background-color: rgb(158, 158, 158);
+}
+
+.mp3Top {
+    width: 90%;
+    height: 70%;
+    margin: auto;
+    background-color: #2d5837;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#songDisplay {
+    width: 100%;
+    height: 20%;
+    background-color: aliceblue;
+}
+
+#choosePlaylist {
+    width: 80%;
+    height: 50%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow-y: scroll;
+}
+
+.playlist {
+    width: 85%;
+    height: 25%;
+}
+
+.mp3Bottom {
+    width: 90%;
+    height: 25%;
+    margin: auto;
+    background-color: blue;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+#volume {
+    width: 15%;
+    height: 100%;
+    background-color: burlywood;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.volume_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 110%;
+    height: 5%;
+    background-color: rgb(38, 0, 255);
+    position: absolute;
+    z-index: 3;
+    opacity: 100%;
+    
+}
+
+.volume_slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 40%;
+    height: 100%;
+    background-color: rgba(138, 221, 214, 0);
+    opacity: 100%;
+    writing-mode: vertical-lr;
+    margin: auto;
+    transform: rotate(180deg);
+    z-index: 3;
+    position: absolute;
+}
+
+#volumeDisplay {
+    width: 100%;
+    height: 10%;
+    align-self: flex-end;
+    position: absolute;
+    background-color: rgb(255, 0, 179);
+    z-index: 1;
+    opacity: 100%;
+}
+
+.StartStopContainer {
+    width: 30%;
+    height: 90%;
+    background-color: aliceblue;
+
+}
+
+#StartStop {
+    width: 90%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: brown;
+    margin: 5%;
+}
+
 
 
 
