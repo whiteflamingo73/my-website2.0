@@ -317,7 +317,7 @@ the radio station is big in size*/
     
 }
 
-.volume_slider {
+#volume_slider {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -356,8 +356,6 @@ the radio station is big in size*/
     background-color: brown;
     margin: 5%;
 }
-
-
 
 
 /*Bike Page*/
