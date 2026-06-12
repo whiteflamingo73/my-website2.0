@@ -7,14 +7,19 @@ document.getElementById('volumeDisplay').style.height = `${currentVol.value}%`;
 
 const currentSong = document.createElement('audio');
 const songDisplay = document.getElementById('songDisplay');
-let song = null;
+
+const songOption = document.getElementById('choosePlaylist');
+
+let songTitle = null;
 let artist = null;
+
+
 
 const classicalMusic = [
     {
         name: "Egmont Overture Op 84",
         artist: "Beethoven",
-        path: "mp3/classical/Beethoven-EgmontOvertureOp84"
+        path: "mp3/classical/Beethoven-EgmontOvertureOp84.mp3"
     },
     {
         name: "String Quartet No. 6",
@@ -130,26 +135,88 @@ const lofiMusic = [
         artist: "猫 シ Corp.",
         path: "mp3/lofi/End-of-Tape.mp3"
     }
-    
+
 ];
 
-let currentPlaylist = classicalMusic;
+let currentPlaylist = lofiMusic;
 let trackIndex = 0;
 let isPlaying = false;
 
 currentVol.addEventListener('change', function () {
     console.log(`Current Volume: ${currentVol.value}`)
     document.getElementById('volumeDisplay').style.height = `${currentVol.value}%`;
+    currentSong.volume = currentVol.value / 100;
+    console.log(currentSong.volume);
 });
 
-onButton.addEventListener('click', function(){
-    if(isPlaying === false){
+onButton.addEventListener('click', function () {
+    if (isPlaying === false) {
         isPlaying = true;
+        playSong();
+
         console.log(isPlaying);
     } else {
         isPlaying = false;
         console.log(isPlaying);
+        pauseSong();
     }
 });
+
+songOption.addEventListener('click', function (event) {
+    let selectedPlaylist = event.target.closest('.playlist');
+    console.log(selectedPlaylist);
+    let playlistID = selectedPlaylist.id;
+
+    if (playlistID === 'play1') {
+        currentPlaylist = classicalMusic;
+        console.log(`in function ${currentPlaylist}`);
+        console.log(playlistID);
+    }
+    if (playlistID === 'play2') {
+        currentPlaylist = lofiMusic;
+        console.log(playlistID);
+        console.log(`in function ${currentPlaylist}`);
+
+    }
+    loadSong();
+
+
+});
+
+function loadSong() {
+    console.log('hello');
+    currentSong.src = currentPlaylist[trackIndex].path;
+    currentSong.load();
+    songDisplay.innerText = `${currentPlaylist[trackIndex].name} -- ${currentPlaylist[trackIndex].artist}`;
+
+    if (isPlaying === true) {
+        playSong();
+    } else {
+        pauseSong();
+    }
+
+}
+
+currentSong.addEventListener('ended', nextSong);
+
+
+function playSong() {
+    currentSong.play();
+    isPlaying = true;
+}
+
+function pauseSong() {
+    currentSong.pause();
+    isPlaying = false;
+}
+
+function nextSong() {
+    if (trackIndex < currentPlaylist.length - 1) {
+        trackIndex += 1;
+    } else {
+        trackIndex = 0;
+    }
+    loadSong();
+}
 
 
